@@ -1,0 +1,132 @@
+{
+  "name": "@rtorcato/common-react",
+  "version": "1.0.0",
+  "type": "module",
+  "author": "Richard Torcato",
+  "description": "A React component package",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [
+    "react",
+    "component",
+    "typescript"
+  ],
+  "license": "ISC",
+  "homepage": "https://gitlab.com/rtorcato/common-react",
+  "scripts": {
+    "component-add": "npx shadcn@latest add",
+    "build:css": "postcss src/styles/globals.css -o dist/styles.css",
+    "build-dev": "rimraf ./dist && pnpm build:css && cross-env NODE_ENV=development node build.mjs && tsc --emitDeclarationOnly --project tsconfig.build.json",
+    "build-prod": "rimraf ./dist && pnpm build:css && cross-env NODE_ENV=production node build.mjs && tsc --emitDeclarationOnly --project tsconfig.build.json",
+    "package:analyzer": "esbuild-analyzer meta.json",
+    "package:analyzer1": "https://esbuild.github.io/analyze/",
+    "==================== Common ====================": "",
+    "lint": "pnpm exec biome lint .",
+    "format": "pnpm exec biome format .",
+    "check:fix": "pnpm exec biome check --fix",
+    "check": "pnpm exec biome check .",
+    "prepare": "husky",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "coverage": "vitest run --coverage",
+    "commit": "cz",
+    "================================================": ""
+  },
+  "files": [
+    "CHANGELOG.md",
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./components/MyComponent": {
+      "types": "./dist/components/MyComponent.d.ts",
+      "import": "./dist/components/MyComponent.js"
+    },
+    "./hooks": {
+      "types": "./dist/hooks/index.d.ts",
+      "import": "./dist/hooks/index.js"
+    },
+    "./lib/*": {
+      "types": "./dist/lib/*.d.ts",
+      "import": "./dist/lib/*.js"
+    }
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@changesets/cli": "^2.27.11",
+    "@commitlint/cli": "^19.8.1",
+    "@rtorcato/js-tooling": "^1.0.9",
+    "@semantic-release/changelog": "^6.0.3",
+    "esbuild-node-externals": "1.18.0",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.25.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.0",
+    "rimraf": "^6.0.1",
+    "semantic-release": "^24.2.5",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/jest": "^29.5.14",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "class-variance-authority": "^0.7.1",
+    "clean-package": "2.2.0",
+    "clsx": "^2.1.1",
+    "jsdom": "^26.1.0",
+    "postcss": "8.5.1",
+    "postcss-cli": "^11.0.0",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss": "3.4.17",
+    "vite": "^6.0.7",
+    "webpack-bundle-analyzer": "^4.10.2"
+  },
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "esbuild-analyzer": "^0.2.0",
+    "next-themes": "^0.4.4",
+    "tailwind-merge": "2.6.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    },
+    "@types/react-dom": {
+      "optional": true
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,json,md}": [
+      "pnpm exec biome lint",
+      "pnpm exec biome format",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://gitlab.com/api/v4/projects/70948730/packages/npm/"
+  }
+}

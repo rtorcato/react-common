@@ -1,0 +1,60 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "ignore": [
+      //
+      "**/.pnpm-store/**", // pnpm store
+      "package.json", //do not remove this on semantic-release will fail
+      "tsconfig*.json", // this ignores the tsconfig.json files which have comments
+      "node_modules",
+      "old",
+      "dist",
+      "coverage",
+      ".git",
+      ".github",
+      ".vscode"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "tab",
+    "lineWidth": 100
+  },
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+
+    "rules": {
+      "recommended": true,
+      "style": {
+        "noInferrableTypes": "off"
+      },
+      "complexity": {
+        "useLiteralKeys": "off"
+      }
+      // "noUnusedVariables": "error", ❌ Not supported yet
+      // "noExplicitAny": "warn"       ❌ Not supported yet
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "trailingCommas": "es5",
+      "semicolons": "asNeeded"
+    }
+  },
+  "json": {
+    "formatter": {
+      "indentStyle": "space",
+      "indentWidth": 2
+    }
+  }
+}

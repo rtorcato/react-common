@@ -1,0 +1,8 @@
+
+# Skip commitlint for semantic-release commits
+if grep -q "\[skip ci\]" "$1"; then
+  echo "⏩ Skipping commitlint for semantic-release commit"
+  exit 0
+fi
+
+npx --no-install commitlint --edit "$1"

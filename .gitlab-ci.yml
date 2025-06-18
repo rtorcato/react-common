@@ -1,0 +1,173 @@
+####################################################
+stages:
+- dependencies
+- lint
+- varcheck
+- test
+- build
+# - verify-release
+- release
+
+####################################################
+
+default:
+  before_script:
+  - set -e
+  - npm install -g pnpm
+
+####################################################
+
+workflow:
+  rules:
+  # Prevent loop from semantic-release
+  - if: '$CI_COMMIT_MESSAGE =~ /(\[ci skip\]|\[skip ci\])/i'
+    when: never
+  # skip if message contains [ci skip] or [skip ci]
+  # - if: $CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "ci-testing" # Run for specific branches
+  # - if: '$CI_COMMIT_MESSAGE =~ /(\[ci skip\]|\[skip ci\])/i'
+  #   when: never
+  # - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_TAG
+  #   when: always
+  # - if: $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_BRANCH
+  #   when: always
+  # Only run pipeline for specific branches
+  - if: '$CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "dev" || $CI_COMMIT_BRANCH == "release" || $CI_COMMIT_BRANCH == "ci-testing"'
+    when: always
+
+####################################################
+
+dependencies:
+  stage: dependencies
+  image: node:20.5-alpine
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+    - .pnpm-store
+    - node_modules/
+    - /usr/local/bin/pnpm # Cache the global pnpm binary
+  script:
+  - pnpm install --store .pnpm-store
+
+####################################################
+
+lint:
+  stage: lint
+  image: node:20.5-alpine
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+    - .pnpm-store
+    - node_modules/
+    - /usr/local/bin/pnpm # Reuse the cached pnpm binary
+  script:
+  - pnpm lint
+
+####################################################
+
+typecheck:
+  stage: lint
+  image: node:20.5-alpine
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+    - .pnpm-store
+    - node_modules/
+    - /usr/local/bin/pnpm # Reuse the cached pnpm binary
+  script:
+  - pnpm typecheck
+
+####################################################
+
+varcheck:
+  stage: varcheck
+  image: node:20.5-alpine
+  script:
+  - |
+    echo "CI_COMMIT_BRANCH: $CI_COMMIT_BRANCH"
+    echo "CI_COMMIT_TAG: $CI_COMMIT_TAG"
+    echo "CI_COMMIT_MESSAGE: $CI_COMMIT_MESSAGE"
+    if [ -z "$GITLAB_TOKEN" ]; then
+      echo "GITLAB_TOKEN is not set"
+      exit 1
+    else
+      echo "GITLAB_TOKEN is set"
+    fi
+    if [ -z "$NPM_TOKEN" ]; then
+      echo "NPM_TOKEN is not set"
+      exit 1
+    else
+      echo "NPM_TOKEN is set"
+    fi
+
+####################################################
+
+test:
+  stage: test
+  image: node:20.5-alpine
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+    - .pnpm-store
+    - node_modules/
+    - /usr/local/bin/pnpm # Reuse the cached pnpm binary
+  script:
+  - pnpm test
+
+####################################################
+
+build:
+  stage: build
+  image: node:20.5-alpine
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+    - .pnpm-store
+    - node_modules/
+    - /usr/local/bin/pnpm # Reuse the cached pnpm binary
+  script:
+  - pnpm build-prod
+  artifacts:
+    paths:
+    - dist/
+    - package.json
+    - README.md
+    - pnpm-lock.yaml
+    - .npmrc
+    expire_in: 1 week
+
+####################################################
+
+publish:
+  stage: release
+  image: node:20.8-alpine
+  dependencies:
+  # - verify-release
+  - build
+  # tags:
+  # - specific # Use a specific runner tag if needed
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+    - .pnpm-store
+    - node_modules/
+    - /usr/local/bin/pnpm
+  variables:
+    GIT_AUTHOR_NAME: "GitLab CI"
+    GIT_AUTHOR_EMAIL: "ci@example.com"
+    GIT_COMMITTER_NAME: "GitLab CI"
+    GIT_COMMITTER_EMAIL: "ci@example.com"
+  script:
+  - apk add --no-cache git # Install git
+  - git config --global user.name "GitLab CI" # Configure git user
+  - git config --global user.email "ci@example.com" # Configure git user
+  - pnpm install # Install dependencies
+  - git fetch --unshallow || true # Ensure we have a full git history
+  - git pull origin main --ff-only || true # Ensure we are on the latest main branch
+  - rm -f .npmrc || true # Deletes the .npmrc in your current working directory
+  - rm -f ~/.npmrc || true # Remove existing .npmrc if it exists
+  # 🔐 Inject dynamic .npmrc for auth
+  - echo "@rtorcato/js-tooling:registry=https://gitlab.com/api/v4/projects/60598964/packages/npm/" > ~/.npmrc
+  - echo "//gitlab.com/api/v4/projects/60598964/packages/npm/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+  - npx semantic-release --no-ci # Publish the package
+
+####################################################
