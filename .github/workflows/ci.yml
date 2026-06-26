@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [main, dev, release, ci-testing]
+  pull_request:
+
+# Avoid the semantic-release commit re-triggering a run.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      # Private @rtorcato devDeps come from the GitLab registry.
+      - name: Configure GitLab registry auth
+        run: |
+          printf '//gitlab.com/api/v4/projects/60855075/packages/npm/:_authToken=%s\n' "$GITLAB_TOKEN" >> ~/.npmrc
+          printf '//gitlab.com/api/v4/projects/69645966/packages/npm/:_authToken=%s\n' "$GITLAB_TOKEN" >> ~/.npmrc
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build-prod
+
+  release:
+    needs: verify
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - name: Configure GitLab registry auth
+        run: |
+          printf '//gitlab.com/api/v4/projects/60855075/packages/npm/:_authToken=%s\n' "$GITLAB_TOKEN" >> ~/.npmrc
+          printf '//gitlab.com/api/v4/projects/69645966/packages/npm/:_authToken=%s\n' "$GITLAB_TOKEN" >> ~/.npmrc
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build-prod
+      # @semantic-release/npm reads NPM_TOKEN to auth to npmjs.org for publish.
+      - run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}

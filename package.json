@@ -13,7 +13,11 @@
     "typescript"
   ],
   "license": "ISC",
-  "homepage": "https://gitlab.com/rtorcato/common-react",
+  "homepage": "https://github.com/rtorcato/common-react",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rtorcato/common-react.git"
+  },
   "scripts": {
     "component-add": "npx shadcn@latest add",
     "build:css": "postcss src/styles/globals.css -o dist/styles.css",
@@ -127,6 +131,7 @@
     }
   },
   "publishConfig": {
-    "registry": "https://gitlab.com/api/v4/projects/70948730/packages/npm/"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
