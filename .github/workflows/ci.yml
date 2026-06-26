@@ -1,67 +1,148 @@
-name: CI
+name: CI/CD Pipeline
 
 on:
   push:
-    branches: [main, dev, release, ci-testing]
+    branches: [main, release, ci-testing]
   pull_request:
+    branches: [main]
+  workflow_dispatch:
 
-# Avoid the semantic-release commit re-triggering a run.
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  verify:
-    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
+  check-skip:
     runs-on: ubuntu-latest
+    outputs:
+      should-skip: ${{ steps.skip-check.outputs.should-skip }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm
-      # Private @rtorcato devDeps come from the GitLab registry.
-      - name: Configure GitLab registry auth
-        run: |
-          printf '//gitlab.com/api/v4/projects/60855075/packages/npm/:_authToken=%s\n' "$GITLAB_TOKEN" >> ~/.npmrc
-          printf '//gitlab.com/api/v4/projects/69645966/packages/npm/:_authToken=%s\n' "$GITLAB_TOKEN" >> ~/.npmrc
+      - id: skip-check
         env:
-          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+          COMMIT_MSG: ${{ github.event.head_commit.message }}
+        run: |
+          if [[ "$COMMIT_MSG" == *"[skip ci]"* || "$COMMIT_MSG" == *"[ci skip]"* ]]; then
+            echo "should-skip=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should-skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  lint:
+    runs-on: ubuntu-latest
+    needs: check-skip
+    if: needs.check-skip.outputs.should-skip != 'true'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.1.3
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
+
+  typecheck:
+    runs-on: ubuntu-latest
+    needs: check-skip
+    if: needs.check-skip.outputs.should-skip != 'true'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.1.3
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
       - run: pnpm typecheck
-      - run: pnpm test
+
+  commitlint:
+    runs-on: ubuntu-latest
+    needs: check-skip
+    if: needs.check-skip.outputs.should-skip != 'true' && github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.1.3
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: git log -1 --pretty=format:"%s" | npx commitlint
+
+  test:
+    runs-on: ubuntu-latest
+    needs: check-skip
+    if: needs.check-skip.outputs.should-skip != 'true'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.1.3
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test --run
+
+  build:
+    runs-on: ubuntu-latest
+    needs: check-skip
+    if: needs.check-skip.outputs.should-skip != 'true'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.1.3
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
       - run: pnpm build-prod
 
   release:
-    needs: verify
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    needs: [check-skip, lint, typecheck, test, build, commitlint]
+    if: |
+      always() &&
+      needs.check-skip.outputs.should-skip != 'true' &&
+      github.ref == 'refs/heads/main' &&
+      needs.lint.result == 'success' &&
+      needs.typecheck.result == 'success' &&
+      needs.test.result == 'success' &&
+      needs.build.result == 'success' &&
+      (needs.commitlint.result == 'success' || needs.commitlint.result == 'skipped')
     permissions:
       contents: write
       issues: write
       pull-requests: write
+      id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-          persist-credentials: false
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v6
         with:
-          node-version: 20
+          version: 11.1.3
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
           cache: pnpm
-      - name: Configure GitLab registry auth
-        run: |
-          printf '//gitlab.com/api/v4/projects/60855075/packages/npm/:_authToken=%s\n' "$GITLAB_TOKEN" >> ~/.npmrc
-          printf '//gitlab.com/api/v4/projects/69645966/packages/npm/:_authToken=%s\n' "$GITLAB_TOKEN" >> ~/.npmrc
-        env:
-          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
+          registry-url: "https://registry.npmjs.org"
       - run: pnpm install --frozen-lockfile
       - run: pnpm build-prod
-      # @semantic-release/npm reads NPM_TOKEN to auth to npmjs.org for publish.
-      - run: npx semantic-release
+      - name: Run semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
