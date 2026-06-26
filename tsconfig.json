@@ -1,7 +1,6 @@
 {
   "extends": "@rtorcato/js-tooling/typescript/react",
   "compilerOptions": {
-    "baseUrl": ".",
     "rootDir": "./src",
     "lib": ["esnext", "dom"],
     "jsx": "react-jsx",
