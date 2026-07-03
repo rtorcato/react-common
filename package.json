@@ -87,7 +87,7 @@
     "esbuild-node-externals": "^1.23.1",
     "husky": "^9.1.7",
     "jsdom": "^26.1.0",
-    "knip": "^6.18.0",
+    "knip": "^6.24.0",
     "lint-staged": "^17.0.8",
     "postcss": "8.5.16",
     "postcss-cli": "^11.0.0",
