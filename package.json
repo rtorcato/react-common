@@ -69,7 +69,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.2",
-    "@commitlint/cli": "^21.0.2",
+    "@commitlint/cli": "^21.2.0",
     "@commitlint/config-conventional": "^21.2.0",
     "@rtorcato/js-tooling": "^2.18.0",
     "@semantic-release/changelog": "^6.0.3",
