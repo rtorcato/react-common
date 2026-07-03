@@ -53,7 +53,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: ^16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@types/node':
         specifier: ^25.9.3
         version: 25.9.4
@@ -61,8 +61,8 @@ importers:
         specifier: ^19.0.7
         version: 19.1.8
       '@types/react-dom':
-        specifier: ^19.0.3
-        version: 19.1.6(@types/react@19.1.8)
+        specifier: ^19.2.3
+        version: 19.2.3(@types/react@19.1.8)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
         version: 4.5.2(vite@6.3.5(@types/node@25.9.4)(jiti@2.7.0)(yaml@2.9.0))
@@ -1592,10 +1592,10 @@ packages:
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
 
-  '@types/react-dom@19.1.6':
-    resolution: {integrity: sha512-4hOiT/dwO8Ko0gV1m/TJZYk3y0KBnY9vzDh7W+DH17b2HFSOGgdj33dhihPeuy3l0q23+4e+hoXHV6hCC4dCXw==}
+  '@types/react-dom@19.2.3':
+    resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
     peerDependencies:
-      '@types/react': ^19.0.0
+      '@types/react': ^19.2.0
 
   '@types/react@19.1.8':
     resolution: {integrity: sha512-AwAfQ2Wa5bCx9WP8nZL2uMZWod7J7/JSplxbTmBQ5ms6QpqNYm672H0Vu9ZVKVngQ+ii4R/byguVEUZQyeg44g==}
@@ -4961,7 +4961,7 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@testing-library/react@16.3.0(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@babel/runtime': 7.27.6
       '@testing-library/dom': 10.4.0
@@ -4969,7 +4969,7 @@ snapshots:
       react-dom: 19.1.0(react@19.1.0)
     optionalDependencies:
       '@types/react': 19.1.8
-      '@types/react-dom': 19.1.6(@types/react@19.1.8)
+      '@types/react-dom': 19.2.3(@types/react@19.1.8)
 
   '@tybys/wasm-util@0.10.3':
     dependencies:
@@ -5015,7 +5015,7 @@ snapshots:
 
   '@types/normalize-package-data@2.4.4': {}
 
-  '@types/react-dom@19.1.6(@types/react@19.1.8)':
+  '@types/react-dom@19.2.3(@types/react@19.1.8)':
     dependencies:
       '@types/react': 19.1.8
 
