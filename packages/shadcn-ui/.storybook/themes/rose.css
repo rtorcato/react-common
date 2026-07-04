@@ -1,0 +1,11 @@
+.theme-rose {
+	--primary: 346.8 77.2% 49.8%;
+	--primary-foreground: 355.7 100% 97.3%;
+	--ring: 346.8 77.2% 49.8%;
+}
+
+.theme-rose.dark {
+	--primary: 346.8 77.2% 49.8%;
+	--primary-foreground: 355.7 100% 97.3%;
+	--ring: 346.8 77.2% 49.8%;
+}

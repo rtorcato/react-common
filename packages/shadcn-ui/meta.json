@@ -1,0 +1,1905 @@
+{
+  "inputs": {
+    "src/components/MyComponent.tsx": {
+      "bytes": 198,
+      "imports": [{ "path": "react/jsx-runtime", "kind": "import-statement", "external": true }],
+      "format": "esm"
+    },
+    "src/lib/utils.ts": {
+      "bytes": 187,
+      "imports": [
+        { "path": "clsx", "kind": "import-statement", "external": true },
+        { "path": "tailwind-merge", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/accordion.tsx": {
+      "bytes": 1950,
+      "imports": [
+        { "path": "@radix-ui/react-accordion", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/button.tsx": {
+      "bytes": 2055,
+      "imports": [
+        { "path": "@radix-ui/react-slot", "kind": "import-statement", "external": true },
+        { "path": "class-variance-authority", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/alert-dialog.tsx": {
+      "bytes": 3500,
+      "imports": [
+        { "path": "@radix-ui/react-alert-dialog", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        {
+          "path": "src/components/ui/button.tsx",
+          "kind": "import-statement",
+          "original": "@/components/ui/button"
+        },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/alert.tsx": {
+      "bytes": 1431,
+      "imports": [
+        { "path": "class-variance-authority", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/aspect-ratio.tsx": {
+      "bytes": 280,
+      "imports": [
+        { "path": "@radix-ui/react-aspect-ratio", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/avatar.tsx": {
+      "bytes": 939,
+      "imports": [
+        { "path": "@radix-ui/react-avatar", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/badge.tsx": {
+      "bytes": 1562,
+      "imports": [
+        { "path": "@radix-ui/react-slot", "kind": "import-statement", "external": true },
+        { "path": "class-variance-authority", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/breadcrumb.tsx": {
+      "bytes": 2099,
+      "imports": [
+        { "path": "@radix-ui/react-slot", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/calendar.tsx": {
+      "bytes": 2737,
+      "imports": [
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react-day-picker", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "@/lib/utils" },
+        {
+          "path": "src/components/ui/button.tsx",
+          "kind": "import-statement",
+          "original": "@/components/ui/button"
+        },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/card.tsx": {
+      "bytes": 1693,
+      "imports": [
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/carousel.tsx": {
+      "bytes": 5127,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "embla-carousel-react", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        {
+          "path": "src/components/ui/button.tsx",
+          "kind": "import-statement",
+          "original": "@/components/ui/button"
+        },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/chart.tsx": {
+      "bytes": 8988,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "recharts", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/checkbox.tsx": {
+      "bytes": 1191,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-checkbox", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/collapsible.tsx": {
+      "bytes": 800,
+      "imports": [
+        { "path": "@radix-ui/react-collapsible", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/dialog.tsx": {
+      "bytes": 3529,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-dialog", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/command.tsx": {
+      "bytes": 4239,
+      "imports": [
+        { "path": "cmdk", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        {
+          "path": "src/components/ui/dialog.tsx",
+          "kind": "import-statement",
+          "original": "@/components/ui/dialog"
+        },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/context-menu.tsx": {
+      "bytes": 7881,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-context-menu", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/drawer.tsx": {
+      "bytes": 3841,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "vaul", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/dropdown-menu.tsx": {
+      "bytes": 7896,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-dropdown-menu", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/label.tsx": {
+      "bytes": 542,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-label", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/form.tsx": {
+      "bytes": 3506,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-slot", "kind": "import-statement", "external": true },
+        { "path": "react-hook-form", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        {
+          "path": "src/components/ui/label.tsx",
+          "kind": "import-statement",
+          "original": "@/components/ui/label"
+        },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/hover-card.tsx": {
+      "bytes": 1503,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-hover-card", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/input-otp.tsx": {
+      "bytes": 2159,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "input-otp", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/input.tsx": {
+      "bytes": 971,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/menubar.tsx": {
+      "bytes": 7945,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-menubar", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/navigation-menu.tsx": {
+      "bytes": 6330,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-navigation-menu", "kind": "import-statement", "external": true },
+        { "path": "class-variance-authority", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/pagination.tsx": {
+      "bytes": 2517,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        {
+          "path": "src/components/ui/button.tsx",
+          "kind": "import-statement",
+          "original": "@/components/ui/button"
+        },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/popover.tsx": {
+      "bytes": 1615,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-popover", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/progress.tsx": {
+      "bytes": 648,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-progress", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/radio-group.tsx": {
+      "bytes": 1396,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-radio-group", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/resizable.tsx": {
+      "bytes": 1961,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react-resizable-panels", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/scroll-area.tsx": {
+      "bytes": 1468,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-scroll-area", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/select.tsx": {
+      "bytes": 5939,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-select", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/separator.tsx": {
+      "bytes": 624,
+      "imports": [
+        { "path": "@radix-ui/react-separator", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/sheet.tsx": {
+      "bytes": 3830,
+      "imports": [
+        { "path": "@radix-ui/react-dialog", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/hooks/use-mobile.tsx": {
+      "bytes": 546,
+      "imports": [{ "path": "react", "kind": "import-statement", "external": true }],
+      "format": "esm"
+    },
+    "src/components/ui/skeleton.tsx": {
+      "bytes": 247,
+      "imports": [
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/tooltip.tsx": {
+      "bytes": 1842,
+      "imports": [
+        { "path": "@radix-ui/react-tooltip", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/sidebar.tsx": {
+      "bytes": 20605,
+      "imports": [
+        { "path": "@radix-ui/react-slot", "kind": "import-statement", "external": true },
+        { "path": "class-variance-authority", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        {
+          "path": "src/hooks/use-mobile.tsx",
+          "kind": "import-statement",
+          "original": "@/hooks/use-mobile"
+        },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        {
+          "path": "src/components/ui/button.tsx",
+          "kind": "import-statement",
+          "original": "@/components/ui/button"
+        },
+        {
+          "path": "src/components/ui/input.tsx",
+          "kind": "import-statement",
+          "original": "@/components/ui/input"
+        },
+        {
+          "path": "src/components/ui/separator.tsx",
+          "kind": "import-statement",
+          "original": "@/components/ui/separator"
+        },
+        {
+          "path": "src/components/ui/sheet.tsx",
+          "kind": "import-statement",
+          "original": "@/components/ui/sheet"
+        },
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "kind": "import-statement",
+          "original": "@/components/ui/skeleton"
+        },
+        {
+          "path": "src/components/ui/tooltip.tsx",
+          "kind": "import-statement",
+          "original": "@/components/ui/tooltip"
+        },
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/slider.tsx": {
+      "bytes": 1750,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-slider", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/sonner.tsx": {
+      "bytes": 564,
+      "imports": [
+        { "path": "next-themes", "kind": "import-statement", "external": true },
+        { "path": "sonner", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/switch.tsx": {
+      "bytes": 1103,
+      "imports": [
+        { "path": "@radix-ui/react-switch", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/table.tsx": {
+      "bytes": 2062,
+      "imports": [
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/tabs.tsx": {
+      "bytes": 1832,
+      "imports": [
+        { "path": "@radix-ui/react-tabs", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/textarea.tsx": {
+      "bytes": 768,
+      "imports": [
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/toggle.tsx": {
+      "bytes": 1516,
+      "imports": [
+        { "path": "@radix-ui/react-toggle", "kind": "import-statement", "external": true },
+        { "path": "class-variance-authority", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui/toggle-group.tsx": {
+      "bytes": 1818,
+      "imports": [
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-toggle-group", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "~/lib/utils" },
+        {
+          "path": "src/components/ui/toggle.tsx",
+          "kind": "import-statement",
+          "original": "~/components/ui/toggle"
+        },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui-extended/date-picker-with-presets.tsx": {
+      "bytes": 1647,
+      "imports": [
+        { "path": "date-fns", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "../../lib/utils" },
+        {
+          "path": "src/components/ui/button.tsx",
+          "kind": "import-statement",
+          "original": "../ui/button"
+        },
+        {
+          "path": "src/components/ui/popover.tsx",
+          "kind": "import-statement",
+          "original": "../ui/popover"
+        },
+        {
+          "path": "src/components/ui/select.tsx",
+          "kind": "import-statement",
+          "original": "../ui/select"
+        },
+        {
+          "path": "src/components/ui/calendar.tsx",
+          "kind": "import-statement",
+          "original": "../ui/calendar"
+        },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/components/ui-extended/date-picker-with-range.tsx": {
+      "bytes": 1669,
+      "imports": [
+        { "path": "date-fns", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "../../lib/utils" },
+        {
+          "path": "src/components/ui/button.tsx",
+          "kind": "import-statement",
+          "original": "../ui/button"
+        },
+        {
+          "path": "src/components/ui/calendar.tsx",
+          "kind": "import-statement",
+          "original": "../ui/calendar"
+        },
+        {
+          "path": "src/components/ui/popover.tsx",
+          "kind": "import-statement",
+          "original": "../ui/popover"
+        },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "format": "esm"
+    },
+    "src/hooks/use-sidebar.tsx": {
+      "bytes": 245,
+      "imports": [{ "path": "react", "kind": "import-statement", "external": true }],
+      "format": "esm"
+    },
+    "src/hooks/index.ts": {
+      "bytes": 94,
+      "imports": [
+        {
+          "path": "src/hooks/use-mobile.tsx",
+          "kind": "import-statement",
+          "original": "./use-mobile"
+        },
+        {
+          "path": "src/hooks/use-sidebar.tsx",
+          "kind": "import-statement",
+          "original": "./use-sidebar"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/lib/index.ts": {
+      "bytes": 29,
+      "imports": [
+        { "path": "src/lib/utils.ts", "kind": "import-statement", "original": "./utils" }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "dist/components/ui-extended/date-picker-with-range.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 2958
+    },
+    "dist/components/ui-extended/date-picker-with-range.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-FLR6ZCQS.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-2X3ZDIGA.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-ABLDEITU.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "date-fns", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["default"],
+      "entryPoint": "src/components/ui-extended/date-picker-with-range.tsx",
+      "inputs": {
+        "src/components/ui-extended/date-picker-with-range.tsx": { "bytesInOutput": 814 }
+      },
+      "bytes": 1118
+    },
+    "dist/hooks/index.js.map": { "imports": [], "exports": [], "inputs": {}, "bytes": 595 },
+    "dist/hooks/index.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-SDK7SYFQ.js", "kind": "import-statement" },
+        { "path": "react", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["useIsMobile", "useSidebar"],
+      "entryPoint": "src/hooks/index.ts",
+      "inputs": {
+        "src/hooks/index.ts": { "bytesInOutput": 0 },
+        "src/hooks/use-sidebar.tsx": { "bytesInOutput": 126 }
+      },
+      "bytes": 250
+    },
+    "dist/lib/index.js.map": { "imports": [], "exports": [], "inputs": {}, "bytes": 93 },
+    "dist/lib/index.js": {
+      "imports": [{ "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }],
+      "exports": ["cn"],
+      "entryPoint": "src/lib/index.ts",
+      "inputs": { "src/lib/index.ts": { "bytesInOutput": 0 } },
+      "bytes": 99
+    },
+    "dist/lib/utils.js.map": { "imports": [], "exports": [], "inputs": {}, "bytes": 93 },
+    "dist/lib/utils.js": {
+      "imports": [{ "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }],
+      "exports": ["cn"],
+      "entryPoint": "src/lib/utils.ts",
+      "inputs": {},
+      "bytes": 94
+    },
+    "dist/components/ui/switch.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 1554
+    },
+    "dist/components/ui/switch.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-switch", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["Switch"],
+      "entryPoint": "src/components/ui/switch.tsx",
+      "inputs": { "src/components/ui/switch.tsx": { "bytesInOutput": 865 } },
+      "bytes": 972
+    },
+    "dist/components/ui/table.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 3475
+    },
+    "dist/components/ui/table.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "Table",
+        "TableBody",
+        "TableCaption",
+        "TableCell",
+        "TableFooter",
+        "TableHead",
+        "TableHeader",
+        "TableRow"
+      ],
+      "entryPoint": "src/components/ui/table.tsx",
+      "inputs": { "src/components/ui/table.tsx": { "bytesInOutput": 1402 } },
+      "bytes": 1613
+    },
+    "dist/components/ui/tabs.js.map": { "imports": [], "exports": [], "inputs": {}, "bytes": 2671 },
+    "dist/components/ui/tabs.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-tabs", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["Tabs", "TabsContent", "TabsList", "TabsTrigger"],
+      "entryPoint": "src/components/ui/tabs.tsx",
+      "inputs": { "src/components/ui/tabs.tsx": { "bytesInOutput": 1282 } },
+      "bytes": 1428
+    },
+    "dist/components/ui/textarea.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 1111
+    },
+    "dist/components/ui/textarea.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["Textarea"],
+      "entryPoint": "src/components/ui/textarea.tsx",
+      "inputs": { "src/components/ui/textarea.tsx": { "bytesInOutput": 591 } },
+      "bytes": 702
+    },
+    "dist/components/ui/toggle-group.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 2891
+    },
+    "dist/components/ui/toggle-group.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-JUOAW2UM.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-toggle-group", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["ToggleGroup", "ToggleGroupItem"],
+      "entryPoint": "src/components/ui/toggle-group.tsx",
+      "inputs": { "src/components/ui/toggle-group.tsx": { "bytesInOutput": 919 } },
+      "bytes": 1109
+    },
+    "dist/components/ui/toggle.js.map": { "imports": [], "exports": [], "inputs": {}, "bytes": 93 },
+    "dist/components/ui/toggle.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-JUOAW2UM.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }
+      ],
+      "exports": ["Toggle", "toggleVariants"],
+      "entryPoint": "src/components/ui/toggle.tsx",
+      "inputs": {},
+      "bytes": 163
+    },
+    "dist/chunks/chunk-JUOAW2UM.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 2234
+    },
+    "dist/chunks/chunk-JUOAW2UM.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-toggle", "kind": "import-statement", "external": true },
+        { "path": "class-variance-authority", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["a", "b"],
+      "inputs": { "src/components/ui/toggle.tsx": { "bytesInOutput": 1120 } },
+      "bytes": 1226
+    },
+    "dist/components/ui/tooltip.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 93
+    },
+    "dist/components/ui/tooltip.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-JBHQW7NO.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }
+      ],
+      "exports": ["Tooltip", "TooltipContent", "TooltipProvider", "TooltipTrigger"],
+      "entryPoint": "src/components/ui/tooltip.tsx",
+      "inputs": {},
+      "bytes": 210
+    },
+    "dist/components/ui-extended/date-picker-with-presets.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 3052
+    },
+    "dist/components/ui-extended/date-picker-with-presets.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-WDUMKZEL.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-FLR6ZCQS.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-2X3ZDIGA.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-ABLDEITU.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "date-fns", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["default"],
+      "entryPoint": "src/components/ui-extended/date-picker-with-presets.tsx",
+      "inputs": {
+        "src/components/ui-extended/date-picker-with-presets.tsx": { "bytesInOutput": 907 }
+      },
+      "bytes": 1292
+    },
+    "dist/components/ui/scroll-area.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 2329
+    },
+    "dist/components/ui/scroll-area.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-scroll-area", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["ScrollArea", "ScrollBar"],
+      "entryPoint": "src/components/ui/scroll-area.tsx",
+      "inputs": { "src/components/ui/scroll-area.tsx": { "bytesInOutput": 923 } },
+      "bytes": 1049
+    },
+    "dist/components/ui/select.js.map": { "imports": [], "exports": [], "inputs": {}, "bytes": 93 },
+    "dist/components/ui/select.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-WDUMKZEL.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }
+      ],
+      "exports": [
+        "Select",
+        "SelectContent",
+        "SelectGroup",
+        "SelectItem",
+        "SelectLabel",
+        "SelectScrollDownButton",
+        "SelectScrollUpButton",
+        "SelectSeparator",
+        "SelectTrigger",
+        "SelectValue"
+      ],
+      "entryPoint": "src/components/ui/select.tsx",
+      "inputs": {},
+      "bytes": 339
+    },
+    "dist/chunks/chunk-WDUMKZEL.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 8473
+    },
+    "dist/chunks/chunk-WDUMKZEL.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-select", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
+      "inputs": { "src/components/ui/select.tsx": { "bytesInOutput": 3916 } },
+      "bytes": 4078
+    },
+    "dist/components/ui/separator.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 93
+    },
+    "dist/components/ui/separator.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-SPPIFMUM.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }
+      ],
+      "exports": ["Separator"],
+      "entryPoint": "src/components/ui/separator.tsx",
+      "inputs": {},
+      "bytes": 147
+    },
+    "dist/components/ui/sheet.js.map": { "imports": [], "exports": [], "inputs": {}, "bytes": 93 },
+    "dist/components/ui/sheet.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-VEYJOALA.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }
+      ],
+      "exports": [
+        "Sheet",
+        "SheetClose",
+        "SheetContent",
+        "SheetDescription",
+        "SheetFooter",
+        "SheetHeader",
+        "SheetTitle",
+        "SheetTrigger"
+      ],
+      "entryPoint": "src/components/ui/sheet.tsx",
+      "inputs": {},
+      "bytes": 277
+    },
+    "dist/components/ui/sidebar.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 29899
+    },
+    "dist/components/ui/sidebar.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-SDK7SYFQ.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-JBHQW7NO.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-SPPIFMUM.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-VEYJOALA.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-EROZ6GJ3.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-UIO4CGQS.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-ABLDEITU.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-slot", "kind": "import-statement", "external": true },
+        { "path": "class-variance-authority", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "Sidebar",
+        "SidebarContent",
+        "SidebarFooter",
+        "SidebarGroup",
+        "SidebarGroupAction",
+        "SidebarGroupContent",
+        "SidebarGroupLabel",
+        "SidebarHeader",
+        "SidebarInput",
+        "SidebarInset",
+        "SidebarMenu",
+        "SidebarMenuAction",
+        "SidebarMenuBadge",
+        "SidebarMenuButton",
+        "SidebarMenuItem",
+        "SidebarMenuSkeleton",
+        "SidebarMenuSub",
+        "SidebarMenuSubButton",
+        "SidebarMenuSubItem",
+        "SidebarProvider",
+        "SidebarRail",
+        "SidebarSeparator",
+        "SidebarTrigger",
+        "useSidebar"
+      ],
+      "entryPoint": "src/components/ui/sidebar.tsx",
+      "inputs": { "src/components/ui/sidebar.tsx": { "bytesInOutput": 12614 } },
+      "bytes": 13633
+    },
+    "dist/chunks/chunk-SDK7SYFQ.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 1156
+    },
+    "dist/chunks/chunk-SDK7SYFQ.js": {
+      "imports": [{ "path": "react", "kind": "import-statement", "external": true }],
+      "exports": ["a"],
+      "inputs": { "src/hooks/use-mobile.tsx": { "bytesInOutput": 287 } },
+      "bytes": 341
+    },
+    "dist/chunks/chunk-JBHQW7NO.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 2837
+    },
+    "dist/chunks/chunk-JBHQW7NO.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-tooltip", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["a", "b", "c", "d"],
+      "inputs": { "src/components/ui/tooltip.tsx": { "bytesInOutput": 1082 } },
+      "bytes": 1202
+    },
+    "dist/chunks/chunk-SPPIFMUM.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 1094
+    },
+    "dist/chunks/chunk-SPPIFMUM.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-separator", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["a"],
+      "inputs": { "src/components/ui/separator.tsx": { "bytesInOutput": 414 } },
+      "bytes": 513
+    },
+    "dist/chunks/chunk-VEYJOALA.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 5815
+    },
+    "dist/chunks/chunk-VEYJOALA.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-dialog", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["a", "b", "c", "d", "e", "f", "g", "h"],
+      "inputs": { "src/components/ui/sheet.tsx": { "bytesInOutput": 2434 } },
+      "bytes": 2582
+    },
+    "dist/components/ui/skeleton.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 93
+    },
+    "dist/components/ui/skeleton.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-EROZ6GJ3.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }
+      ],
+      "exports": ["Skeleton"],
+      "entryPoint": "src/components/ui/skeleton.tsx",
+      "inputs": {},
+      "bytes": 145
+    },
+    "dist/chunks/chunk-EROZ6GJ3.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 578
+    },
+    "dist/chunks/chunk-EROZ6GJ3.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["a"],
+      "inputs": { "src/components/ui/skeleton.tsx": { "bytesInOutput": 169 } },
+      "bytes": 268
+    },
+    "dist/components/ui/slider.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 2755
+    },
+    "dist/components/ui/slider.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-slider", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["Slider"],
+      "entryPoint": "src/components/ui/slider.tsx",
+      "inputs": { "src/components/ui/slider.tsx": { "bytesInOutput": 1350 } },
+      "bytes": 1457
+    },
+    "dist/components/ui/sonner.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 1070
+    },
+    "dist/components/ui/sonner.js": {
+      "imports": [
+        { "path": "next-themes", "kind": "import-statement", "external": true },
+        { "path": "sonner", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["Toaster"],
+      "entryPoint": "src/components/ui/sonner.tsx",
+      "inputs": { "src/components/ui/sonner.tsx": { "bytesInOutput": 326 } },
+      "bytes": 396
+    },
+    "dist/components/ui/label.js.map": { "imports": [], "exports": [], "inputs": {}, "bytes": 93 },
+    "dist/components/ui/label.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-MZR7JTPU.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }
+      ],
+      "exports": ["Label"],
+      "entryPoint": "src/components/ui/label.tsx",
+      "inputs": {},
+      "bytes": 139
+    },
+    "dist/components/ui/menubar.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 11407
+    },
+    "dist/components/ui/menubar.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-menubar", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "Menubar",
+        "MenubarCheckboxItem",
+        "MenubarContent",
+        "MenubarGroup",
+        "MenubarItem",
+        "MenubarLabel",
+        "MenubarMenu",
+        "MenubarPortal",
+        "MenubarRadioGroup",
+        "MenubarRadioItem",
+        "MenubarSeparator",
+        "MenubarShortcut",
+        "MenubarSub",
+        "MenubarSubContent",
+        "MenubarSubTrigger",
+        "MenubarTrigger"
+      ],
+      "entryPoint": "src/components/ui/menubar.tsx",
+      "inputs": { "src/components/ui/menubar.tsx": { "bytesInOutput": 5175 } },
+      "bytes": 5588
+    },
+    "dist/components/ui/navigation-menu.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 8417
+    },
+    "dist/components/ui/navigation-menu.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-navigation-menu", "kind": "import-statement", "external": true },
+        { "path": "class-variance-authority", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "NavigationMenu",
+        "NavigationMenuContent",
+        "NavigationMenuIndicator",
+        "NavigationMenuItem",
+        "NavigationMenuLink",
+        "NavigationMenuList",
+        "NavigationMenuTrigger",
+        "NavigationMenuViewport",
+        "navigationMenuTriggerStyle"
+      ],
+      "entryPoint": "src/components/ui/navigation-menu.tsx",
+      "inputs": { "src/components/ui/navigation-menu.tsx": { "bytesInOutput": 4581 } },
+      "bytes": 4920
+    },
+    "dist/components/ui/pagination.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 4401
+    },
+    "dist/components/ui/pagination.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-ABLDEITU.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "Pagination",
+        "PaginationContent",
+        "PaginationEllipsis",
+        "PaginationItem",
+        "PaginationLink",
+        "PaginationNext",
+        "PaginationPrevious"
+      ],
+      "entryPoint": "src/components/ui/pagination.tsx",
+      "inputs": { "src/components/ui/pagination.tsx": { "bytesInOutput": 1418 } },
+      "bytes": 1715
+    },
+    "dist/components/ui/popover.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 93
+    },
+    "dist/components/ui/popover.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-FLR6ZCQS.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }
+      ],
+      "exports": ["Popover", "PopoverAnchor", "PopoverContent", "PopoverTrigger"],
+      "entryPoint": "src/components/ui/popover.tsx",
+      "inputs": {},
+      "bytes": 208
+    },
+    "dist/chunks/chunk-FLR6ZCQS.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 2470
+    },
+    "dist/chunks/chunk-FLR6ZCQS.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-popover", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["a", "b", "c", "d"],
+      "inputs": { "src/components/ui/popover.tsx": { "bytesInOutput": 957 } },
+      "bytes": 1077
+    },
+    "dist/components/ui/progress.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 1161
+    },
+    "dist/components/ui/progress.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-progress", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["Progress"],
+      "entryPoint": "src/components/ui/progress.tsx",
+      "inputs": { "src/components/ui/progress.tsx": { "bytesInOutput": 415 } },
+      "bytes": 526
+    },
+    "dist/components/ui/radio-group.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 2107
+    },
+    "dist/components/ui/radio-group.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-radio-group", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["RadioGroup", "RadioGroupItem"],
+      "entryPoint": "src/components/ui/radio-group.tsx",
+      "inputs": { "src/components/ui/radio-group.tsx": { "bytesInOutput": 939 } },
+      "bytes": 1070
+    },
+    "dist/components/ui/resizable.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 2835
+    },
+    "dist/components/ui/resizable.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react-resizable-panels", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["ResizableHandle", "ResizablePanel", "ResizablePanelGroup"],
+      "entryPoint": "src/components/ui/resizable.tsx",
+      "inputs": { "src/components/ui/resizable.tsx": { "bytesInOutput": 1308 } },
+      "bytes": 1472
+    },
+    "dist/components/ui/context-menu.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 11094
+    },
+    "dist/components/ui/context-menu.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-context-menu", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "ContextMenu",
+        "ContextMenuCheckboxItem",
+        "ContextMenuContent",
+        "ContextMenuGroup",
+        "ContextMenuItem",
+        "ContextMenuLabel",
+        "ContextMenuPortal",
+        "ContextMenuRadioGroup",
+        "ContextMenuRadioItem",
+        "ContextMenuSeparator",
+        "ContextMenuShortcut",
+        "ContextMenuSub",
+        "ContextMenuSubContent",
+        "ContextMenuSubTrigger",
+        "ContextMenuTrigger"
+      ],
+      "entryPoint": "src/components/ui/context-menu.tsx",
+      "inputs": { "src/components/ui/context-menu.tsx": { "bytesInOutput": 4982 } },
+      "bytes": 5443
+    },
+    "dist/components/ui/dialog.js.map": { "imports": [], "exports": [], "inputs": {}, "bytes": 93 },
+    "dist/components/ui/dialog.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-BTJJ6F2K.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }
+      ],
+      "exports": [
+        "Dialog",
+        "DialogClose",
+        "DialogContent",
+        "DialogDescription",
+        "DialogFooter",
+        "DialogHeader",
+        "DialogOverlay",
+        "DialogPortal",
+        "DialogTitle",
+        "DialogTrigger"
+      ],
+      "entryPoint": "src/components/ui/dialog.tsx",
+      "inputs": {},
+      "bytes": 327
+    },
+    "dist/components/ui/drawer.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 5738
+    },
+    "dist/components/ui/drawer.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "vaul", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "Drawer",
+        "DrawerClose",
+        "DrawerContent",
+        "DrawerDescription",
+        "DrawerFooter",
+        "DrawerHeader",
+        "DrawerOverlay",
+        "DrawerPortal",
+        "DrawerTitle",
+        "DrawerTrigger"
+      ],
+      "entryPoint": "src/components/ui/drawer.tsx",
+      "inputs": { "src/components/ui/drawer.tsx": { "bytesInOutput": 2519 } },
+      "bytes": 2794
+    },
+    "dist/components/ui/dropdown-menu.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 11171
+    },
+    "dist/components/ui/dropdown-menu.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-dropdown-menu", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "DropdownMenu",
+        "DropdownMenuCheckboxItem",
+        "DropdownMenuContent",
+        "DropdownMenuGroup",
+        "DropdownMenuItem",
+        "DropdownMenuLabel",
+        "DropdownMenuPortal",
+        "DropdownMenuRadioGroup",
+        "DropdownMenuRadioItem",
+        "DropdownMenuSeparator",
+        "DropdownMenuShortcut",
+        "DropdownMenuSub",
+        "DropdownMenuSubContent",
+        "DropdownMenuSubTrigger",
+        "DropdownMenuTrigger"
+      ],
+      "entryPoint": "src/components/ui/dropdown-menu.tsx",
+      "inputs": { "src/components/ui/dropdown-menu.tsx": { "bytesInOutput": 4938 } },
+      "bytes": 5415
+    },
+    "dist/components/ui/form.js.map": { "imports": [], "exports": [], "inputs": {}, "bytes": 6109 },
+    "dist/components/ui/form.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-MZR7JTPU.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "@radix-ui/react-slot", "kind": "import-statement", "external": true },
+        { "path": "react-hook-form", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "Form",
+        "FormControl",
+        "FormDescription",
+        "FormField",
+        "FormItem",
+        "FormLabel",
+        "FormMessage",
+        "useFormField"
+      ],
+      "entryPoint": "src/components/ui/form.tsx",
+      "inputs": { "src/components/ui/form.tsx": { "bytesInOutput": 1579 } },
+      "bytes": 1850
+    },
+    "dist/chunks/chunk-MZR7JTPU.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 914
+    },
+    "dist/chunks/chunk-MZR7JTPU.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-label", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["a"],
+      "inputs": { "src/components/ui/label.tsx": { "bytesInOutput": 384 } },
+      "bytes": 483
+    },
+    "dist/components/ui/hover-card.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 2269
+    },
+    "dist/components/ui/hover-card.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-hover-card", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["HoverCard", "HoverCardContent", "HoverCardTrigger"],
+      "entryPoint": "src/components/ui/hover-card.tsx",
+      "inputs": { "src/components/ui/hover-card.tsx": { "bytesInOutput": 930 } },
+      "bytes": 1088
+    },
+    "dist/components/ui/input-otp.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 3529
+    },
+    "dist/components/ui/input-otp.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "input-otp", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["InputOTP", "InputOTPGroup", "InputOTPSeparator", "InputOTPSlot"],
+      "entryPoint": "src/components/ui/input-otp.tsx",
+      "inputs": { "src/components/ui/input-otp.tsx": { "bytesInOutput": 1516 } },
+      "bytes": 1688
+    },
+    "dist/components/ui/input.js.map": { "imports": [], "exports": [], "inputs": {}, "bytes": 93 },
+    "dist/components/ui/input.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-UIO4CGQS.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }
+      ],
+      "exports": ["Input"],
+      "entryPoint": "src/components/ui/input.tsx",
+      "inputs": {},
+      "bytes": 139
+    },
+    "dist/chunks/chunk-UIO4CGQS.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 1350
+    },
+    "dist/chunks/chunk-UIO4CGQS.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["a"],
+      "inputs": { "src/components/ui/input.tsx": { "bytesInOutput": 780 } },
+      "bytes": 874
+    },
+    "dist/components/ui/button.js.map": { "imports": [], "exports": [], "inputs": {}, "bytes": 93 },
+    "dist/components/ui/button.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-ABLDEITU.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }
+      ],
+      "exports": ["Button", "buttonVariants"],
+      "entryPoint": "src/components/ui/button.tsx",
+      "inputs": {},
+      "bytes": 163
+    },
+    "dist/components/ui/calendar.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 93
+    },
+    "dist/components/ui/calendar.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-2X3ZDIGA.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-ABLDEITU.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" }
+      ],
+      "exports": ["Calendar"],
+      "entryPoint": "src/components/ui/calendar.tsx",
+      "inputs": {},
+      "bytes": 184
+    },
+    "dist/chunks/chunk-2X3ZDIGA.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 3976
+    },
+    "dist/chunks/chunk-2X3ZDIGA.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-ABLDEITU.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react-day-picker", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["a"],
+      "inputs": { "src/components/ui/calendar.tsx": { "bytesInOutput": 2041 } },
+      "bytes": 2180
+    },
+    "dist/components/ui/card.js.map": { "imports": [], "exports": [], "inputs": {}, "bytes": 2909 },
+    "dist/components/ui/card.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "Card",
+        "CardAction",
+        "CardContent",
+        "CardDescription",
+        "CardFooter",
+        "CardHeader",
+        "CardTitle"
+      ],
+      "entryPoint": "src/components/ui/card.tsx",
+      "inputs": { "src/components/ui/card.tsx": { "bytesInOutput": 1119 } },
+      "bytes": 1323
+    },
+    "dist/components/ui/carousel.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 8618
+    },
+    "dist/components/ui/carousel.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-ABLDEITU.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "embla-carousel-react", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "Carousel",
+        "CarouselContent",
+        "CarouselItem",
+        "CarouselNext",
+        "CarouselPrevious"
+      ],
+      "entryPoint": "src/components/ui/carousel.tsx",
+      "inputs": { "src/components/ui/carousel.tsx": { "bytesInOutput": 2555 } },
+      "bytes": 2796
+    },
+    "dist/components/ui/chart.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 13948
+    },
+    "dist/components/ui/chart.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "react", "kind": "import-statement", "external": true },
+        { "path": "recharts", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "ChartContainer",
+        "ChartLegend",
+        "ChartLegendContent",
+        "ChartStyle",
+        "ChartTooltip",
+        "ChartTooltipContent"
+      ],
+      "entryPoint": "src/components/ui/chart.tsx",
+      "inputs": { "src/components/ui/chart.tsx": { "bytesInOutput": 4145 } },
+      "bytes": 4359
+    },
+    "dist/components/ui/checkbox.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 1733
+    },
+    "dist/components/ui/checkbox.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-checkbox", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["Checkbox"],
+      "entryPoint": "src/components/ui/checkbox.tsx",
+      "inputs": { "src/components/ui/checkbox.tsx": { "bytesInOutput": 881 } },
+      "bytes": 992
+    },
+    "dist/components/ui/collapsible.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 1404
+    },
+    "dist/components/ui/collapsible.js": {
+      "imports": [
+        { "path": "@radix-ui/react-collapsible", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["Collapsible", "CollapsibleContent", "CollapsibleTrigger"],
+      "entryPoint": "src/components/ui/collapsible.tsx",
+      "inputs": { "src/components/ui/collapsible.tsx": { "bytesInOutput": 337 } },
+      "bytes": 464
+    },
+    "dist/components/ui/command.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 6427
+    },
+    "dist/components/ui/command.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-BTJJ6F2K.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "cmdk", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "Command",
+        "CommandDialog",
+        "CommandEmpty",
+        "CommandGroup",
+        "CommandInput",
+        "CommandItem",
+        "CommandList",
+        "CommandSeparator",
+        "CommandShortcut"
+      ],
+      "entryPoint": "src/components/ui/command.tsx",
+      "inputs": { "src/components/ui/command.tsx": { "bytesInOutput": 2763 } },
+      "bytes": 3096
+    },
+    "dist/chunks/chunk-BTJJ6F2K.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 5435
+    },
+    "dist/chunks/chunk-BTJJ6F2K.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-dialog", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"],
+      "inputs": { "src/components/ui/dialog.tsx": { "bytesInOutput": 2234 } },
+      "bytes": 2396
+    },
+    "dist/components/MyComponent.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 489
+    },
+    "dist/components/MyComponent.js": {
+      "imports": [{ "path": "react/jsx-runtime", "kind": "import-statement", "external": true }],
+      "exports": ["default"],
+      "entryPoint": "src/components/MyComponent.tsx",
+      "inputs": { "src/components/MyComponent.tsx": { "bytesInOutput": 84 } },
+      "bytes": 146
+    },
+    "dist/components/ui/accordion.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 3051
+    },
+    "dist/components/ui/accordion.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-accordion", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["Accordion", "AccordionContent", "AccordionItem", "AccordionTrigger"],
+      "entryPoint": "src/components/ui/accordion.tsx",
+      "inputs": { "src/components/ui/accordion.tsx": { "bytesInOutput": 1208 } },
+      "bytes": 1384
+    },
+    "dist/components/ui/alert-dialog.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 5515
+    },
+    "dist/components/ui/alert-dialog.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-ABLDEITU.js", "kind": "import-statement" },
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-alert-dialog", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "AlertDialog",
+        "AlertDialogAction",
+        "AlertDialogCancel",
+        "AlertDialogContent",
+        "AlertDialogDescription",
+        "AlertDialogFooter",
+        "AlertDialogHeader",
+        "AlertDialogOverlay",
+        "AlertDialogPortal",
+        "AlertDialogTitle",
+        "AlertDialogTrigger"
+      ],
+      "entryPoint": "src/components/ui/alert-dialog.tsx",
+      "inputs": { "src/components/ui/alert-dialog.tsx": { "bytesInOutput": 1845 } },
+      "bytes": 2251
+    },
+    "dist/chunks/chunk-ABLDEITU.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 2878
+    },
+    "dist/chunks/chunk-ABLDEITU.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-slot", "kind": "import-statement", "external": true },
+        { "path": "class-variance-authority", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["a", "b"],
+      "inputs": { "src/components/ui/button.tsx": { "bytesInOutput": 1577 } },
+      "bytes": 1683
+    },
+    "dist/components/ui/alert.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 2312
+    },
+    "dist/components/ui/alert.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "class-variance-authority", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["Alert", "AlertDescription", "AlertTitle"],
+      "entryPoint": "src/components/ui/alert.tsx",
+      "inputs": { "src/components/ui/alert.tsx": { "bytesInOutput": 1016 } },
+      "bytes": 1154
+    },
+    "dist/components/ui/aspect-ratio.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 622
+    },
+    "dist/components/ui/aspect-ratio.js": {
+      "imports": [
+        { "path": "@radix-ui/react-aspect-ratio", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["AspectRatio"],
+      "entryPoint": "src/components/ui/aspect-ratio.tsx",
+      "inputs": { "src/components/ui/aspect-ratio.tsx": { "bytesInOutput": 157 } },
+      "bytes": 237
+    },
+    "dist/components/ui/avatar.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 1635
+    },
+    "dist/components/ui/avatar.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-avatar", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["Avatar", "AvatarFallback", "AvatarImage"],
+      "entryPoint": "src/components/ui/avatar.tsx",
+      "inputs": { "src/components/ui/avatar.tsx": { "bytesInOutput": 528 } },
+      "bytes": 672
+    },
+    "dist/components/ui/badge.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 2242
+    },
+    "dist/components/ui/badge.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-slot", "kind": "import-statement", "external": true },
+        { "path": "class-variance-authority", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["Badge", "badgeVariants"],
+      "entryPoint": "src/components/ui/badge.tsx",
+      "inputs": { "src/components/ui/badge.tsx": { "bytesInOutput": 1183 } },
+      "bytes": 1307
+    },
+    "dist/components/ui/breadcrumb.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 3769
+    },
+    "dist/components/ui/breadcrumb.js": {
+      "imports": [
+        { "path": "dist/chunks/chunk-PSXUKLGB.js", "kind": "import-statement" },
+        { "path": "@radix-ui/react-slot", "kind": "import-statement", "external": true },
+        { "path": "lucide-react", "kind": "import-statement", "external": true },
+        { "path": "react/jsx-runtime", "kind": "import-statement", "external": true }
+      ],
+      "exports": [
+        "Breadcrumb",
+        "BreadcrumbEllipsis",
+        "BreadcrumbItem",
+        "BreadcrumbLink",
+        "BreadcrumbList",
+        "BreadcrumbPage",
+        "BreadcrumbSeparator"
+      ],
+      "entryPoint": "src/components/ui/breadcrumb.tsx",
+      "inputs": { "src/components/ui/breadcrumb.tsx": { "bytesInOutput": 1367 } },
+      "bytes": 1611
+    },
+    "dist/chunks/chunk-PSXUKLGB.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 454
+    },
+    "dist/chunks/chunk-PSXUKLGB.js": {
+      "imports": [
+        { "path": "clsx", "kind": "import-statement", "external": true },
+        { "path": "tailwind-merge", "kind": "import-statement", "external": true }
+      ],
+      "exports": ["a"],
+      "inputs": { "src/lib/utils.ts": { "bytesInOutput": 101 } },
+      "bytes": 160
+    }
+  }
+}

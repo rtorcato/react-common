@@ -1,3 +1,15 @@
+packages:
+  - "packages/*"
+  - "apps/*"
+
+# Approve build scripts (postinstall, etc.) per package; deny everything else.
 allowBuilds:
-  '@biomejs/biome': true
+  "@biomejs/biome": true
   esbuild: true
+  # Docusaurus (apps/docs) pulls in core-js; its postinstall is just a funding banner.
+  core-js: false
+
+# Whitelist our own packages from pnpm's minimum-release-age supply-chain policy.
+minimumReleaseAgeExclude:
+  - "@rtorcato/js-common"
+  - "@rtorcato/js-tooling"

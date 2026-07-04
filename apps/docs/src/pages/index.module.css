@@ -1,0 +1,293 @@
+/* Homepage styles — src/pages/index.module.css */
+
+.hero {
+	position: relative;
+	overflow: hidden;
+	padding: 80px 24px 40px;
+}
+.heroGlow {
+	position: absolute;
+	top: -120px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 900px;
+	height: 520px;
+	max-width: 100%;
+	background: radial-gradient(closest-side, var(--su-accent-soft), transparent 70%);
+	pointer-events: none;
+}
+.heroInner {
+	position: relative;
+	max-width: 900px;
+	margin: 0 auto;
+	text-align: center;
+}
+.heroTitle {
+	margin: 0 0 20px;
+	font-size: 54px;
+	line-height: 1.05;
+	letter-spacing: -0.03em;
+	font-weight: 800;
+	color: var(--su-heading);
+}
+.heroAccent {
+	color: var(--su-accent);
+}
+.heroSub {
+	margin: 0 auto 32px;
+	max-width: 620px;
+	font-size: 18px;
+	line-height: 1.6;
+	color: var(--su-muted);
+}
+
+.heroButtons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 14px;
+	justify-content: center;
+}
+.cta {
+	border-radius: 11px;
+}
+.ctaSecondary {
+	border-radius: 11px;
+	background: transparent;
+	border: 1px solid var(--su-border2);
+	color: var(--su-heading);
+	font-weight: 600;
+}
+.ctaSecondary:hover {
+	background: var(--su-surface);
+	border-color: var(--su-accent-border);
+	color: var(--su-heading);
+}
+
+.heroActions {
+	display: flex;
+	justify-content: center;
+	margin-top: 28px;
+}
+.heroCode {
+	margin-top: 40px;
+	display: flex;
+	justify-content: center;
+}
+
+/* Code window */
+.codeWindow {
+	width: 100%;
+	max-width: 560px;
+	border-radius: 14px;
+	overflow: hidden;
+	border: 1px solid var(--su-border2);
+	background: var(--su-code-bg);
+	box-shadow: var(--su-shadow);
+	text-align: left;
+}
+.codeBar {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 11px 14px;
+	border-bottom: 1px solid var(--su-border);
+}
+.dot {
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+}
+.codeFile {
+	margin-left: 6px;
+	font: 500 12px var(--ifm-font-family-monospace);
+	color: var(--su-faint);
+}
+.codePre {
+	margin: 0;
+	padding: 18px;
+	font: 500 13px / 1.8 var(--ifm-font-family-monospace);
+	color: var(--su-text);
+	overflow: auto;
+	background: transparent;
+}
+
+/* Sections */
+.section {
+	max-width: 1120px;
+	margin: 0 auto;
+	padding: 54px 24px 8px;
+}
+.sectionHead {
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 20px;
+	flex-wrap: wrap;
+	margin-bottom: 24px;
+}
+.h2 {
+	margin: 0 0 8px;
+	font-size: 30px;
+	letter-spacing: -0.02em;
+	font-weight: 800;
+	color: var(--su-heading);
+}
+.sub {
+	margin: 0;
+	font-size: 16px;
+	color: var(--su-muted);
+}
+.viewAll {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	height: 42px;
+	padding: 0 18px;
+	background: transparent;
+	border: 1px solid var(--su-accent-border);
+	border-radius: 10px;
+	color: var(--su-accent);
+	font-weight: 600;
+	font-size: 14px;
+	white-space: nowrap;
+	text-decoration: none;
+	transition: background 0.15s;
+}
+.viewAll:hover {
+	background: var(--su-accent-soft);
+	color: var(--su-accent);
+	text-decoration: none;
+}
+
+/* Pillars */
+.pillarGrid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
+}
+.pillar {
+	padding: 22px;
+	background: var(--su-surface);
+	border: 1px solid var(--su-border);
+	border-radius: 14px;
+}
+.pillarIcon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	margin-bottom: 14px;
+	background: var(--su-accent-soft);
+	border: 1px solid var(--su-accent-border);
+	border-radius: 10px;
+	color: var(--su-accent);
+}
+.pillarTitle {
+	font-weight: 700;
+	font-size: 15px;
+	color: var(--su-heading);
+	margin-bottom: 5px;
+}
+.pillarDesc {
+	font-size: 13px;
+	line-height: 1.55;
+	color: var(--su-muted);
+}
+
+/* Cards */
+.catGrid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
+}
+.siblingGrid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+}
+.card {
+	display: block;
+	padding: 22px;
+	background: var(--su-surface);
+	border: 1px solid var(--su-border);
+	border-radius: 16px;
+	/* biome-ignore lint/complexity/noImportantStyles: Docusaurus <Link> ships an underline we need to suppress on cards */
+	text-decoration: none !important;
+	color: inherit;
+	transition:
+		transform 0.15s,
+		border-color 0.15s;
+}
+.card:hover {
+	border-color: var(--su-accent-border);
+	transform: translateY(-3px);
+}
+.cardHead {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+.cardName {
+	font-weight: 700;
+	font-size: 15px;
+	color: var(--su-heading);
+}
+.cardCount {
+	font-size: 12px;
+	color: var(--su-faint);
+}
+.cardDesc {
+	margin: 0 0 14px;
+	font-size: 13px;
+	line-height: 1.5;
+	color: var(--su-muted);
+}
+.chips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+}
+.chip {
+	font: 500 12px var(--ifm-font-family-monospace);
+	padding: 3px 9px;
+	background: var(--su-surface2);
+	border: 1px solid var(--su-border);
+	border-radius: 7px;
+	color: var(--su-text);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 996px) {
+	.heroTitle {
+		font-size: 42px;
+	}
+	.pillarGrid,
+	.catGrid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	.siblingGrid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (max-width: 760px) {
+	.heroButtons {
+		flex-direction: column;
+		width: 100%;
+	}
+	.heroButtons > * {
+		width: 100%;
+		justify-content: center;
+	}
+}
+@media (max-width: 560px) {
+	.heroTitle {
+		font-size: 34px;
+	}
+	.pillarGrid,
+	.catGrid,
+	.siblingGrid {
+		grid-template-columns: 1fr;
+	}
+}

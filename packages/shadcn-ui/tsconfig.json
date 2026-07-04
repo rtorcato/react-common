@@ -1,0 +1,17 @@
+{
+  "extends": "@rtorcato/js-tooling/typescript/react",
+  "compilerOptions": {
+    "ignoreDeprecations": "5.0",
+    "baseUrl": ".",
+    "rootDir": "./src",
+    "lib": ["esnext", "dom"],
+    "jsx": "react-jsx",
+    "types": ["react", "react-dom", "tailwindcss", "vitest"],
+    "paths": {
+      "~/*": ["./src/*"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src/**/*", "tests/**/*"],
+  "exclude": ["build.mjs", "node_modules", "dist", "build", "coverage", "**/*.spec.ts", "**/*.test.ts", "release.config.ts", "OLD/examples", "OLD/ui-stories", "OLD"]
+}
