@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_response.filePath // .tool_input.file_path // empty' | { read -r f && [ -n \"$f\" ] && [ -f \"$f\" ] && ./node_modules/.bin/biome format --write --files-ignore-unknown=true \"$f\" 2>/dev/null || true; }"
+          },
+          {
+            "type": "command",
+            "command": "jq -r '.tool_response.filePath // .tool_input.file_path // empty' | { read -r f && [ -n \"$f\" ] && [ -f \"$f\" ] && ./node_modules/.bin/biome lint --files-ignore-unknown=true \"$f\" 2>&1 || true; }"
+          }
+        ]
+      }
+    ]
+  }
+}
