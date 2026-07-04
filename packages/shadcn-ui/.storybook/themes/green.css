@@ -1,0 +1,11 @@
+.theme-green {
+	--primary: 142.1 76.2% 36.3%;
+	--primary-foreground: 355.7 100% 97.3%;
+	--ring: 142.1 76.2% 36.3%;
+}
+
+.theme-green.dark {
+	--primary: 142.1 70.6% 45.3%;
+	--primary-foreground: 144.9 80.4% 10%;
+	--ring: 142.4 71.8% 29.2%;
+}

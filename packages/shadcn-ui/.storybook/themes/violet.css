@@ -1,0 +1,11 @@
+.theme-violet {
+	--primary: 262.1 83.3% 57.8%;
+	--primary-foreground: 210 20% 98%;
+	--ring: 262.1 83.3% 57.8%;
+}
+
+.theme-violet.dark {
+	--primary: 263.4 70% 50.4%;
+	--primary-foreground: 210 20% 98%;
+	--ring: 263.4 70% 50.4%;
+}

@@ -1,0 +1,11 @@
+.theme-orange {
+	--primary: 24.6 95% 53.1%;
+	--primary-foreground: 60 9.1% 97.8%;
+	--ring: 24.6 95% 53.1%;
+}
+
+.theme-orange.dark {
+	--primary: 20.5 90.2% 48.2%;
+	--primary-foreground: 60 9.1% 97.8%;
+	--ring: 20.5 90.2% 48.2%;
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.16/schema.json",
+  "root": false,
+  "extends": ["@rtorcato/js-tooling/biome"],
+  "files": {
+    "includes": [
+      "!**/.docusaurus",
+      "!**/build",
+      "!**/node_modules",
+      "!**/test-results",
+      "!**/playwright-report"
+    ]
+  },
+  "overrides": [
+    {
+      "includes": ["src/css/custom.css"],
+      "linter": {
+        "rules": {
+          "complexity": { "noImportantStyles": "off" },
+          "style": { "noDescendingSpecificity": "off" }
+        }
+      }
+    }
+  ]
+}
