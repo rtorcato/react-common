@@ -1,7 +1,12 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.5.1/schema.json",
   "extends": ["@rtorcato/js-tooling/biome"],
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
   "files": {
-    "includes": ["!**/.pnpm-store", "!**/dist", "!**/coverage", "!**/OLD", "!**/.claude/worktrees"]
+    "includes": ["!**/.pnpm-store", "!**/dist", "!**/coverage", "!**/OLD", "!**/.claude"]
   }
 }
