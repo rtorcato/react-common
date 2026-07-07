@@ -1,7 +1,7 @@
 
-# Skip commitlint for semantic-release commits
+# Skip commitlint for automated commits (e.g. changesets "Version Packages")
 if grep -q "\[skip ci\]" "$1"; then
-  echo "⏩ Skipping commitlint for semantic-release commit"
+  echo "⏩ Skipping commitlint for [skip ci] commit"
   exit 0
 fi
 

@@ -3,8 +3,9 @@ Thanks for the PR! Quick checklist:
   - Branch name follows `feat/`, `fix/`, `docs/`, `chore/`, `ci/`, `refactor/`, `test/`
     (with the issue number when one exists: `feat/20-resource-card`).
   - PR title is a Conventional Commit (`feat(components): add ResourceCard`) —
-    it becomes the squash commit on main and feeds semantic-release.
-  - CI gates are green locally before pushing: pnpm lint, typecheck, test, build-prod.
+    it becomes the squash commit on main.
+  - A changeset is included for any change to a published package (`pnpm changeset`).
+  - CI gates are green locally before pushing: pnpm lint, typecheck, test, build.
   - Every new TODO/FIXME in code references an issue: `TODO(#42): …`.
 
 Once you're ready, queue auto-merge:
