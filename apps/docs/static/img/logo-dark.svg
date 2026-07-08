@@ -1,5 +1,5 @@
-<svg width="112" height="26" viewBox="0 0 112 26" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="shadcn-ui">
+<svg width="150" height="26" viewBox="0 0 150 26" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="react-common">
   <text x="0" y="20" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="21" font-weight="800" letter-spacing="-0.8">
-    <tspan fill="#FFFFFF">shadcn</tspan><tspan fill="#818CF8">-ui</tspan>
+    <tspan fill="#FFFFFF">react</tspan><tspan fill="#2DD4BF">-common</tspan>
   </text>
 </svg>

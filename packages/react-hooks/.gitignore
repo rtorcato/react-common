@@ -1,0 +1,41 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Environment variables
+.env
+.env.*
+
+# Build output
+dist/
+build/
+out/
+storybook-static/
+tsconfig*.tsbuildinfo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+
+# Claude Code local settings
+.claude/settings.json
+.claude/settings.local.json
+
+# Test coverage
+coverage/
+
+# Temporary files
+*.tmp
+*.temp

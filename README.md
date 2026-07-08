@@ -1,54 +1,43 @@
-# @rtorcato/common-react
+# react-common
 
-[![npm](https://img.shields.io/npm/v/@rtorcato/common-react.svg)](https://www.npmjs.com/package/@rtorcato/common-react)
 [![CI](https://github.com/rtorcato/react-common/actions/workflows/ci.yml/badge.svg)](https://github.com/rtorcato/react-common/actions/workflows/ci.yml)
-[![license](https://img.shields.io/npm/l/@rtorcato/common-react.svg)](./LICENSE)
 
-A published **React 19** component library — reusable components, hooks, and utilities, distributed as tree-shakeable ESM with bundled type definitions.
+The `@rtorcato` **React monorepo** — a pnpm workspace that publishes reusable
+React packages to the public npm registry. The repo itself is private and
+unpublished; the umbrella name `react-common` is the brand and the docs-site
+identity.
 
-## Install
+## Packages
+
+| Package | Description |
+| --- | --- |
+| [`@rtorcato/common-react`](https://www.npmjs.com/package/@rtorcato/common-react) | React 19 component library — shadcn/ui + Radix primitives, extended components, Tailwind CSS v4. Dir: [`packages/common-react`](./packages/common-react). |
+| [`@rtorcato/react-hooks`](https://www.npmjs.com/package/@rtorcato/react-hooks) | Headless React hooks, zero UI dependencies. Dir: [`packages/react-hooks`](./packages/react-hooks). |
+
+`apps/docs` is the private Docusaurus site (`@rtorcato/react-common-docs`).
+
+## Install (consumers)
 
 ```bash
-pnpm add @rtorcato/common-react
+pnpm add @rtorcato/common-react   # components
+pnpm add @rtorcato/react-hooks    # headless hooks
 # react & react-dom 19 are peer dependencies
-pnpm add react react-dom
 ```
-
-## Usage
-
-```tsx
-import { MyComponent } from '@rtorcato/common-react/components/MyComponent'
-
-export function App() {
-	return <MyComponent />
-}
-```
-
-### Entry points
-
-The package ships granular subpath exports so bundlers only pull what you import:
-
-| Import | Contents |
-| --- | --- |
-| `@rtorcato/common-react` | Root barrel |
-| `@rtorcato/common-react/components/MyComponent` | Individual component |
-| `@rtorcato/common-react/hooks` | Shared hooks |
-| `@rtorcato/common-react/lib/*` | Utility modules (e.g. `lib/utils`) |
 
 ## Development
 
-Requires Node ≥ 22 and pnpm (see `.nvmrc` / `packageManager`).
+Requires Node ≥ 22 and pnpm 11 (see `.nvmrc` / `packageManager`).
 
 ```bash
 pnpm install
-pnpm verify       # typecheck + biome check + tests (the local gate)
-pnpm test         # vitest (watch)
-pnpm build-prod   # esbuild bundle + .d.ts emit
+pnpm verify       # typecheck + biome check + tests, across all packages
+pnpm build        # build every package (build-prod)
 ```
 
-Tooling (TypeScript, Biome, Vitest, Commitlint, Husky, semantic-release, CI)
-is shared from [`@rtorcato/js-tooling`](https://github.com/rtorcato/js-tooling) —
-run `npx @rtorcato/js-tooling doctor` to check for drift.
+Scripts run recursively (`pnpm -r`) across the workspace. Tooling (TypeScript,
+Biome, Vitest, Commitlint, Husky, CI) is shared from
+[`@rtorcato/js-tooling`](https://github.com/rtorcato/js-tooling) — run
+`npx @rtorcato/js-tooling doctor` to check for drift.
 
 ## Contributing
 
@@ -56,14 +45,15 @@ run `npx @rtorcato/js-tooling doctor` to check for drift.
 
 ```bash
 git switch -c feat/short-name origin/main
-# …conventional commits…
+# …conventional commits + `pnpm changeset` for anything user-facing…
 git push -u origin feat/short-name
 gh pr create --fill
 gh pr merge --auto --squash --delete-branch   # ships when CI is green
 ```
 
-Commit messages follow [Conventional Commits](https://www.conventionalcommits.org)
-— `semantic-release` reads them to version, tag, and publish to npm on merge to `main`.
+Releases are driven by [Changesets](https://github.com/changesets/changesets):
+merging PRs with changesets opens a "Version Packages" PR; merging that publishes
+the changed packages to npm.
 
 ## License
 
