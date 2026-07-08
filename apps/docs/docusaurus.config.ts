@@ -10,15 +10,15 @@ const GITHUB_PROFILE = 'https://github.com/rtorcato'
 const PROJECT_FAMILY = projectFamilyItems()
 
 const config: Config = {
-	title: 'shadcn-ui',
+	title: 'react-common',
 	tagline: 'A React component library built on shadcn/ui, Radix UI, and Tailwind CSS v4.',
 	favicon: 'img/favicon.svg',
 
 	url: 'https://rtorcato.github.io',
-	baseUrl: '/shadcn-ui/',
+	baseUrl: '/react-common/',
 
 	organizationName: 'rtorcato',
-	projectName: 'shadcn-ui',
+	projectName: 'react-common',
 
 	onBrokenLinks: 'warn',
 
@@ -57,7 +57,7 @@ const config: Config = {
 					sidebarPath: './sidebars.ts',
 					// Docs live under /docs so the marketing landing (src/pages/index.tsx) owns '/'.
 					routeBasePath: '/docs',
-					editUrl: 'https://github.com/rtorcato/shadcn-ui/edit/main/apps/docs/',
+					editUrl: 'https://github.com/rtorcato/react-common/edit/main/apps/docs/',
 				},
 				blog: false,
 				theme: {
@@ -90,7 +90,7 @@ const config: Config = {
 			// The wordmark is baked into the SVG logo (light + dark), so title stays empty.
 			title: '',
 			logo: {
-				alt: 'shadcn-ui',
+				alt: 'react-common',
 				src: 'img/logo.svg',
 				srcDark: 'img/logo-dark.svg',
 				width: 112,
@@ -106,7 +106,7 @@ const config: Config = {
 					items: [{ label: 'All on GitHub →', href: GITHUB_PROFILE }, ...PROJECT_FAMILY],
 				},
 				{
-					href: 'https://github.com/rtorcato/shadcn-ui',
+					href: 'https://github.com/rtorcato/react-common',
 					label: 'GitHub',
 					position: 'right',
 				},
@@ -122,7 +122,7 @@ const config: Config = {
 				{
 					title: 'Resources',
 					items: [
-						{ label: 'GitHub', href: 'https://github.com/rtorcato/shadcn-ui' },
+						{ label: 'GitHub', href: 'https://github.com/rtorcato/react-common' },
 						{
 							label: 'npm',
 							href: 'https://www.npmjs.com/package/@rtorcato/shadcn-ui',
