@@ -7,5 +7,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@rtorcato/shadcn-ui-docs"]
+  "ignore": ["@rtorcato/react-common-docs"]
 }

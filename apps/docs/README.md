@@ -1,14 +1,15 @@
-# @rtorcato/shadcn-ui-docs
+# @rtorcato/react-common-docs
 
-Documentation site for [`@rtorcato/shadcn-ui`](https://www.npmjs.com/package/@rtorcato/shadcn-ui),
-built with [Docusaurus](https://docusaurus.io/). Mirrors the setup of the sibling
-[js-common](https://rtorcato.github.io/js-common/) docs.
+Documentation site for **react-common** — the `@rtorcato` React monorepo, home of
+the [`@rtorcato/shadcn-ui`](https://www.npmjs.com/package/@rtorcato/shadcn-ui)
+component library. Built with [Docusaurus](https://docusaurus.io/). Mirrors the
+setup of the sibling [js-common](https://rtorcato.github.io/js-common/) docs.
 
 ## Develop
 
 ```bash
 pnpm install          # from the repo root (apps/* is a workspace member)
-pnpm --filter @rtorcato/shadcn-ui-docs dev
+pnpm --filter @rtorcato/react-common-docs dev
 ```
 
 Or from this directory:
@@ -22,4 +23,5 @@ pnpm typecheck        # tsc --noEmit
 
 ## Status
 
-Being built out — see tracking issue [#12](https://github.com/rtorcato/shadcn-ui/issues/12).
+Being built out — see the
+[react-common issues](https://github.com/rtorcato/react-common/issues).

@@ -156,7 +156,7 @@ function Hero(): ReactElement {
 					</Link>
 					<Link
 						className={clsx('button button--lg', styles.ctaSecondary)}
-						href="https://github.com/rtorcato/shadcn-ui"
+						href="https://github.com/rtorcato/react-common"
 					>
 						GitHub
 					</Link>
@@ -253,10 +253,7 @@ function Siblings(): ReactElement {
 
 export default function Home(): ReactElement {
 	return (
-		<Layout
-			title="shadcn-ui"
-			description="A React component library built on shadcn/ui, Radix UI, and Tailwind CSS v4."
-		>
+		<Layout description="A React component library built on shadcn/ui, Radix UI, and Tailwind CSS v4.">
 			<main>
 				<Hero />
 				<Pillars />
