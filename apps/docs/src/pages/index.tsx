@@ -1,9 +1,9 @@
 import Link from '@docusaurus/Link'
-import { siblings } from '@rtorcato/shared-docs'
+import Siblings from '@rtorcato/shared-docs/components/Siblings'
 import Layout from '@theme/Layout'
 import clsx from 'clsx'
 import type { ReactElement } from 'react'
-import InstallTabs from '@site/src/components/InstallTabs'
+import InstallTabs from '@rtorcato/shared-docs/components/InstallTabs'
 import styles from './index.module.css'
 
 /* ------------------------------------------------------------------ */
@@ -105,8 +105,6 @@ const GROUPS: { name: string; desc: string; chips: string[] }[] = [
 	},
 ]
 
-const SIBLINGS = siblings('@rtorcato/react-common')
-
 const HERO_CODE = `import { Button } from '@rtorcato/common-react'
 import '@rtorcato/common-react/styles.css'
 
@@ -142,13 +140,13 @@ function Hero(): ReactElement {
 			<div className={styles.heroGlow} aria-hidden />
 			<div className={styles.heroInner}>
 				<h1 className={styles.heroTitle}>
-					Beautiful React components,
+					Components, hooks, and utilities
 					<br />
-					<span className={styles.heroAccent}>ready to ship.</span>
+					<span className={styles.heroAccent}>for React 19.</span>
 				</h1>
 				<p className={styles.heroSub}>
-					A React component library built on shadcn/ui, Radix UI, TypeScript and Tailwind CSS v4 —
-					accessible, themable, and yours to own.
+					The @rtorcato React toolkit — a typed monorepo of packages spanning UI, headless hooks,
+					and helpers. Built on Radix UI and Tailwind CSS v4.
 				</p>
 				<div className={styles.heroButtons}>
 					<Link className={clsx('button button--primary button--lg', styles.cta)} to="/docs">
@@ -225,32 +223,6 @@ function Groups(): ReactElement {
 	)
 }
 
-function Siblings(): ReactElement {
-	return (
-		<section className={styles.section}>
-			<div className={styles.sectionHead}>
-				<div>
-					<h2 className={styles.h2}>Sibling projects</h2>
-					<p className={styles.sub}>
-						More from <code>@rtorcato</code> — same conventions, same release pipeline.
-					</p>
-				</div>
-			</div>
-			<div className={styles.siblingGrid}>
-				{SIBLINGS.map((s) => (
-					<Link key={s.name} href={s.href} className={styles.card}>
-						<div className={styles.cardHead}>
-							<div className={styles.cardName}>{s.name}</div>
-							<div className={styles.cardCount}>{s.dest} ↗</div>
-						</div>
-						<p className={styles.cardDesc}>{s.tagline}</p>
-					</Link>
-				))}
-			</div>
-		</section>
-	)
-}
-
 export default function Home(): ReactElement {
 	return (
 		<Layout description="A React component library built on shadcn/ui, Radix UI, and Tailwind CSS v4.">
@@ -258,7 +230,7 @@ export default function Home(): ReactElement {
 				<Hero />
 				<Pillars />
 				<Groups />
-				<Siblings />
+				<Siblings self="@rtorcato/react-common" />
 			</main>
 		</Layout>
 	)
