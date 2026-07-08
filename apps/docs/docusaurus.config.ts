@@ -1,6 +1,13 @@
 import type * as Preset from '@docusaurus/preset-classic'
 import type { Config } from '@docusaurus/types'
+import { projectFamilyItems } from '@rtorcato/shared-docs'
 import { themes as prismThemes } from 'prism-react-renderer'
+
+// The @rtorcato open-source family — single source of truth in @rtorcato/shared-docs.
+// Surfaced as a navbar "Projects" dropdown (Docusaurus renders navbar items in the
+// mobile menu too) and in the footer, so every sibling site cross-links to the rest.
+const GITHUB_PROFILE = 'https://github.com/rtorcato'
+const PROJECT_FAMILY = projectFamilyItems()
 
 const config: Config = {
 	title: 'shadcn-ui',
@@ -92,6 +99,12 @@ const config: Config = {
 			items: [
 				{ to: '/docs', position: 'left', label: 'Docs' },
 				{
+					type: 'dropdown',
+					label: 'Projects',
+					position: 'left',
+					items: [{ label: 'All on GitHub →', href: GITHUB_PROFILE }, ...PROJECT_FAMILY],
+				},
+				{
 					href: 'https://github.com/rtorcato/shadcn-ui',
 					label: 'GitHub',
 					position: 'right',
@@ -113,15 +126,12 @@ const config: Config = {
 							label: 'npm',
 							href: 'https://www.npmjs.com/package/@rtorcato/shadcn-ui',
 						},
+						{ label: 'GitHub profile', href: GITHUB_PROFILE },
 					],
 				},
 				{
-					title: 'Sibling projects',
-					items: [
-						{ label: 'js-common', href: 'https://rtorcato.github.io/js-common/' },
-						{ label: 'react-common', href: 'https://rtorcato.github.io/react-common/' },
-						{ label: 'browser-common', href: 'https://rtorcato.github.io/browser-common/' },
-					],
+					title: 'Projects',
+					items: PROJECT_FAMILY,
 				},
 			],
 			copyright: `Copyright © ${new Date().getFullYear()} Richard Torcato. Built with Docusaurus.`,
