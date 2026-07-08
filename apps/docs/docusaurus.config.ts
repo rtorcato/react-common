@@ -98,6 +98,7 @@ const config: Config = {
 			},
 			items: [
 				{ to: '/docs', position: 'left', label: 'Docs' },
+				{ to: '/docs/adr', position: 'left', label: 'ADRs' },
 				{
 					type: 'dropdown',
 					label: 'Projects',
