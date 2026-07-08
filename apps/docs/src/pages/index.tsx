@@ -107,8 +107,8 @@ const GROUPS: { name: string; desc: string; chips: string[] }[] = [
 
 const SIBLINGS = siblings('@rtorcato/react-common')
 
-const HERO_CODE = `import { Button } from '@rtorcato/shadcn-ui'
-import '@rtorcato/shadcn-ui/styles.css'
+const HERO_CODE = `import { Button } from '@rtorcato/common-react'
+import '@rtorcato/common-react/styles.css'
 
 export function Example() {
   return (
@@ -162,7 +162,7 @@ function Hero(): ReactElement {
 					</Link>
 				</div>
 				<div className={styles.heroActions}>
-					<InstallTabs pkg="@rtorcato/shadcn-ui" />
+					<InstallTabs pkg="@rtorcato/common-react" />
 				</div>
 				<div className={styles.heroCode}>
 					<CodeWindow />

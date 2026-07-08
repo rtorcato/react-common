@@ -1,9 +1,9 @@
 {
-	"name": "@rtorcato/shadcn-ui",
-	"version": "1.4.0",
+	"name": "@rtorcato/common-react",
+	"version": "0.0.0",
 	"type": "module",
 	"author": "Richard Torcato",
-	"description": "A React component package",
+	"description": "A React 19 component library — shadcn/ui + Radix primitives, extended components, and Tailwind CSS v4.",
 	"keywords": [
 		"react",
 		"component",
@@ -14,11 +14,11 @@
 		"node": ">=22.12"
 	},
 	"packageManager": "pnpm@11.1.3",
-	"homepage": "https://github.com/rtorcato/react-common/tree/main/packages/shadcn-ui#readme",
+	"homepage": "https://github.com/rtorcato/react-common/tree/main/packages/common-react#readme",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/rtorcato/react-common.git",
-		"directory": "packages/shadcn-ui"
+		"directory": "packages/common-react"
 	},
 	"bugs": {
 		"url": "https://github.com/rtorcato/react-common/issues"
@@ -355,6 +355,7 @@
 		"vitest": "^3.2.4"
 	},
 	"dependencies": {
+		"@rtorcato/react-hooks": "workspace:*",
 		"@tanstack/react-table": "^8.21.3",
 		"cmdk": "^1.1.1",
 		"date-fns": "^4.1.0",

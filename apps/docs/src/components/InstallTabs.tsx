@@ -44,7 +44,7 @@ type InstallTabsProps = {
 }
 
 export default function InstallTabs({
-	pkg = '@rtorcato/shadcn-ui',
+	pkg = '@rtorcato/common-react',
 }: InstallTabsProps): ReactElement {
 	const [active, setActive] = useState('pnpm')
 	const [copied, setCopied] = useState(false)

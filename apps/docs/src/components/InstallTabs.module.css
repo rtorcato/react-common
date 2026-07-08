@@ -35,8 +35,8 @@
 	color: var(--su-heading, #fff);
 }
 .tabActive {
-	color: var(--su-accent, #818cf8);
-	border-bottom-color: var(--su-accent, #818cf8);
+	color: var(--su-accent, #2dd4bf);
+	border-bottom-color: var(--su-accent, #2dd4bf);
 }
 
 .cmdRow {
@@ -82,8 +82,8 @@
 		color 0.15s;
 }
 .copy:hover {
-	border-color: var(--su-accent-border, rgba(129, 140, 248, 0.4));
-	color: var(--su-accent, #818cf8);
+	border-color: var(--su-accent-border, rgba(45, 212, 191, 0.4));
+	color: var(--su-accent, #2dd4bf);
 }
 .copy[data-copied="true"] {
 	color: #28c840;

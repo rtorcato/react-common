@@ -93,12 +93,11 @@ const config: Config = {
 				alt: 'react-common',
 				src: 'img/logo.svg',
 				srcDark: 'img/logo-dark.svg',
-				width: 112,
+				width: 150,
 				height: 26,
 			},
 			items: [
 				{ to: '/docs', position: 'left', label: 'Docs' },
-				{ to: '/docs/adr', position: 'left', label: 'ADRs' },
 				{
 					type: 'dropdown',
 					label: 'Projects',
@@ -125,7 +124,7 @@ const config: Config = {
 						{ label: 'GitHub', href: 'https://github.com/rtorcato/react-common' },
 						{
 							label: 'npm',
-							href: 'https://www.npmjs.com/package/@rtorcato/shadcn-ui',
+							href: 'https://www.npmjs.com/package/@rtorcato/common-react',
 						},
 						{ label: '@rtorcato', href: GITHUB_PROFILE },
 					],

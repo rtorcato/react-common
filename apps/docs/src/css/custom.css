@@ -1,9 +1,10 @@
 /**
- * shadcn-ui — Docusaurus theme
- * Ported from the sibling js-common docs so the sites share one design
- * language: navy dark surfaces, Geist typography, rounded code blocks, quiet
- * sidebar/footer/table treatment. The accent is indigo (js-common uses gold);
- * change --su-accent* below to reskin.
+ * react-common — Docusaurus theme
+ * Shares the sibling family's design language (navy dark surfaces, Geist
+ * typography, rounded code blocks, quiet sidebar/footer/table treatment) but
+ * takes a distinct teal accent — js-common gold, browser-common blue,
+ * api-common fuchsia, db-common violet, cf-common orange, react-common teal.
+ * Change --su-accent* below to reskin.
  */
 
 /* ---------- Fonts ---------- */
@@ -11,13 +12,13 @@
 
 /* ---------- Light (default) ---------- */
 :root {
-	--ifm-color-primary: #4f46e5;
-	--ifm-color-primary-dark: #4338ca;
-	--ifm-color-primary-darker: #3f35bf;
-	--ifm-color-primary-darkest: #342c9d;
-	--ifm-color-primary-light: #5b52e8;
-	--ifm-color-primary-lighter: #6259e9;
-	--ifm-color-primary-lightest: #7d76ee;
+	--ifm-color-primary: #0d9488;
+	--ifm-color-primary-dark: #0c857b;
+	--ifm-color-primary-darker: #0b7d74;
+	--ifm-color-primary-darkest: #09675f;
+	--ifm-color-primary-light: #0ea395;
+	--ifm-color-primary-lighter: #0fab9c;
+	--ifm-color-primary-lightest: #14c4b3;
 
 	--ifm-font-family-base: "Geist", system-ui, -apple-system, sans-serif;
 	--ifm-font-family-monospace: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
@@ -29,14 +30,14 @@
 	--ifm-navbar-background-color: rgba(255, 255, 255, 0.8);
 	--ifm-heading-color: #0a0e16;
 	--ifm-font-color-base: #374253;
-	--ifm-link-color: #4f46e5;
+	--ifm-link-color: #0d9488;
 	--ifm-toc-border-color: rgba(12, 18, 28, 0.1);
 	--ifm-code-background: #f3f6f9;
-	--docusaurus-highlighted-code-line-bg: rgba(99, 102, 241, 0.14);
+	--docusaurus-highlighted-code-line-bg: rgba(20, 184, 166, 0.14);
 
-	/* shadcn-ui custom tokens */
-	--su-accent: #4f46e5;
-	--su-accent-fill: #6366f1;
+	/* react-common custom tokens */
+	--su-accent: #0d9488;
+	--su-accent-fill: #14b8a6;
 	--su-on-accent: #ffffff;
 	--su-bg: #ffffff;
 	--su-bg2: #f6f8fb;
@@ -49,33 +50,33 @@
 	--su-text: #374253;
 	--su-muted: #5b6675;
 	--su-faint: #8a95a5;
-	--su-accent-soft: rgba(99, 102, 241, 0.12);
-	--su-accent-border: rgba(99, 102, 241, 0.45);
+	--su-accent-soft: rgba(20, 184, 166, 0.12);
+	--su-accent-border: rgba(20, 184, 166, 0.45);
 	--su-shadow: 0 22px 50px -26px rgba(20, 28, 44, 0.3);
 }
 
 /* ---------- Dark ---------- */
 [data-theme="dark"] {
-	--ifm-color-primary: #818cf8;
-	--ifm-color-primary-dark: #6674f5;
-	--ifm-color-primary-darker: #5a69f4;
-	--ifm-color-primary-darkest: #3a4bf1;
-	--ifm-color-primary-light: #9ca5fb;
-	--ifm-color-primary-lighter: #a8b0fc;
-	--ifm-color-primary-lightest: #cbd0fd;
+	--ifm-color-primary: #2dd4bf;
+	--ifm-color-primary-dark: #1ec9b3;
+	--ifm-color-primary-darker: #1bbfaa;
+	--ifm-color-primary-darkest: #169e8c;
+	--ifm-color-primary-light: #45d9c7;
+	--ifm-color-primary-lighter: #52dccb;
+	--ifm-color-primary-lightest: #7ce5d8;
 
 	--ifm-background-color: #0a0e16;
 	--ifm-background-surface-color: #111824;
 	--ifm-navbar-background-color: #0a0e16;
 	--ifm-heading-color: #ffffff;
 	--ifm-font-color-base: #dfe5ee;
-	--ifm-link-color: #818cf8;
+	--ifm-link-color: #2dd4bf;
 	--ifm-toc-border-color: rgba(255, 255, 255, 0.08);
 	--ifm-code-background: #0d131d;
-	--docusaurus-highlighted-code-line-bg: rgba(129, 140, 248, 0.12);
+	--docusaurus-highlighted-code-line-bg: rgba(45, 212, 191, 0.12);
 
-	--su-accent: #818cf8;
-	--su-accent-fill: #818cf8;
+	--su-accent: #2dd4bf;
+	--su-accent-fill: #2dd4bf;
 	--su-on-accent: #0a0e16;
 	--su-bg: #0a0e16;
 	--su-bg2: #0b101a;
@@ -88,8 +89,8 @@
 	--su-text: #dfe5ee;
 	--su-muted: #94a1b4;
 	--su-faint: #647184;
-	--su-accent-soft: rgba(129, 140, 248, 0.12);
-	--su-accent-border: rgba(129, 140, 248, 0.34);
+	--su-accent-soft: rgba(45, 212, 191, 0.12);
+	--su-accent-border: rgba(45, 212, 191, 0.34);
 	--su-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.75);
 }
 
@@ -304,8 +305,8 @@ article table td:nth-child(2) code {
 	font-weight: 700;
 }
 .button--primary:hover {
-	background: #6f78f9;
-	border-color: #6f78f9;
+	background: #22c3af;
+	border-color: #22c3af;
 	color: var(--su-on-accent);
 }
 .button--secondary {
@@ -315,7 +316,7 @@ article table td:nth-child(2) code {
 }
 
 ::selection {
-	background: rgba(129, 140, 248, 0.28);
+	background: rgba(45, 212, 191, 0.28);
 }
 
 /* ============================================================

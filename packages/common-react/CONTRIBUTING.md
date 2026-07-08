@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for picking this up. This file covers the conventions specific to `@rtorcato/shadcn-ui` so you don't have to reverse-engineer them from the code.
+Thanks for picking this up. This file covers the conventions specific to `@rtorcato/common-react` so you don't have to reverse-engineer them from the code.
 
 ## One-time setup
 
@@ -50,7 +50,7 @@ There are two component directories and the distinction matters:
 
 ### `src/hooks/` — custom React hooks
 
-Tests live next to the source (`use-mobile.ts` + `use-mobile.test.ts`). Re-exports from `src/hooks/index.ts` for the consumer-facing `@rtorcato/shadcn-ui/hooks` entry point.
+Tests live next to the source (`use-mobile.ts` + `use-mobile.test.ts`). Re-exports from `src/hooks/index.ts` for the consumer-facing `@rtorcato/common-react/hooks` entry point.
 
 ## Adding a new shadcn component
 
