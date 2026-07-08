@@ -126,7 +126,7 @@ const config: Config = {
 							label: 'npm',
 							href: 'https://www.npmjs.com/package/@rtorcato/shadcn-ui',
 						},
-						{ label: 'GitHub profile', href: GITHUB_PROFILE },
+						{ label: '@rtorcato', href: GITHUB_PROFILE },
 					],
 				},
 				{
