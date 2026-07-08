@@ -1,4 +1,5 @@
 import Link from '@docusaurus/Link'
+import { siblings } from '@rtorcato/shared-docs'
 import Layout from '@theme/Layout'
 import clsx from 'clsx'
 import type { ReactElement } from 'react'
@@ -104,23 +105,7 @@ const GROUPS: { name: string; desc: string; chips: string[] }[] = [
 	},
 ]
 
-const SIBLINGS: { name: string; tagline: string; href: string }[] = [
-	{
-		name: '@rtorcato/react-common',
-		tagline: 'Reusable React hooks and components for modern apps.',
-		href: 'https://rtorcato.github.io/react-common/',
-	},
-	{
-		name: '@rtorcato/js-common',
-		tagline: 'Tree-shakeable TypeScript utilities — tiny bundles, full type safety.',
-		href: 'https://rtorcato.github.io/js-common/',
-	},
-	{
-		name: '@rtorcato/browser-common',
-		tagline: 'Small, tree-shakeable TypeScript wrappers around 40+ browser Web APIs.',
-		href: 'https://rtorcato.github.io/browser-common/',
-	},
-]
+const SIBLINGS = siblings('@rtorcato/react-common')
 
 const HERO_CODE = `import { Button } from '@rtorcato/shadcn-ui'
 import '@rtorcato/shadcn-ui/styles.css'
@@ -256,7 +241,7 @@ function Siblings(): ReactElement {
 					<Link key={s.name} href={s.href} className={styles.card}>
 						<div className={styles.cardHead}>
 							<div className={styles.cardName}>{s.name}</div>
-							<div className={styles.cardCount}>Docs ↗</div>
+							<div className={styles.cardCount}>{s.dest} ↗</div>
 						</div>
 						<p className={styles.cardDesc}>{s.tagline}</p>
 					</Link>
