@@ -22,7 +22,7 @@ importers:
         version: 21.2.0
       '@rtorcato/js-tooling':
         specifier: ^2.18.0
-        version: 2.18.0(@biomejs/biome@2.5.3)(@commitlint/cli@21.2.0(@types/node@25.9.4)(conventional-commits-parser@6.4.0)(typescript@6.0.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@20.5.0)(@types/node@25.9.4)(@typescript-eslint/eslint-plugin@8.62.1(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.18.0(esbuild@0.28.1))(esbuild@0.28.1)(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3)(vitest@3.2.6(@types/debug@4.1.13)(@types/node@25.9.4)(jiti@2.7.0)(jsdom@26.1.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0))
+        version: 2.18.0(@biomejs/biome@2.5.3)(@commitlint/cli@21.2.0(@types/node@25.9.4)(conventional-commits-parser@6.4.0)(typescript@6.0.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@20.5.0)(@types/node@25.9.4)(@typescript-eslint/eslint-plugin@8.62.1(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.28.1))(esbuild@0.28.1)(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3)(vitest@3.2.6(@types/debug@4.1.13)(@types/node@25.9.4)(jiti@2.7.0)(jsdom@26.1.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0))
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -147,7 +147,7 @@ importers:
         version: 21.2.0
       '@rtorcato/js-tooling':
         specifier: ^2.7.0
-        version: 2.18.0(@biomejs/biome@2.5.3)(@commitlint/cli@20.5.3(@types/node@25.9.4)(conventional-commits-parser@6.4.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@20.5.0)(@types/node@25.9.4)(@typescript-eslint/eslint-plugin@8.62.1(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.18.0(esbuild@0.25.5))(esbuild@0.25.5)(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3)(vitest@3.2.6(@types/debug@4.1.13)(@types/node@25.9.4)(jiti@2.7.0)(jsdom@26.1.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0))
+        version: 2.18.0(@biomejs/biome@2.5.3)(@commitlint/cli@20.5.3(@types/node@25.9.4)(conventional-commits-parser@6.4.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@20.5.0)(@types/node@25.9.4)(@typescript-eslint/eslint-plugin@8.62.1(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.25.5))(esbuild@0.25.5)(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3)(vitest@3.2.6(@types/debug@4.1.13)(@types/node@25.9.4)(jiti@2.7.0)(jsdom@26.1.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0))
       '@storybook/addon-a11y':
         specifier: ^10.4.1
         version: 10.4.6(storybook@10.4.6(@testing-library/dom@10.4.0)(@types/react@19.1.8)(react@19.1.0))
@@ -215,8 +215,8 @@ importers:
         specifier: ^0.25.5
         version: 0.25.5
       esbuild-node-externals:
-        specifier: 1.18.0
-        version: 1.18.0(esbuild@0.25.5)
+        specifier: 1.23.1
+        version: 1.23.1(esbuild@0.25.5)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -264,7 +264,7 @@ importers:
         version: 2.5.3
       '@rtorcato/js-tooling':
         specifier: ^2.18.0
-        version: 2.18.0(@biomejs/biome@2.5.3)(@commitlint/cli@20.5.3(@types/node@25.9.4)(conventional-commits-parser@6.4.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@20.5.0)(@types/node@25.9.4)(@typescript-eslint/eslint-plugin@8.62.1(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.18.0(esbuild@0.25.5))(esbuild@0.25.5)(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3)(vitest@3.2.6(@types/debug@4.1.13)(@types/node@25.9.4)(jiti@2.7.0)(jsdom@26.1.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0))
+        version: 2.18.0(@biomejs/biome@2.5.3)(@commitlint/cli@20.5.3(@types/node@25.9.4)(conventional-commits-parser@6.4.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@20.5.0)(@types/node@25.9.4)(@typescript-eslint/eslint-plugin@8.62.1(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.25.5))(esbuild@0.25.5)(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3)(vitest@3.2.6(@types/debug@4.1.13)(@types/node@25.9.4)(jiti@2.7.0)(jsdom@26.1.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0))
       '@testing-library/jest-dom':
         specifier: ^6.6.3
         version: 6.9.1
@@ -290,8 +290,8 @@ importers:
         specifier: ^0.25.5
         version: 0.25.5
       esbuild-node-externals:
-        specifier: 1.18.0
-        version: 1.18.0(esbuild@0.25.5)
+        specifier: 1.23.1
+        version: 1.23.1(esbuild@0.25.5)
       jsdom:
         specifier: ^26.0.0
         version: 26.1.0
@@ -6028,11 +6028,11 @@ packages:
     resolution: {integrity: sha512-Akvse1JBfsAPMi0RnGKdpLrjCioS2Q7K0tt1J9POCA13dfDNTdGsYeDyZMFC876t9Yo0HEEUsw4JVgoX8W3ZiA==}
     hasBin: true
 
-  esbuild-node-externals@1.18.0:
-    resolution: {integrity: sha512-suFVX3SzZlXrGIS9Yqx+ZaHL4w1p0e/j7dQbOM9zk8SfFpnAGnDplHUKXIf9kcPEAfZRL66JuYeVSVlsSEQ5Eg==}
+  esbuild-node-externals@1.23.1:
+    resolution: {integrity: sha512-aU/Bxaq9KU5SUnsCVP0a2Kj74qZz0QpRH2qvcQ4tRQ7yGYcmzUPOdXXA2hd7o55OjChduOwsFYP5EPJH01gn2Q==}
     engines: {node: '>=12'}
     peerDependencies:
-      esbuild: 0.12 - 0.25
+      esbuild: 0.12 - 0.28
 
   esbuild@0.25.5:
     resolution: {integrity: sha512-P8OtKZRv/5J5hhz0cUAdu/cLuPIKXpQl1R9pZtvmHWQvrAUVd0UNIPT4IB4W3rNOqVO0rlqHmCIbSwxh/c9yUQ==}
@@ -15225,7 +15225,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.43.0':
     optional: true
 
-  '@rtorcato/js-tooling@2.18.0(@biomejs/biome@2.5.3)(@commitlint/cli@20.5.3(@types/node@25.9.4)(conventional-commits-parser@6.4.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@20.5.0)(@types/node@25.9.4)(@typescript-eslint/eslint-plugin@8.62.1(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.18.0(esbuild@0.25.5))(esbuild@0.25.5)(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3)(vitest@3.2.6(@types/debug@4.1.13)(@types/node@25.9.4)(jiti@2.7.0)(jsdom@26.1.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0))':
+  '@rtorcato/js-tooling@2.18.0(@biomejs/biome@2.5.3)(@commitlint/cli@20.5.3(@types/node@25.9.4)(conventional-commits-parser@6.4.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@20.5.0)(@types/node@25.9.4)(@typescript-eslint/eslint-plugin@8.62.1(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.25.5))(esbuild@0.25.5)(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3)(vitest@3.2.6(@types/debug@4.1.13)(@types/node@25.9.4)(jiti@2.7.0)(jsdom@26.1.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0))':
     dependencies:
       chalk: 5.6.2
       commander: 14.0.3
@@ -15241,14 +15241,14 @@ snapshots:
       '@typescript-eslint/parser': 8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3)
       conventional-changelog-conventionalcommits: 9.3.1
       esbuild: 0.25.5
-      esbuild-node-externals: 1.18.0(esbuild@0.25.5)
+      esbuild-node-externals: 1.23.1(esbuild@0.25.5)
       eslint: 10.6.0(jiti@2.7.0)
       typescript: 5.9.3
       vitest: 3.2.6(@types/debug@4.1.13)(@types/node@25.9.4)(jiti@2.7.0)(jsdom@26.1.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@rtorcato/js-tooling@2.18.0(@biomejs/biome@2.5.3)(@commitlint/cli@21.2.0(@types/node@25.9.4)(conventional-commits-parser@6.4.0)(typescript@6.0.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@20.5.0)(@types/node@25.9.4)(@typescript-eslint/eslint-plugin@8.62.1(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.18.0(esbuild@0.28.1))(esbuild@0.28.1)(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3)(vitest@3.2.6(@types/debug@4.1.13)(@types/node@25.9.4)(jiti@2.7.0)(jsdom@26.1.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0))':
+  '@rtorcato/js-tooling@2.18.0(@biomejs/biome@2.5.3)(@commitlint/cli@21.2.0(@types/node@25.9.4)(conventional-commits-parser@6.4.0)(typescript@6.0.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@20.5.0)(@types/node@25.9.4)(@typescript-eslint/eslint-plugin@8.62.1(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(@typescript-eslint/parser@8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3))(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.28.1))(esbuild@0.28.1)(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3)(vitest@3.2.6(@types/debug@4.1.13)(@types/node@25.9.4)(jiti@2.7.0)(jsdom@26.1.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0))':
     dependencies:
       chalk: 5.6.2
       commander: 14.0.3
@@ -15264,7 +15264,7 @@ snapshots:
       '@typescript-eslint/parser': 8.62.1(eslint@10.6.0(jiti@2.7.0))(typescript@6.0.3)
       conventional-changelog-conventionalcommits: 9.3.1
       esbuild: 0.28.1
-      esbuild-node-externals: 1.18.0(esbuild@0.28.1)
+      esbuild-node-externals: 1.23.1(esbuild@0.28.1)
       eslint: 10.6.0(jiti@2.7.0)
       typescript: 6.0.3
       vitest: 3.2.6(@types/debug@4.1.13)(@types/node@25.9.4)(jiti@2.7.0)(jsdom@26.1.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0)
@@ -17482,15 +17482,15 @@ snapshots:
       pako: 2.2.0
       yargs: 17.7.2
 
-  esbuild-node-externals@1.18.0(esbuild@0.25.5):
+  esbuild-node-externals@1.23.1(esbuild@0.25.5):
     dependencies:
+      empathic: 2.0.1
       esbuild: 0.25.5
-      find-up: 5.0.0
 
-  esbuild-node-externals@1.18.0(esbuild@0.28.1):
+  esbuild-node-externals@1.23.1(esbuild@0.28.1):
     dependencies:
+      empathic: 2.0.1
       esbuild: 0.28.1
-      find-up: 5.0.0
     optional: true
 
   esbuild@0.25.5:

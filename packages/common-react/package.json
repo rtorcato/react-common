@@ -339,7 +339,7 @@
 		"cross-env": "^10.1.0",
 		"cz-conventional-changelog": "^3.3.0",
 		"esbuild": "^0.25.5",
-		"esbuild-node-externals": "1.18.0",
+		"esbuild-node-externals": "1.23.1",
 		"husky": "^9.1.7",
 		"jsdom": "^26.0.0",
 		"knip": "^6.14.2",
