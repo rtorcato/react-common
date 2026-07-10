@@ -58,7 +58,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.3",
-		"@rtorcato/js-tooling": "^2.18.0",
+		"@rtorcato/js-tooling": "^2.29.2",
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/react": "^16.3.0",
 		"@types/react": "^19.0.7",
