@@ -313,7 +313,7 @@
 		"./styles.css": "./dist/styles.css"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.2.5",
+		"@biomejs/biome": "^2.5.3",
 		"@commitlint/cli": "^20.1.0",
 		"@commitlint/config-conventional": "^21.0.1",
 		"@rtorcato/js-tooling": "^2.7.0",
