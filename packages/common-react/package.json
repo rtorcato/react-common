@@ -316,7 +316,7 @@
 		"@biomejs/biome": "^2.5.3",
 		"@commitlint/cli": "^20.1.0",
 		"@commitlint/config-conventional": "^21.0.1",
-		"@rtorcato/js-tooling": "^2.7.0",
+		"@rtorcato/js-tooling": "^2.29.2",
 		"@storybook/addon-a11y": "^10.4.1",
 		"@storybook/addon-themes": "^10.4.1",
 		"@storybook/react-vite": "^10.4.1",
