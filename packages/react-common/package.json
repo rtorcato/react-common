@@ -77,7 +77,7 @@
 		"rimraf": "^6.0.1",
 		"typescript": "^5.9.3",
 		"vite": "^7.1.9",
-		"vitest": "^3.2.4"
+		"vitest": "^4.1.10"
 	},
 	"dependencies": {
 		"clsx": "^2.1.1",
