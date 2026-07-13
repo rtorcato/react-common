@@ -4,6 +4,7 @@
     // "target": "ES2017",
     // "module": "ESNext",
     "noEmit": false, // Emit output files
+    "incremental": false, // Full rebuild each time; stale .tsbuildinfo otherwise skips .d.ts emit (rimraf only clears dist)
     "emitDeclarationOnly": true, // Emit JS and .d.ts files
     "declaration": true, // Generate .d.ts files
     "jsx": "react-jsx", // Use the new JSX transform
