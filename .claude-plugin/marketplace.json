@@ -1,0 +1,15 @@
+{
+  "name": "react-common",
+  "owner": {
+    "name": "Richard Torcato",
+    "email": "rtorcato@me.com"
+  },
+  "description": "Claude Code skill for the @rtorcato React monorepo — @rtorcato/react-common (headless hooks + cn + ThemeProvider) and @rtorcato/shadcn-ui (shadcn/ui component library).",
+  "plugins": [
+    {
+      "name": "react-common",
+      "source": "./",
+      "description": "Teaches Claude to use @rtorcato/react-common and @rtorcato/shadcn-ui correctly: barrel vs subpath imports, the styles.css + Tailwind setup, and ThemeProvider theming."
+    }
+  ]
+}
