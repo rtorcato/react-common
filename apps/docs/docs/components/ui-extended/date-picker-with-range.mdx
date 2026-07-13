@@ -1,0 +1,34 @@
+---
+title: Date picker (range)
+description: Popover two-month date range picker.
+---
+
+import StorybookEmbed from '@site/src/components/StorybookEmbed'
+
+# Date picker (range)
+
+A popover two-month date range picker.
+
+```ts
+import DatePickerWithRange from '@rtorcato/shadcn-ui/components/ui-extended/date-picker-with-range'
+```
+
+<StorybookEmbed storyId="ui-extended-datepickerwithrange--default" height={420} />
+
+:::warning Demo-grade
+Aside from `className`, this component takes no props — it uses internal state
+with a hardcoded default range. Treat it as an example; a controlled
+`value` / `onChange` version is needed for real use. Tracked for a rewrite.
+:::
+
+## Usage
+
+```tsx
+<DatePickerWithRange />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `className` | `string` | — | Wrapper class. |

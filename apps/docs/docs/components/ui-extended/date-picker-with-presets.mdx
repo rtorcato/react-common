@@ -1,0 +1,29 @@
+---
+title: Date picker (presets)
+description: Popover date picker with Today / Tomorrow / +3 days / +1 week quick presets.
+---
+
+import StorybookEmbed from '@site/src/components/StorybookEmbed'
+
+# Date picker (presets)
+
+A popover date picker combining a preset `Select` (Today, Tomorrow, +3 days,
++1 week) with a `Calendar`.
+
+```ts
+import DatePickerWithPresets from '@rtorcato/shadcn-ui/components/ui-extended/date-picker-with-presets'
+```
+
+<StorybookEmbed storyId="ui-extended-datepickerwithpresets--default" height={420} />
+
+:::warning Demo-grade
+This component takes **no props** — it manages its own internal `date` state and
+the presets are hardcoded. Treat it as an example/starting point; for real use
+you'll want a controlled `value` / `onChange` version. Tracked for a rewrite.
+:::
+
+## Usage
+
+```tsx
+<DatePickerWithPresets />
+```
