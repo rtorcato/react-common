@@ -1,5 +1,11 @@
 # [1.4.0](https://github.com/rtorcato/shadcn-ui/compare/v1.3.0...v1.4.0) (2026-07-04)
 
+## 1.5.1
+
+### Patch Changes
+
+- 7b5dc43: Upgrade `react-day-picker` to v10. Adapts the `Calendar` component to the v10 API: the `table` class-names key is now `month_grid`, and the custom `WeekNumber` slot no longer leaks the `week` prop onto the DOM. No visible behavior change.
+
 ## 1.5.0
 
 ### Minor Changes
