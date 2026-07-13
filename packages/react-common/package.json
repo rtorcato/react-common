@@ -73,7 +73,7 @@
 		"esbuild-node-externals": "1.23.1",
 		"jsdom": "^26.0.0",
 		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
+		"react-dom": "^19.2.7",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.9.3",
 		"vite": "^7.1.9",
@@ -86,7 +86,7 @@
 	},
 	"peerDependencies": {
 		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
+		"react-dom": "^19.2.7"
 	},
 	"peerDependenciesMeta": {
 		"@types/react": {
