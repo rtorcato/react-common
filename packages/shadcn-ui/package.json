@@ -1,6 +1,6 @@
 {
-	"name": "@rtorcato/common-react",
-	"version": "0.1.0",
+	"name": "@rtorcato/shadcn-ui",
+	"version": "1.4.0",
 	"type": "module",
 	"author": "Richard Torcato",
 	"description": "A React 19 component library — shadcn/ui + Radix primitives, extended components, and Tailwind CSS v4.",
@@ -14,11 +14,11 @@
 		"node": ">=22.12"
 	},
 	"packageManager": "pnpm@11.1.3",
-	"homepage": "https://github.com/rtorcato/react-common/tree/main/packages/common-react#readme",
+	"homepage": "https://github.com/rtorcato/react-common/tree/main/packages/shadcn-ui#readme",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/rtorcato/react-common.git",
-		"directory": "packages/common-react"
+		"directory": "packages/shadcn-ui"
 	},
 	"bugs": {
 		"url": "https://github.com/rtorcato/react-common/issues"
@@ -302,10 +302,6 @@
 			"types": "./dist/lib/*.d.ts",
 			"import": "./dist/lib/*.js"
 		},
-		"./theme-provider": {
-			"types": "./dist/components/theme-provider.d.ts",
-			"import": "./dist/components/theme-provider.js"
-		},
 		"./styles.css": "./dist/styles.css"
 	},
 	"devDependencies": {
@@ -331,7 +327,7 @@
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"commitizen": "^4.3.1",
-		"conventional-changelog-conventionalcommits": "^10.2.1",
+		"conventional-changelog-conventionalcommits": "^9.3.1",
 		"cross-env": "^10.1.0",
 		"cz-conventional-changelog": "^3.3.0",
 		"esbuild": "^0.25.5",
@@ -351,7 +347,7 @@
 		"vitest": "^3.2.4"
 	},
 	"dependencies": {
-		"@rtorcato/react-hooks": "workspace:*",
+		"@rtorcato/react-common": "workspace:*",
 		"@tanstack/react-table": "^8.21.3",
 		"cmdk": "^1.1.1",
 		"date-fns": "^4.1.0",
@@ -365,7 +361,6 @@
 		"react-resizable-panels": "^4.8.0",
 		"recharts": "^3.8.0",
 		"sonner": "^2.0.7",
-		"tailwind-merge": "3.3.1",
 		"vaul": "^1.1.2"
 	},
 	"peerDependencies": {

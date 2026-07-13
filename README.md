@@ -11,16 +11,16 @@ identity.
 
 | Package | Description |
 | --- | --- |
-| [`@rtorcato/common-react`](https://www.npmjs.com/package/@rtorcato/common-react) | React 19 component library — shadcn/ui + Radix primitives, extended components, Tailwind CSS v4. Dir: [`packages/common-react`](./packages/common-react). |
-| [`@rtorcato/react-hooks`](https://www.npmjs.com/package/@rtorcato/react-hooks) | Headless React hooks, zero UI dependencies. Dir: [`packages/react-hooks`](./packages/react-hooks). |
+| [`@rtorcato/shadcn-ui`](https://www.npmjs.com/package/@rtorcato/shadcn-ui) | React 19 shadcn/ui component library — shadcn/ui + Radix primitives, extended components, Tailwind CSS v4. Dir: [`packages/shadcn-ui`](./packages/shadcn-ui). |
+| [`@rtorcato/react-common`](https://www.npmjs.com/package/@rtorcato/react-common) | Foundation package — headless hooks, the `cn` class-merge utility, and `ThemeProvider`. Dir: [`packages/react-common`](./packages/react-common). |
 
 `apps/docs` is the private Docusaurus site (`@rtorcato/react-common-docs`).
 
 ## Install (consumers)
 
 ```bash
-pnpm add @rtorcato/common-react   # components
-pnpm add @rtorcato/react-hooks    # headless hooks
+pnpm add @rtorcato/shadcn-ui      # shadcn/ui components (pulls in @rtorcato/react-common)
+pnpm add @rtorcato/react-common   # hooks, cn, ThemeProvider (standalone)
 # react & react-dom 19 are peer dependencies
 ```
 
