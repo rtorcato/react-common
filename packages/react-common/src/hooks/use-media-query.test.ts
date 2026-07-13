@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { useMediaQuery } from '~/use-media-query'
+import { useMediaQuery } from '~/hooks/use-media-query'
 
 type ChangeListener = (event: MediaQueryListEvent) => void
 

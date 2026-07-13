@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
-import { useSidebar } from '~/use-sidebar'
+import { useSidebar } from '~/hooks/use-sidebar'
 
 describe('useSidebar', () => {
 	it('initial state: open is true', () => {
