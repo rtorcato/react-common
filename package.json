@@ -50,9 +50,8 @@
     "lint-staged": "^17.0.8"
   },
   "lint-staged": {
-    "*.{js,ts,json,md}": [
-      "pnpm exec biome lint",
-      "pnpm exec biome format"
+    "*": [
+      "pnpm exec biome check --no-errors-on-unmatched --files-ignore-unknown=true --write"
     ]
   }
 }
