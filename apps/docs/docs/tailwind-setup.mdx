@@ -1,0 +1,53 @@
+---
+title: Tailwind setup
+description: Wire @rtorcato/shadcn-ui into a consumer's Tailwind CSS build.
+sidebar_position: 3
+---
+
+# Tailwind setup
+
+`@rtorcato/shadcn-ui` ships its components as compiled JS plus a single
+stylesheet. Two steps get a consumer app rendering styled components.
+
+## 1. Import the stylesheet
+
+The package builds `src/styles/globals.css` into `dist/styles.css`, exposed as
+the `@rtorcato/shadcn-ui/styles.css` subpath. Import it once, at your app root,
+**before** any of your own overrides:
+
+```ts
+import '@rtorcato/shadcn-ui/styles.css'
+import './theme.css' // optional — your token overrides (see Theming)
+```
+
+This stylesheet carries the design tokens (CSS variables), the `.dark` mode
+block, and a Tailwind v4 `@theme inline` block, so no extra config is needed for
+the tokens themselves.
+
+## 2. Point Tailwind at the package
+
+Tailwind only emits utility classes it sees used. Since the components live in
+`node_modules`, add the package's built output to your content globs so the
+classes they use ship in your build:
+
+```ts
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/@rtorcato/shadcn-ui/dist/**/*.{js,mjs}',
+  ],
+}
+
+export default config
+```
+
+## Tailwind v3 vs v4
+
+The package supports both consumer paths without extra setup:
+
+- **Tailwind v4** — consumes the `@theme inline` block already in
+  `dist/styles.css`. Nothing else to do.
+- **Tailwind v3** — the package also ships a `tailwind.config.ts` with the
+  `hsl(var(--xxx))` token mappings you can extend from.
