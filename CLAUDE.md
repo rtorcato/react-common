@@ -8,11 +8,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Workspace layout (`pnpm-workspace.yaml`: `packages/*`, `apps/*`):
 
-- `packages/common-react` — `@rtorcato/common-react`, the React 19 component library (shadcn/ui + Radix primitives, extended components, hooks, `lib/utils`, Tailwind CSS v4).
-- `packages/react-hooks` — `@rtorcato/react-hooks`, headless React hooks with zero UI dependencies.
+- `packages/shadcn-ui` — `@rtorcato/shadcn-ui`, the React 19 shadcn/ui component library (shadcn/ui + Radix primitives, extended `ui-extended` components, Tailwind CSS v4). Published on npm from `1.4.x`.
+- `packages/react-common` — `@rtorcato/react-common`, the foundation package: headless hooks (`useClickOutside`, `useDebounce`, `useLocalStorage`, `useMediaQuery`, `useIsMobile`, `useSidebar`), the `cn` class-merge utility, and `ThemeProvider`.
 - `apps/docs` — `@rtorcato/react-common-docs`, the private Docusaurus site.
 
-`@rtorcato/common-react` depends on `@rtorcato/react-hooks` (`workspace:*`); it re-exports only the sonner-coupled `useToast` from its own `/hooks` subpath.
+`@rtorcato/shadcn-ui` depends on `@rtorcato/react-common` (`workspace:*`) for `cn` (re-exported internally via `~/lib/utils`) and `useIsMobile`. It re-exports only the sonner-coupled `useToast` from its own `/hooks` subpath. `@rtorcato/react-common` has no workspace deps.
 
 ## Package manager
 
@@ -28,7 +28,7 @@ Run from the repo root; scripts fan out across the workspace with `pnpm -r`:
 - `pnpm build` — `build-prod` (esbuild + `tsc --emitDeclarationOnly`) per package
 - `pnpm verify` — the local gate: `typecheck` + `check` + `test`
 
-Target a single package with `pnpm --filter @rtorcato/common-react <script>`, or `cd` into its dir.
+Target a single package with `pnpm --filter @rtorcato/shadcn-ui <script>`, or `cd` into its dir.
 
 CI gates that must pass before merge: `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build` (separate jobs in `.github/workflows/ci.yml`).
 
@@ -44,13 +44,13 @@ Requires **Node ≥ 22** (`.nvmrc`) and pnpm `11.1.3` (`packageManager`).
 - Path aliases: `@/*` and `~/*` both map to `./src/*` (per package).
 - JSX: `react-jsx` (no `import React` needed in component files).
 - Base config comes from `@rtorcato/js-tooling/typescript/react`.
-- `@rtorcato/react-hooks` uses source-condition exports (`exports` → `src`, `publishConfig.exports` → `dist`) so `pnpm verify` typechecks/tests the workspace without a pre-build; publishing swaps to `dist`.
+- `@rtorcato/react-common` uses source-condition exports (`exports` → `src`, `publishConfig.exports` → `dist`) so `pnpm verify` typechecks/tests the workspace without a pre-build; publishing swaps to `dist`.
 
 ## Build: entry points are NOT fully dynamic
 
-`packages/common-react/build.mjs` scans a **fixed list** of directories for esbuild entry points: `src/components`, `src/components/ui` (`.tsx`), `src/components/ui-extended` (`.tsx`), `src/lib`, `src/hooks`. If you add a new top-level folder under `src/`, it will NOT be bundled until you add a `getEntryPoints('src/…')` call in `build.mjs` and include it in `allEntryPoints`. Also extend the `exports` map in that package's `package.json` for a public subpath.
+`packages/shadcn-ui/build.mjs` scans a **fixed list** of directories for esbuild entry points: `src/components`, `src/components/ui` (`.tsx`), `src/components/ui-extended` (`.tsx`), `src/lib`, `src/hooks`. If you add a new top-level folder under `src/`, it will NOT be bundled until you add a `getEntryPoints('src/…')` call in `build.mjs` and include it in `allEntryPoints`. Also extend the `exports` map in that package's `package.json` for a public subpath.
 
-`packages/react-hooks/build.mjs` builds a single barrel entry (`src/index.ts`).
+`packages/react-common/build.mjs` builds a single barrel entry (`src/index.ts`).
 
 ## Shared config from `@rtorcato/js-tooling`
 
@@ -79,9 +79,9 @@ Releases are driven by **Changesets** (not semantic-release):
 
 ## Adding a public export
 
-When adding a component to `@rtorcato/common-react`:
+When adding a component to `@rtorcato/shadcn-ui`:
 
-1. Place it under `packages/common-react/src/components/` (or `src/components/ui/` for shadcn-style primitives).
+1. Place it under `packages/shadcn-ui/src/components/` (or `src/components/ui/` for shadcn-style primitives).
 2. Add a matching test alongside it.
-3. Add a subpath to the `exports` map in `packages/common-react/package.json` if it should be importable as `@rtorcato/common-react/components/Foo`.
+3. Add a subpath to the `exports` map in `packages/shadcn-ui/package.json` if it should be importable as `@rtorcato/shadcn-ui/components/Foo`.
 4. Verify the entry-points discovery in `build.mjs` will pick it up (see "Build: entry points are NOT fully dynamic" above).

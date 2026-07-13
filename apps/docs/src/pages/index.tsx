@@ -105,8 +105,8 @@ const GROUPS: { name: string; desc: string; chips: string[] }[] = [
 	},
 ]
 
-const HERO_CODE = `import { Button } from '@rtorcato/common-react'
-import '@rtorcato/common-react/styles.css'
+const HERO_CODE = `import { Button } from '@rtorcato/shadcn-ui/components/ui/button'
+import '@rtorcato/shadcn-ui/styles.css'
 
 export function Example() {
   return (
@@ -160,7 +160,7 @@ function Hero(): ReactElement {
 					</Link>
 				</div>
 				<div className={styles.heroActions}>
-					<InstallTabs pkg="@rtorcato/common-react" />
+					<InstallTabs pkg="@rtorcato/shadcn-ui" />
 				</div>
 				<div className={styles.heroCode}>
 					<CodeWindow />

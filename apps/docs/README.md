@@ -1,8 +1,8 @@
 # @rtorcato/react-common-docs
 
 Documentation site for **react-common** — the `@rtorcato` React monorepo, home of
-the [`@rtorcato/common-react`](https://www.npmjs.com/package/@rtorcato/common-react)
-component library and [`@rtorcato/react-hooks`](https://www.npmjs.com/package/@rtorcato/react-hooks).
+the [`@rtorcato/shadcn-ui`](https://www.npmjs.com/package/@rtorcato/shadcn-ui)
+component library and [`@rtorcato/react-common`](https://www.npmjs.com/package/@rtorcato/react-common).
 Built with [Docusaurus](https://docusaurus.io/). Mirrors the setup of the sibling
 [js-common](https://rtorcato.github.io/js-common/) docs.
 

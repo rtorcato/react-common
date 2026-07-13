@@ -2,7 +2,7 @@
   "$schema": "https://rtorcato.github.io/js-tooling/schemas/lockfile.json",
   "version": 1,
   "config": {
-    "projectName": "@rtorcato/common-react",
+    "projectName": "react-common",
     "projectType": "library",
     "typescript": {
       "enabled": true,

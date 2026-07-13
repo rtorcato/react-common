@@ -1,7 +1,7 @@
-# @rtorcato/common-react
+# @rtorcato/shadcn-ui
 
 [![CI/CD](https://github.com/rtorcato/react-common/actions/workflows/ci.yml/badge.svg)](https://github.com/rtorcato/react-common/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/@rtorcato/common-react)](https://www.npmjs.com/package/@rtorcato/common-react)
+[![npm](https://img.shields.io/npm/v/@rtorcato/shadcn-ui)](https://www.npmjs.com/package/@rtorcato/shadcn-ui)
 
 A pre-built [shadcn/ui](https://ui.shadcn.com) component library for React + Tailwind CSS v4. Install once — every shadcn component, the extended components, and the hooks are available via subpath imports. No more running `npx shadcn add <name>` in every new project.
 
@@ -25,11 +25,11 @@ This library leans on two sibling packages so it doesn't reinvent tooling or uti
 ## Installation
 
 ```bash
-pnpm add @rtorcato/common-react
+pnpm add @rtorcato/shadcn-ui
 # or
-npm install @rtorcato/common-react
+npm install @rtorcato/shadcn-ui
 # or
-yarn add @rtorcato/common-react
+yarn add @rtorcato/shadcn-ui
 ```
 
 Peer dependencies (you most likely already have these):
@@ -43,7 +43,7 @@ pnpm add react react-dom lucide-react tailwindcss tw-animate-css
 ### 1. Import the stylesheet
 
 ```ts
-import '@rtorcato/common-react/styles.css'
+import '@rtorcato/shadcn-ui/styles.css'
 ```
 
 ### 2. Tell Tailwind to scan the package
@@ -56,7 +56,7 @@ import type { Config } from 'tailwindcss'
 const config: Config = {
   content: [
     './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@rtorcato/common-react/dist/**/*.{js,mjs}',
+    './node_modules/@rtorcato/shadcn-ui/dist/**/*.{js,mjs}',
   ],
 }
 
@@ -68,12 +68,12 @@ export default config
 Import components from their subpath — bundlers tree-shake the rest.
 
 ```tsx
-import { Button } from '@rtorcato/common-react/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@rtorcato/common-react/components/ui/card'
-import { Input } from '@rtorcato/common-react/components/ui/input'
-import { DataTable } from '@rtorcato/common-react/components/ui-extended/data-table'
-import { useToast } from '@rtorcato/common-react/hooks'
-import '@rtorcato/common-react/styles.css'
+import { Button } from '@rtorcato/shadcn-ui/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@rtorcato/shadcn-ui/components/ui/card'
+import { Input } from '@rtorcato/shadcn-ui/components/ui/input'
+import { DataTable } from '@rtorcato/shadcn-ui/components/ui-extended/data-table'
+import { useToast } from '@rtorcato/shadcn-ui/hooks'
+import '@rtorcato/shadcn-ui/styles.css'
 
 export function App() {
   return (
@@ -114,7 +114,7 @@ Hand-written compositions on top of the primitives:
 
 `use-toast` — the sonner-coupled toast hook.
 
-The generic, headless hooks (`use-click-outside`, `use-debounce`, `use-local-storage`, `use-media-query`, `use-mobile`, `use-sidebar`) now live in the sibling [`@rtorcato/react-hooks`](https://www.npmjs.com/package/@rtorcato/react-hooks) package — install it separately if you need them.
+The generic, headless hooks (`useClickOutside`, `useDebounce`, `useLocalStorage`, `useMediaQuery`, `useIsMobile`, `useSidebar`) now live in the foundation package [`@rtorcato/react-common`](https://www.npmjs.com/package/@rtorcato/react-common), alongside the `cn` class-merge utility (which this package re-exports internally) and `ThemeProvider` (no longer shipped here) — install it separately if you need them.
 
 ## Theming
 
@@ -125,7 +125,7 @@ You don't have to fork the package to re-theme it. Every component uses semantic
 1. Import the library stylesheet **first**, then your overrides.
 
    ```ts
-   import '@rtorcato/common-react/styles.css'
+   import '@rtorcato/shadcn-ui/styles.css'
    import './theme.css' // <- your overrides
    ```
 
@@ -154,7 +154,7 @@ The actual workflow:
 
 1. Pick a theme at <https://ui.shadcn.com/themes>.
 2. Copy its `:root { ... }` and `.dark { ... }` blocks.
-3. Paste them into the `theme.css` you already import after `@rtorcato/common-react/styles.css` (see "How it works" above).
+3. Paste them into the `theme.css` you already import after `@rtorcato/shadcn-ui/styles.css` (see "How it works" above).
 
 For example, the canonical **Orange** preset:
 

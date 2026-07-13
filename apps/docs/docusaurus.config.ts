@@ -124,7 +124,7 @@ const config: Config = {
 						{ label: 'GitHub', href: 'https://github.com/rtorcato/react-common' },
 						{
 							label: 'npm',
-							href: 'https://www.npmjs.com/package/@rtorcato/common-react',
+							href: 'https://www.npmjs.com/package/@rtorcato/shadcn-ui',
 						},
 						{ label: '@rtorcato', href: GITHUB_PROFILE },
 					],
