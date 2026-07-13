@@ -14,5 +14,5 @@
     }
   },
   "include": ["src"],
-  "exclude": ["build.mjs", "node_modules", "dist", "build", "coverage", "**/*.spec.ts", "**/*.test.ts", "src/test"]
+  "exclude": ["build.mjs", "node_modules", "dist", "build", "coverage", "**/*.spec.ts", "**/*.spec.tsx", "**/*.test.ts", "**/*.test.tsx", "src/test"]
 }
