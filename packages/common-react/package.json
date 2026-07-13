@@ -314,7 +314,7 @@
 		"@commitlint/config-conventional": "^21.0.1",
 		"@rtorcato/js-tooling": "^2.29.2",
 		"@storybook/addon-a11y": "^10.4.1",
-		"@storybook/addon-themes": "^10.4.1",
+		"@storybook/addon-themes": "^10.5.0",
 		"@storybook/react-vite": "^10.4.1",
 		"@tailwindcss/postcss": "^4.1.14",
 		"@testing-library/jest-dom": "^6.6.3",
