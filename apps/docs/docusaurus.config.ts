@@ -125,6 +125,12 @@ const config: Config = {
 					items: [{ label: 'All on GitHub →', href: GITHUB_PROFILE }, ...PROJECT_FAMILY],
 				},
 				{
+					// Deployed alongside the docs site (see .github/workflows/docs.yml).
+					href: 'pathname:///react-common/storybook/',
+					label: 'Storybook',
+					position: 'right',
+				},
+				{
 					href: 'https://github.com/rtorcato/react-common',
 					label: 'GitHub',
 					position: 'right',

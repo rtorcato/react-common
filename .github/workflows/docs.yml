@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'apps/docs/**'
+      - 'packages/shadcn-ui/**'
       - '.github/workflows/docs.yml'
       - 'pnpm-workspace.yaml'
       - 'pnpm-lock.yaml'
@@ -43,6 +44,13 @@ jobs:
 
       - name: Build docs
         run: pnpm --filter @rtorcato/react-common-docs build
+
+      - name: Build Storybook
+        run: pnpm --filter @rtorcato/shadcn-ui build-storybook
+
+      - name: Colocate Storybook under the docs site
+        # Served at /react-common/storybook/ (base path set in .storybook/main.ts).
+        run: cp -r packages/shadcn-ui/storybook-static apps/docs/build/storybook
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
