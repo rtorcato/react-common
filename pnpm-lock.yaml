@@ -149,8 +149,8 @@ importers:
         specifier: ^2.29.2
         version: 2.29.2(@biomejs/biome@2.5.3)(@commitlint/cli@20.5.3(@types/node@26.1.1)(conventional-commits-parser@6.4.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@21.2.0)(@types/node@26.1.1)(@typescript-eslint/eslint-plugin@8.63.0(@typescript-eslint/parser@8.63.0(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(@typescript-eslint/parser@8.63.0(eslint@10.6.0(jiti@2.7.0))(typescript@5.9.3))(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.25.5))(esbuild@0.25.5)(eslint@10.6.0(jiti@2.7.0))(rollup@4.43.0)(tslib@2.8.1)(typescript@5.9.3)(vitest@3.2.6(@types/debug@4.1.13)(@types/node@26.1.1)(jiti@2.7.0)(jsdom@26.1.0)(lightningcss@1.32.0)(terser@5.48.0)(yaml@2.9.0))
       '@storybook/addon-a11y':
-        specifier: ^10.4.1
-        version: 10.4.6(storybook@10.5.0(@types/react@19.1.8)(react@19.1.0))
+        specifier: ^10.5.0
+        version: 10.5.0(storybook@10.5.0(@types/react@19.1.8)(react@19.1.0))
       '@storybook/addon-themes':
         specifier: ^10.5.0
         version: 10.5.0(storybook@10.5.0(@types/react@19.1.8)(react@19.1.0))
@@ -4331,10 +4331,10 @@ packages:
   '@standard-schema/utils@0.3.0':
     resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
 
-  '@storybook/addon-a11y@10.4.6':
-    resolution: {integrity: sha512-XCJy+f0DFOiCgUU9knRDlLDxVFI+AAQ3/wE/NF85zB9iDPPS2DwkSN+mas3zDgHt66zhN8Cq3/UiyCDUweV9Zw==}
+  '@storybook/addon-a11y@10.5.0':
+    resolution: {integrity: sha512-AguqTsYS2NX20AF1vWt6IonbkpMXur30/dAOOYltbEW7uKmPxBNtjuiBmYB2WI4aFN4r8jje4bbDGk/Yfq58hQ==}
     peerDependencies:
-      storybook: ^10.4.6
+      storybook: ^10.5.0
 
   '@storybook/addon-themes@10.5.0':
     resolution: {integrity: sha512-9dvrN1JcpWt+f+RueMGvdeGTNQJ5y4w931X2HHzE+ItrN2Ogp0vSppb/baUNezeBLqhuUJjPbvyAeAb9v4rong==}
@@ -16209,7 +16209,7 @@ snapshots:
 
   '@standard-schema/utils@0.3.0': {}
 
-  '@storybook/addon-a11y@10.4.6(storybook@10.5.0(@types/react@19.1.8)(react@19.1.0))':
+  '@storybook/addon-a11y@10.5.0(storybook@10.5.0(@types/react@19.1.8)(react@19.1.0))':
     dependencies:
       '@storybook/global': 5.0.0
       axe-core: 4.12.1
