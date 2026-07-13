@@ -9,6 +9,15 @@ updates:
     commit-message:
       prefix: "chore(deps)"
       include: "scope"
+    # react and react-dom must move in lockstep (React errors on mismatched versions),
+    # so group them into one PR instead of separate ones that can never pass alone.
+    groups:
+      react:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
 
   - package-ecosystem: "github-actions"
     directory: "/"
