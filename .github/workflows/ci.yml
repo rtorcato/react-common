@@ -91,7 +91,9 @@ jobs:
           node-version: "22"
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm test
+      # Runs the suite under coverage so the per-package thresholds
+      # (vitest.config.mjs) gate CI — coverage below the floor fails the build.
+      - run: pnpm coverage
 
   build:
     runs-on: ubuntu-latest

@@ -44,8 +44,10 @@ export default mergeConfig(
 					// Pure re-export barrel — 0% because no test imports through it.
 					'src/index.ts',
 				],
+				// Floor a few points below the current ~98% lines. Ratchet up as
+				// coverage grows; keep a margin so routine edits don't trip CI.
 				thresholds: {
-					lines: 85,
+					lines: 90,
 				},
 			},
 		},

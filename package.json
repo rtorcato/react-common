@@ -29,6 +29,7 @@
     "build-dev": "pnpm -r run build-dev",
     "typecheck": "pnpm -r run typecheck",
     "test": "pnpm -r run test -- --run",
+    "coverage": "pnpm -r run coverage",
     "lint": "pnpm -r run lint",
     "format": "pnpm -r run format",
     "check": "pnpm -r run check",
