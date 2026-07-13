@@ -13,7 +13,7 @@
 		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
-		"@docusaurus/core": "^3.8.1",
+		"@docusaurus/core": "^3.10.2",
 		"@docusaurus/preset-classic": "^3.10.2",
 		"@easyops-cn/docusaurus-search-local": "^0.55.2",
 		"@mdx-js/react": "^3.1.0",
@@ -24,11 +24,11 @@
 	},
 	"devDependencies": {
 		"@docusaurus/module-type-aliases": "^3.10.2",
-		"@docusaurus/tsconfig": "^3.8.1",
-		"@docusaurus/types": "^3.8.1",
+		"@docusaurus/tsconfig": "^3.10.2",
+		"@docusaurus/types": "^3.10.2",
 		"@rtorcato/shared-docs": "github:rtorcato/shared-docs",
 		"@types/react": "^19.0.0",
-		"typescript": "~5.6.3"
+		"typescript": "~5.9.3"
 	},
 	"browserslist": {
 		"production": [">0.5%", "not dead", "not op_mini all"],
