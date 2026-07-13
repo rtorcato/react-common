@@ -54,10 +54,6 @@
 		"dist"
 	],
 	"exports": {
-		"./components/MyComponent": {
-			"types": "./dist/components/MyComponent.d.ts",
-			"import": "./dist/components/MyComponent.js"
-		},
 		"./components/ui/accordion": {
 			"types": "./dist/components/ui/accordion.d.ts",
 			"import": "./dist/components/ui/accordion.js"
