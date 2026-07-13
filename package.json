@@ -44,7 +44,7 @@
     "@changesets/cli": "^2.27.0",
     "@commitlint/cli": "^21.2.0",
     "@commitlint/config-conventional": "^21.2.0",
-    "@rtorcato/js-tooling": "^2.29.2",
+    "@rtorcato/js-tooling": "^2.30.0",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8"
   },
