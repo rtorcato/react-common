@@ -2,6 +2,8 @@
 
 [![CI/CD](https://github.com/rtorcato/react-common/actions/workflows/ci.yml/badge.svg)](https://github.com/rtorcato/react-common/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/@rtorcato/shadcn-ui)](https://www.npmjs.com/package/@rtorcato/shadcn-ui)
+[![npm downloads](https://img.shields.io/npm/dm/@rtorcato/shadcn-ui.svg)](https://www.npmjs.com/package/@rtorcato/shadcn-ui)
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
 A pre-built [shadcn/ui](https://ui.shadcn.com) component library for React + Tailwind CSS v4. Install once — every shadcn component, the extended components, and the hooks are available via subpath imports. No more running `npx shadcn add <name>` in every new project.
 
