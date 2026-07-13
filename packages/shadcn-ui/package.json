@@ -1,6 +1,6 @@
 {
 	"name": "@rtorcato/shadcn-ui",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"type": "module",
 	"author": "Richard Torcato",
 	"description": "A React 19 component library — shadcn/ui + Radix primitives, extended components, and Tailwind CSS v4.",

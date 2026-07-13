@@ -1,5 +1,18 @@
 # [1.4.0](https://github.com/rtorcato/shadcn-ui/compare/v1.3.0...v1.4.0) (2026-07-04)
 
+## 1.5.0
+
+### Minor Changes
+
+- ce26fb1: Split the library into two packages. `@rtorcato/react-common` is the foundation — headless hooks (`useClickOutside`, `useDebounce`, `useLocalStorage`, `useMediaQuery`, `useIsMobile`, `useSidebar`), the `cn` class-merge utility, and the `ThemeProvider`. `@rtorcato/shadcn-ui` is the shadcn/ui component library (`components/ui/*`, `components/ui-extended/*`, `useToast`, styles) and now depends on `@rtorcato/react-common` for `cn` and `useIsMobile`.
+
+  The former `@rtorcato/common-react` and `@rtorcato/react-hooks` packages are gone: `common-react` is renamed back to `shadcn-ui`, and the standalone `react-hooks` package is folded into `react-common`.
+
+### Patch Changes
+
+- Updated dependencies [ce26fb1]
+  - @rtorcato/react-common@0.1.0
+
 ## 0.1.0
 
 ### Minor Changes
