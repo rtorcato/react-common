@@ -1,0 +1,41 @@
+---
+title: Page header
+description: Page title block with optional breadcrumbs, description, and an actions slot.
+---
+
+import StorybookEmbed from '@site/src/components/StorybookEmbed'
+
+# Page header
+
+A page title block with optional breadcrumbs, a description, and a right-aligned
+actions slot. Exports the `PageHeaderBreadcrumb` type.
+
+```ts
+import { PageHeader, type PageHeaderBreadcrumb } from '@rtorcato/shadcn-ui/components/ui-extended/page-header'
+```
+
+<StorybookEmbed storyId="ui-extended-pageheader--default" height={220} />
+
+## Usage
+
+```tsx
+<PageHeader
+  title="Settings"
+  description="Manage your workspace."
+  breadcrumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Settings' },
+  ]}
+  actions={<Button>Save</Button>}
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `title` | `string` | — | Page title. |
+| `description` | `string` | — | Subtitle text. |
+| `breadcrumbs` | `PageHeaderBreadcrumb[]` | — | `{ label, href? }` trail. |
+| `actions` | `React.ReactNode` | — | Right-aligned action slot. |
+| `className` | `string` | — | Wrapper class. |

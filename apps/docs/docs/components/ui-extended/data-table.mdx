@@ -1,0 +1,40 @@
+---
+title: Data table
+description: Generic sortable, paginated table with column visibility, built on TanStack Table.
+---
+
+import StorybookEmbed from '@site/src/components/StorybookEmbed'
+
+# Data table
+
+A generic table built on [@tanstack/react-table](https://tanstack.com/table):
+sorting, pagination, and a column-visibility dropdown out of the box. Re-exports
+`ColumnDef` so you can define columns without a separate import.
+
+```ts
+import { DataTable, type ColumnDef } from '@rtorcato/shadcn-ui/components/ui-extended/data-table'
+```
+
+<StorybookEmbed storyId="ui-extended-datatable--default" height={480} />
+
+## Usage
+
+```tsx
+type Payment = { id: string; amount: number; status: string }
+
+const columns: ColumnDef<Payment>[] = [
+  { accessorKey: 'status', header: 'Status' },
+  { accessorKey: 'amount', header: 'Amount' },
+]
+
+<DataTable columns={columns} data={payments} pageSize={10} />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `columns` | `ColumnDef<TData>[]` | — | TanStack column definitions. |
+| `data` | `TData[]` | — | Rows to render. |
+| `pageSize` | `number` | `10` | Rows per page. |
+| `className` | `string` | — | Wrapper class. |

@@ -48,4 +48,16 @@ test.describe('docs smoke', () => {
 		await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
 		expect(errors, `console/page errors: ${errors.join(' | ')}`).toEqual([])
 	})
+
+	test('Components catalog + an extended-component page load', async ({ page }) => {
+		await page.goto('/react-common/docs/components')
+		await expect(page.getByRole('heading', { level: 1, name: 'Components' })).toBeVisible()
+
+		// A ui-extended page renders its heading and a StorybookEmbed iframe
+		// (the iframe is attached even though the deployed Storybook isn't
+		// colocated in the local test build).
+		await page.goto('/react-common/docs/components/ui-extended/data-table')
+		await expect(page.getByRole('heading', { level: 1, name: 'Data table' })).toBeVisible()
+		await expect(page.locator('iframe[title="ui-extended-datatable--default"]')).toBeAttached()
+	})
 })

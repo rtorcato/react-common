@@ -1,0 +1,55 @@
+---
+title: Confirm dialog
+description: Controlled confirm/cancel modal wrapping AlertDialog, with a loading state.
+---
+
+import StorybookEmbed from '@site/src/components/StorybookEmbed'
+
+# Confirm dialog
+
+A controlled confirm/cancel modal built on the shadcn `AlertDialog`, with a
+loading spinner on the confirm button while an async action runs.
+
+```ts
+import { ConfirmDialog } from '@rtorcato/shadcn-ui/components/ui-extended/confirm-dialog'
+```
+
+<StorybookEmbed storyId="ui-extended-confirmdialog--default" />
+
+## Usage
+
+```tsx
+const [open, setOpen] = useState(false)
+const [loading, setLoading] = useState(false)
+
+<ConfirmDialog
+  open={open}
+  onOpenChange={setOpen}
+  title="Delete project?"
+  description="This can't be undone."
+  confirmLabel="Delete"
+  confirmVariant="destructive"
+  loading={loading}
+  onConfirm={async () => {
+    setLoading(true)
+    await deleteProject()
+    setLoading(false)
+    setOpen(false)
+  }}
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `open` | `boolean` | — | Controlled open state. |
+| `onOpenChange` | `(open: boolean) => void` | — | Called when the dialog requests open/close. |
+| `onConfirm` | `() => void \| Promise<void>` | — | Confirm handler. |
+| `onCancel` | `() => void` | — | Optional cancel handler. |
+| `title` | `string` | `'Are you sure?'` | Heading. |
+| `description` | `string` | — | Body text. |
+| `confirmLabel` | `string` | `'Confirm'` | Confirm button label. |
+| `cancelLabel` | `string` | `'Cancel'` | Cancel button label. |
+| `confirmVariant` | `ButtonVariant` | `'default'` | Confirm button variant (e.g. `destructive`). |
+| `loading` | `boolean` | `false` | Shows a spinner and disables the confirm button. |

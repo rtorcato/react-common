@@ -1,0 +1,39 @@
+---
+title: File upload
+description: Drag-and-drop / click file upload with size validation and a removable file list.
+---
+
+import StorybookEmbed from '@site/src/components/StorybookEmbed'
+
+# File upload
+
+Drag-and-drop (or click) file input with size validation, a file list, and
+per-file remove buttons.
+
+```ts
+import { FileUpload } from '@rtorcato/shadcn-ui/components/ui-extended/file-upload'
+```
+
+<StorybookEmbed storyId="ui-extended-fileupload--default" />
+
+## Usage
+
+```tsx
+<FileUpload
+  accept="image/*"
+  multiple
+  maxSize={5 * 1024 * 1024}
+  onFilesChange={(files) => setFiles(files)}
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `onFilesChange` | `(files: File[]) => void` | — | Called when the selection changes. |
+| `accept` | `string` | — | Accepted MIME types / extensions. |
+| `multiple` | `boolean` | `false` | Allow multiple files. |
+| `maxSize` | `number` | — | Max size per file, in bytes. |
+| `disabled` | `boolean` | `false` | Disable the input. |
+| `className` | `string` | — | Wrapper class. |
