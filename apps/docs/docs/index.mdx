@@ -32,3 +32,26 @@ This site is being built out — track progress in the
 ```bash
 pnpm add @rtorcato/shadcn-ui
 ```
+
+New here? Start with [Getting started](./getting-started), then
+[Tailwind setup](./tailwind-setup) and [Theming](./theming).
+
+## Use with AI
+
+The repo ships an in-repo skill so AI coding tools use the packages correctly
+(barrel vs subpath imports, the `styles.css` + Tailwind setup, theming).
+
+### Claude Code
+
+Install the self-hosted skill in a Claude Code session:
+
+```
+/plugin marketplace add rtorcato/react-common
+/plugin install react-common@react-common
+```
+
+### Other AI tools (Cursor / Copilot / Codex)
+
+Point the tool at [`AGENTS.md`](https://github.com/rtorcato/react-common/blob/main/AGENTS.md)
+at the repo root — it carries the same rules in the cross-tool convention many
+agents read automatically.

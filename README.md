@@ -25,6 +25,22 @@ pnpm add @rtorcato/react-common   # hooks, cn, ThemeProvider (standalone)
 # react & react-dom 19 are peer dependencies
 ```
 
+## Use with AI
+
+An in-repo skill teaches AI coding tools to use the packages correctly (barrel
+vs subpath imports, `styles.css` + Tailwind setup, theming).
+
+**Claude Code** — install the self-hosted skill:
+
+```
+/plugin marketplace add rtorcato/react-common
+/plugin install react-common@react-common
+```
+
+**Other tools (Cursor / Copilot / Codex)** — read [`AGENTS.md`](./AGENTS.md),
+the cross-tool convention many agents pick up automatically. It stays in sync
+with the Claude skill in [`skills/react-common/SKILL.md`](./skills/react-common/SKILL.md).
+
 ## Development
 
 Requires Node ≥ 22 and pnpm 11 (see `.nvmrc` / `packageManager`).
