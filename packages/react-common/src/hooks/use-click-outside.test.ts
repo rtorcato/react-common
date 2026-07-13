@@ -2,7 +2,7 @@ import { act, render } from '@testing-library/react'
 import * as React from 'react'
 import { describe, expect, it, vi } from 'vitest'
 
-import { useClickOutside } from '~/use-click-outside'
+import { useClickOutside } from '~/hooks/use-click-outside'
 
 function Harness({ onOutside }: { onOutside: () => void }) {
 	const ref = useClickOutside<HTMLDivElement>(onOutside)

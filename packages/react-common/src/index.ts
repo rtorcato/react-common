@@ -1,13 +1,13 @@
 // Hooks
-export * from './use-click-outside'
-export * from './use-debounce'
-export * from './use-local-storage'
-export * from './use-media-query'
-export * from './use-mobile'
-export * from './use-sidebar'
+export * from './hooks/use-click-outside'
+export * from './hooks/use-debounce'
+export * from './hooks/use-local-storage'
+export * from './hooks/use-media-query'
+export * from './hooks/use-mobile'
+export * from './hooks/use-sidebar'
 
 // Utilities
 export { cn } from './lib/utils'
 
 // Providers
-export * from './theme-provider'
+export * from './providers/theme-provider'

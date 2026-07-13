@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { useDebounce } from '~/use-debounce'
+import { useDebounce } from '~/hooks/use-debounce'
 
 describe('useDebounce', () => {
 	beforeEach(() => {
