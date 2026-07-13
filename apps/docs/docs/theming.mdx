@@ -1,0 +1,74 @@
+---
+title: Theming
+description: Dark mode and theme switching with ThemeProvider (next-themes).
+sidebar_position: 4
+---
+
+# Theming
+
+`@rtorcato/react-common` re-exports [`next-themes`](https://github.com/pacocoursey/next-themes)
+as `ThemeProvider` / `useTheme`, and the components are wired to a `.dark` class
+on `<html>`. Together they give you dark mode and system-preference switching
+with no extra plumbing.
+
+## Wrap your app
+
+Render `ThemeProvider` near the root with `attribute="class"` so it toggles the
+`.dark` class the components respond to:
+
+```tsx
+import { ThemeProvider } from '@rtorcato/react-common'
+
+export function Providers({ children }: { children: React.ReactNode }) {
+  return (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      {children}
+    </ThemeProvider>
+  )
+}
+```
+
+- `defaultTheme="system"` + `enableSystem` follow the OS preference until the
+  user picks a theme.
+- Themes are persisted to `localStorage`, so the choice survives reloads.
+
+## A theme toggle
+
+Use `useTheme` to read and set the active theme:
+
+```tsx
+import { useTheme } from '@rtorcato/react-common'
+
+export function ThemeToggle() {
+  const { theme, setTheme } = useTheme()
+  return (
+    <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}>
+      {theme === 'dark' ? 'Light' : 'Dark'} mode
+    </button>
+  )
+}
+```
+
+## Custom tokens
+
+Dark mode swaps CSS variables under the `.dark` class. To re-theme without
+forking, override those variables in a stylesheet imported **after**
+`@rtorcato/shadcn-ui/styles.css`:
+
+```css
+/* theme.css */
+:root {
+  --primary: 262 83% 58%;          /* purple; raw HSL triplet, no hsl() wrapper */
+  --primary-foreground: 0 0% 100%;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --primary: 263 70% 50%;
+  --primary-foreground: 210 40% 98%;
+}
+```
+
+Color values are raw `H S L` triplets because the components call
+`hsl(var(--primary))` internally. See the `@rtorcato/shadcn-ui` README for the
+full list of overridable tokens.
