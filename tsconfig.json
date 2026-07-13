@@ -1,0 +1,4 @@
+{
+	"extends": "@rtorcato/js-tooling/typescript/base",
+	"files": []
+}
