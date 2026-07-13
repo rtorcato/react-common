@@ -69,6 +69,26 @@ const config: Config = {
 
 	plugins: [
 		[
+			// Generates the API reference under docs/api from the @rtorcato/react-common
+			// public surface on every build, so it can't go stale. shadcn-ui component
+			// coverage is a follow-up (the primitives are documented upstream at
+			// ui.shadcn.com; TypeDoc on 50+ forwardRef components is noisy).
+			'docusaurus-plugin-typedoc',
+			{
+				entryPoints: ['../../packages/react-common/src/index.ts'],
+				tsconfig: '../../packages/react-common/tsconfig.json',
+				out: 'docs/api',
+				readme: 'none',
+				includeVersion: false,
+				excludePrivate: true,
+				excludeInternal: true,
+				excludeExternals: true,
+				sort: ['source-order'],
+				outputFileStrategy: 'modules',
+				sidebar: { autoConfiguration: false },
+			},
+		],
+		[
 			'@easyops-cn/docusaurus-search-local',
 			{
 				hashed: true,
