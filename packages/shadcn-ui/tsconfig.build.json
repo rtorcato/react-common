@@ -16,5 +16,5 @@
     }
   },
   "include": ["src"],
-  "exclude": ["build.mjs", "node_modules", "dist", "build", "coverage", "**/*.spec.ts", "**/*.test.ts", "release.config.ts", "OLD/examples", "OLD/ui-stories", "OLD", "test"]
+  "exclude": ["build.mjs", "node_modules", "dist", "build", "coverage", "**/*.spec.ts", "**/*.spec.tsx", "**/*.test.ts", "**/*.test.tsx", "release.config.ts", "OLD/examples", "OLD/ui-stories", "OLD", "test"]
 }
