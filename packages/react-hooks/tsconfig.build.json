@@ -2,6 +2,7 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "noEmit": false,
+    "incremental": false, // Full rebuild each time; stale .tsbuildinfo otherwise skips .d.ts emit (rimraf only clears dist)
     "emitDeclarationOnly": true,
     "declaration": true,
     "declarationMap": true,
