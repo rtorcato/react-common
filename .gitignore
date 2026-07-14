@@ -4,6 +4,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Transient copy of the root AGENTS.md placed by react-common's prepack so it
+# ships in the npm tarball (removed by postpack). See #38.
+packages/react-common/AGENTS.md
+
 # Logs
 logs/
 *.log
