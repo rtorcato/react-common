@@ -20,7 +20,13 @@ pnpm dev              # start the dev server
 pnpm build            # production build → build/
 pnpm serve            # preview the production build
 pnpm typecheck        # tsc --noEmit
+pnpm storybook:local  # build Storybook into static/ so <StorybookEmbed> previews work locally
 ```
+
+The `<StorybookEmbed>` iframes on component pages load Storybook from
+`/storybook/`. In production that's colocated by CI (`docs.yml`); locally it
+isn't built, so the embeds show Docusaurus's "Page Not Found" until you run
+`pnpm storybook:local` once (re-run it when stories change).
 
 ## Status
 
