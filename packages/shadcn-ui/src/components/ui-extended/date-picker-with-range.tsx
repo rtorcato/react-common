@@ -1,6 +1,6 @@
 'use client'
 
-import { addDays, format } from 'date-fns'
+import { format } from 'date-fns'
 import { Calendar as CalendarIcon } from 'lucide-react'
 import * as React from 'react'
 import type { DateRange } from 'react-day-picker'
@@ -10,12 +10,31 @@ import { Button } from '../ui/button'
 import { Calendar } from '../ui/calendar'
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
 
-export default function DatePickerWithRange({ className }: React.HTMLAttributes<HTMLDivElement>) {
+export interface DatePickerWithRangeProps {
+	/** Controlled selected range. Omit for uncontrolled usage. */
+	value?: DateRange
+	/** Called whenever the selected range changes. */
+	onChange?: (range?: DateRange) => void
+	/** Initial range when uncontrolled. */
+	defaultValue?: DateRange
+	className?: string
+}
+
+export default function DatePickerWithRange({
+	value,
+	onChange,
+	defaultValue,
+	className,
+}: DatePickerWithRangeProps) {
 	const dateId = React.useId()
-	const [date, setDate] = React.useState<DateRange | undefined>({
-		from: new Date(2022, 0, 20),
-		to: addDays(new Date(2022, 0, 20), 20),
-	})
+	const [internal, setInternal] = React.useState<DateRange | undefined>(defaultValue)
+	const isControlled = value !== undefined
+	const date = isControlled ? value : internal
+
+	const setDate = (next?: DateRange) => {
+		if (!isControlled) setInternal(next)
+		onChange?.(next)
+	}
 
 	return (
 		<div className={cn('grid gap-2', className)}>
@@ -45,7 +64,6 @@ export default function DatePickerWithRange({ className }: React.HTMLAttributes<
 				</PopoverTrigger>
 				<PopoverContent className="w-auto p-0" align="start">
 					<Calendar
-						// initialFocus
 						mode="range"
 						defaultMonth={date?.from}
 						selected={date}
