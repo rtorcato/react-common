@@ -69,13 +69,25 @@ const config: Config = {
 
 	plugins: [
 		[
-			// Generates the API reference under docs/api from the @rtorcato/react-common
-			// public surface on every build, so it can't go stale. shadcn-ui component
-			// coverage is a follow-up (the primitives are documented upstream at
-			// ui.shadcn.com; TypeDoc on 50+ forwardRef components is noisy).
+			// Generates the API reference under docs/api on every build, so it can't
+			// go stale. One page per module (hook/util/provider) — mirror the barrel
+			// in packages/react-common/src/index.ts when the public surface changes.
+			// shadcn-ui coverage stays a follow-up (primitives are documented upstream
+			// at ui.shadcn.com; TypeDoc on 50+ forwardRef components is noisy).
 			'docusaurus-plugin-typedoc',
 			{
-				entryPoints: ['../../packages/react-common/src/index.ts'],
+				entryPoints: [
+					'../../packages/react-common/src/hooks/use-click-outside.ts',
+					'../../packages/react-common/src/hooks/use-debounce.ts',
+					'../../packages/react-common/src/hooks/use-local-storage.ts',
+					'../../packages/react-common/src/hooks/use-media-query.ts',
+					'../../packages/react-common/src/hooks/use-mobile.ts',
+					'../../packages/react-common/src/hooks/use-previous.ts',
+					'../../packages/react-common/src/hooks/use-sidebar.ts',
+					'../../packages/react-common/src/hooks/use-toggle.ts',
+					'../../packages/react-common/src/lib/utils.ts',
+					'../../packages/react-common/src/providers/theme-provider.tsx',
+				],
 				tsconfig: '../../packages/react-common/tsconfig.json',
 				out: 'docs/api',
 				readme: 'none',
