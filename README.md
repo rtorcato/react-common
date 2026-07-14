@@ -70,7 +70,8 @@ gh pr merge --auto --squash --delete-branch   # ships when CI is green
 
 Releases are driven by [Changesets](https://github.com/changesets/changesets):
 merging PRs with changesets opens a "Version Packages" PR; merging that publishes
-the changed packages to npm.
+the changed packages to npm. See [RELEASING.md](./RELEASING.md) for the full flow,
+npm-token requirements, and the public-API change checklist.
 
 ## License
 
