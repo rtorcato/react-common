@@ -13,3 +13,17 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {}
+
+export const WithDefaultValue: Story = {
+	args: { defaultValue: new Date() },
+}
+
+export const CustomPresets: Story = {
+	args: {
+		presets: [
+			{ label: 'Today', days: 0 },
+			{ label: 'In 2 weeks', days: 14 },
+			{ label: 'In 30 days', days: 30 },
+		],
+	},
+}

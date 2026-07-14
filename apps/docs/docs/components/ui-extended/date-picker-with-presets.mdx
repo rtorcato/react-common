@@ -16,14 +16,38 @@ import DatePickerWithPresets from '@rtorcato/shadcn-ui/components/ui-extended/da
 
 <StorybookEmbed storyId="ui-extended-datepickerwithpresets--default" height={420} />
 
-:::warning Demo-grade
-This component takes **no props** — it manages its own internal `date` state and
-the presets are hardcoded. Treat it as an example/starting point; for real use
-you'll want a controlled `value` / `onChange` version. Tracked for a rewrite.
-:::
-
 ## Usage
 
+Uncontrolled (manages its own state):
+
 ```tsx
-<DatePickerWithPresets />
+<DatePickerWithPresets defaultValue={new Date()} onChange={(date) => console.log(date)} />
 ```
+
+Controlled:
+
+```tsx
+const [date, setDate] = useState<Date>()
+<DatePickerWithPresets value={date} onChange={setDate} />
+```
+
+Custom presets (offsets in days from today):
+
+```tsx
+<DatePickerWithPresets
+	presets={[
+		{ label: 'Today', days: 0 },
+		{ label: 'In 2 weeks', days: 14 },
+	]}
+/>
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `value` | `Date` | — | Controlled selected date. Omit for uncontrolled usage. |
+| `onChange` | `(date?: Date) => void` | — | Called when the date changes via a preset or the calendar. |
+| `defaultValue` | `Date` | — | Initial date when uncontrolled. |
+| `presets` | `{ label: string; days: number }[]` | Today / Tomorrow / +3 days / +1 week | Preset options, relative to today. |
+| `className` | `string` | — | Class applied to the trigger button. |
