@@ -38,9 +38,12 @@
 		"doctor": "js-tooling doctor",
 		"test": "vitest",
 		"test:watch": "vitest --watch",
-		"coverage": "vitest run --coverage"
+		"coverage": "vitest run --coverage",
+		"prepack": "cp ../../AGENTS.md AGENTS.md",
+		"postpack": "rm -f AGENTS.md"
 	},
 	"files": [
+		"AGENTS.md",
 		"CHANGELOG.md",
 		"dist"
 	],
