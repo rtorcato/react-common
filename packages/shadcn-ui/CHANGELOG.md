@@ -1,5 +1,20 @@
 # [1.4.0](https://github.com/rtorcato/shadcn-ui/compare/v1.3.0...v1.4.0) (2026-07-04)
 
+## 1.6.0
+
+### Minor Changes
+
+- c5c8594: Make `DatePickerWithPresets` and `DatePickerWithRange` controllable. Both now
+  accept `value` / `onChange` (controlled) and `defaultValue` (uncontrolled), and
+  `DatePickerWithPresets` takes a configurable `presets` array. `DatePickerWithRange`
+  no longer defaults to a hardcoded Jan 2022 range — it starts empty unless a
+  `value` or `defaultValue` is provided.
+
+### Patch Changes
+
+- Updated dependencies [9927254]
+  - @rtorcato/react-common@0.2.0
+
 ## 1.5.1
 
 ### Patch Changes

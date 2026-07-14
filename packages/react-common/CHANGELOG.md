@@ -1,5 +1,11 @@
 # @rtorcato/react-common
 
+## 0.2.0
+
+### Minor Changes
+
+- 9927254: Add two headless React hooks: `usePrevious` (the value from the previous render) and `useToggle` (boolean state with stable `toggle`/`setOn`/`setOff` helpers).
+
 ## 0.1.0
 
 ### Minor Changes

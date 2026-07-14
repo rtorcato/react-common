@@ -1,6 +1,6 @@
 {
 	"name": "@rtorcato/react-common",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"type": "module",
 	"author": "Richard Torcato",
 	"description": "Common React foundation — headless hooks, the cn class-merge utility, and a theme provider.",
