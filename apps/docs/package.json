@@ -4,6 +4,7 @@
 	"private": true,
 	"scripts": {
 		"docusaurus": "docusaurus",
+		"storybook:local": "pnpm --filter @rtorcato/shadcn-ui build-storybook && rm -rf static/storybook && cp -r ../../packages/shadcn-ui/storybook-static static/storybook",
 		"start": "docusaurus start",
 		"dev": "docusaurus start",
 		"build": "docusaurus build",
