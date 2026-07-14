@@ -15,20 +15,26 @@ import DatePickerWithRange from '@rtorcato/shadcn-ui/components/ui-extended/date
 
 <StorybookEmbed storyId="ui-extended-datepickerwithrange--default" height={420} />
 
-:::warning Demo-grade
-Aside from `className`, this component takes no props — it uses internal state
-with a hardcoded default range. Treat it as an example; a controlled
-`value` / `onChange` version is needed for real use. Tracked for a rewrite.
-:::
-
 ## Usage
 
+Uncontrolled (manages its own state):
+
 ```tsx
-<DatePickerWithRange />
+<DatePickerWithRange onChange={(range) => console.log(range)} />
+```
+
+Controlled:
+
+```tsx
+const [range, setRange] = useState<DateRange>()
+<DatePickerWithRange value={range} onChange={setRange} />
 ```
 
 ## Props
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
+| `value` | `DateRange` | — | Controlled selected range. Omit for uncontrolled usage. |
+| `onChange` | `(range?: DateRange) => void` | — | Called when the selected range changes. |
+| `defaultValue` | `DateRange` | — | Initial range when uncontrolled. |
 | `className` | `string` | — | Wrapper class. |

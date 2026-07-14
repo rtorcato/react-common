@@ -5,13 +5,24 @@ import { describe, expect, it } from 'vitest'
 import DatePickerWithRange from '~/components/ui-extended/date-picker-with-range'
 
 describe('DatePickerWithRange', () => {
-	it('renders a button showing the initial date range', () => {
+	it('renders the "Pick a date" placeholder when uncontrolled with no default', () => {
 		render(<DatePickerWithRange />)
+		expect(screen.getByRole('button')).toHaveTextContent('Pick a date')
+	})
 
-		// The component initialises with Jan 20, 2022 → Feb 09, 2022 (20 days later)
+	it('renders a controlled range', () => {
+		render(
+			<DatePickerWithRange value={{ from: new Date(2022, 0, 20), to: new Date(2022, 1, 9) }} />
+		)
+
 		const trigger = screen.getByRole('button')
 		expect(trigger).toHaveTextContent('Jan 20, 2022')
 		expect(trigger).toHaveTextContent('Feb 09, 2022')
+	})
+
+	it('honours an uncontrolled defaultValue', () => {
+		render(<DatePickerWithRange defaultValue={{ from: new Date(2022, 0, 20) }} />)
+		expect(screen.getByRole('button')).toHaveTextContent('Jan 20, 2022')
 	})
 
 	it('clicking the button shows the Calendar popover', async () => {

@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { format } from 'date-fns'
 import { describe, expect, it } from 'vitest'
 
 import DatePickerWithPresets from '~/components/ui-extended/date-picker-with-presets'
@@ -8,6 +9,12 @@ describe('DatePickerWithPresets', () => {
 	it('renders a button with "Pick a date" placeholder when no date is selected', () => {
 		render(<DatePickerWithPresets />)
 		expect(screen.getByRole('button')).toHaveTextContent('Pick a date')
+	})
+
+	it('renders a controlled value without managing its own state', () => {
+		const value = new Date(2024, 0, 15)
+		render(<DatePickerWithPresets value={value} />)
+		expect(screen.getByRole('button')).toHaveTextContent(format(value, 'PPP'))
 	})
 
 	it('clicking the button opens the popover containing a Select and a Calendar', async () => {
