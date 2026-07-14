@@ -1,0 +1,45 @@
+---
+title: Multi-select
+description: Searchable multi-value combobox with removable badge chips.
+---
+
+import StorybookEmbed from '@site/src/components/StorybookEmbed'
+
+# Multi-select
+
+A combobox for selecting multiple values, with a searchable list and removable
+badge chips. Built on `Popover` + `Command` + `Badge`. Exports the
+`MultiSelectOption` type.
+
+```ts
+import { MultiSelect, type MultiSelectOption } from '@rtorcato/shadcn-ui/components/ui-extended/multi-select'
+```
+
+<StorybookEmbed storyId="ui-extended-multiselect--default" />
+
+## Usage
+
+```tsx
+const options: MultiSelectOption[] = [
+  { label: 'React', value: 'react' },
+  { label: 'Vue', value: 'vue' },
+  { label: 'Svelte', value: 'svelte' },
+]
+
+const [value, setValue] = useState<string[]>([])
+
+<MultiSelect options={options} value={value} onValueChange={setValue} />
+```
+
+## Props
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `options` | `MultiSelectOption[]` | — | `{ label, value }` choices. |
+| `value` | `string[]` | — | Selected values (controlled). |
+| `onValueChange` | `(value: string[]) => void` | — | Selection change handler. |
+| `placeholder` | `string` | `'Select…'` | Trigger placeholder. |
+| `searchPlaceholder` | `string` | — | Search input placeholder. |
+| `emptyMessage` | `string` | — | Shown when the search has no matches. |
+| `disabled` | `boolean` | `false` | Disable the control. |
+| `className` | `string` | — | Wrapper class. |

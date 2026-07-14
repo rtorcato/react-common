@@ -111,6 +111,24 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
 
+  docs-build:
+    runs-on: ubuntu-latest
+    needs: check-skip
+    if: needs.check-skip.outputs.should-skip != 'true'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.1.3
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # The docs site isn't covered by `pnpm build` (build-prod only); build it
+      # explicitly so MDX/config/version breakage fails CI.
+      - run: pnpm --filter @rtorcato/react-common-docs build
+
   doctor:
     runs-on: ubuntu-latest
     needs: check-skip

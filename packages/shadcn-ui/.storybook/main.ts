@@ -9,12 +9,17 @@ const config: StorybookConfig = {
 		check: false,
 		reactDocgen: 'react-docgen-typescript',
 	},
-	async viteFinal(viteConfig) {
+	async viteFinal(viteConfig, { configType }) {
 		viteConfig.resolve ??= {}
 		viteConfig.resolve.alias = {
 			...viteConfig.resolve.alias,
 			'@': path.resolve(process.cwd(), 'src'),
 			'~': path.resolve(process.cwd(), 'src'),
+		}
+		// The production build is deployed under the docs Pages site at
+		// /react-common/storybook/ (see .github/workflows/docs.yml). Dev stays at /.
+		if (configType === 'PRODUCTION') {
+			viteConfig.base = '/react-common/storybook/'
 		}
 		return viteConfig
 	},

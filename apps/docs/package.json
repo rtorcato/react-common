@@ -10,7 +10,8 @@
 		"serve": "docusaurus serve",
 		"clear": "docusaurus clear",
 		"swizzle": "docusaurus swizzle",
-		"typecheck": "tsc --noEmit"
+		"typecheck": "tsc --noEmit",
+		"test:e2e": "playwright test"
 	},
 	"dependencies": {
 		"@docusaurus/core": "^3.10.2",
@@ -24,10 +25,14 @@
 	},
 	"devDependencies": {
 		"@docusaurus/module-type-aliases": "^3.10.2",
+		"@playwright/test": "^1.60.0",
 		"@docusaurus/tsconfig": "^3.10.2",
 		"@docusaurus/types": "^3.10.2",
 		"@rtorcato/shared-docs": "github:rtorcato/shared-docs",
 		"@types/react": "^19.2.17",
+		"docusaurus-plugin-typedoc": "^1.4.2",
+		"typedoc": "^0.28.19",
+		"typedoc-plugin-markdown": "^4.12.0",
 		"typescript": "~5.9.3"
 	},
 	"browserslist": {

@@ -1,0 +1,57 @@
+---
+title: Hooks
+description: Headless React hooks shipped by @rtorcato/react-common.
+sidebar_position: 2
+---
+
+# Hooks
+
+`@rtorcato/react-common` ships a set of small, headless React hooks — no UI, no
+extra dependencies. Import them from the package root:
+
+```ts
+import { usePrevious, useToggle } from '@rtorcato/react-common'
+```
+
+## Available hooks
+
+| Hook | Purpose |
+| --- | --- |
+| `useClickOutside` | Fire a callback when a click lands outside a ref. |
+| `useDebounce` | Debounce a rapidly-changing value. |
+| `useLocalStorage` | State synced to `localStorage`. |
+| `useMediaQuery` | Track a CSS media query. |
+| `useIsMobile` | `true` below the mobile breakpoint. |
+| `useSidebar` | Sidebar open/collapsed state. |
+| `usePrevious` | The value from the previous render. |
+| `useToggle` | Boolean state with toggle/set helpers. |
+
+## `usePrevious`
+
+Returns the value from the previous render — `undefined` on the first render.
+
+```tsx
+function Counter({ count }: { count: number }) {
+  const prev = usePrevious(count)
+  return <span>Now {count}, was {prev ?? '—'}</span>
+}
+```
+
+## `useToggle`
+
+Boolean state with stable `toggle` / `setOn` / `setOff` helpers — the common
+open/closed, on/off pattern.
+
+```tsx
+function Panel() {
+  const { value: isOpen, toggle, setOff } = useToggle()
+  return (
+    <>
+      <button onClick={() => toggle()}>Toggle</button>
+      {isOpen && <div onMouseLeave={setOff}>Content</div>}
+    </>
+  )
+}
+```
+
+`toggle()` flips the value; `toggle(true)` / `toggle(false)` set it explicitly.

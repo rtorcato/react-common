@@ -1,0 +1,57 @@
+---
+title: Getting started
+description: Install the @rtorcato React packages and import your first component and hook.
+sidebar_position: 1
+---
+
+# Getting started
+
+The monorepo publishes two packages. Install whichever you need — the component
+library depends on the foundation package, so installing `@rtorcato/shadcn-ui`
+pulls `@rtorcato/react-common` in automatically.
+
+| Package | Install when you want… |
+| --- | --- |
+| [`@rtorcato/react-common`](https://www.npmjs.com/package/@rtorcato/react-common) | Headless hooks, the `cn` class-merge utility, or `ThemeProvider` — zero UI. |
+| [`@rtorcato/shadcn-ui`](https://www.npmjs.com/package/@rtorcato/shadcn-ui) | Pre-built shadcn/ui components (also brings in `react-common`). |
+
+## Install
+
+```bash
+# Foundation only (hooks + cn + ThemeProvider)
+pnpm add @rtorcato/react-common
+
+# Components (depends on react-common)
+pnpm add @rtorcato/shadcn-ui
+```
+
+### Peer requirements
+
+Both packages target **React 19**. Install the peers you don't already have:
+
+```bash
+# react-common
+pnpm add react@^19 react-dom@^19
+
+# shadcn-ui additionally needs
+pnpm add lucide-react tailwindcss tw-animate-css
+```
+
+## Import what you need
+
+Everything is exposed through subpath imports so bundlers tree-shake the rest.
+
+```tsx
+// Foundation package — barrel export
+import { cn, useIsMobile, usePrevious, ThemeProvider } from '@rtorcato/react-common'
+
+// Components — one subpath per component
+import { Button } from '@rtorcato/shadcn-ui/components/ui/button'
+import { Card, CardContent } from '@rtorcato/shadcn-ui/components/ui/card'
+import { DataTable } from '@rtorcato/shadcn-ui/components/ui-extended/data-table'
+import { useToast } from '@rtorcato/shadcn-ui/hooks'
+```
+
+If you're using the components, import the stylesheet once at your app root and
+point Tailwind at the package — see [Tailwind setup](./tailwind-setup). For dark
+mode and theming, see [Theming](./theming).

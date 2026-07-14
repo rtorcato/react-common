@@ -1,0 +1,14 @@
+{
+  "name": "react-common",
+  "version": "0.1.0",
+  "description": "Teaches Claude to use @rtorcato/react-common and @rtorcato/shadcn-ui correctly: barrel vs subpath imports, the styles.css + Tailwind setup, and ThemeProvider theming.",
+  "author": {
+    "name": "Richard Torcato",
+    "email": "rtorcato@me.com",
+    "url": "https://github.com/rtorcato"
+  },
+  "homepage": "https://rtorcato.github.io/react-common/",
+  "repository": "https://github.com/rtorcato/react-common",
+  "license": "ISC",
+  "keywords": ["react", "shadcn-ui", "hooks", "tailwind", "typescript"]
+}
