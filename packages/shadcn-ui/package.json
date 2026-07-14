@@ -387,18 +387,6 @@
 			"path": "cz-conventional-changelog"
 		}
 	},
-	"lint-staged": {
-		"*.{js,ts,json,md}": [
-			"pnpm exec biome lint",
-			"pnpm exec biome format",
-			"git add"
-		]
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
 	"publishConfig": {
 		"access": "public"
 	}
