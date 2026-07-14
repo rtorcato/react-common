@@ -14,6 +14,12 @@ Workspace layout (`pnpm-workspace.yaml`: `packages/*`, `apps/*`):
 
 `@rtorcato/shadcn-ui` depends on `@rtorcato/react-common` (`workspace:*`) for `cn` (re-exported internally via `~/lib/utils`) and `useIsMobile`. It re-exports only the sonner-coupled `useToast` from its own `/hooks` subpath. `@rtorcato/react-common` has no workspace deps.
 
+## Where utilities live (js-common boundary)
+
+Do **not** re-implement generic JS/TS utilities here — those belong in **`@rtorcato/js-common`** (dates, strings, arrays, formatting, …). This repo holds only **React-specific** code: components, hooks, and providers. `cn()` stays here (it's React/Tailwind-specific).
+
+When you need a generic utility that isn't in js-common yet, add it to **js-common first**, then consume it here — don't inline a one-off. Add `@rtorcato/js-common` as a dependency only when something actually imports from it (react-common currently has none, so it isn't a dep yet — see #23).
+
 ## Package manager
 
 Always use `pnpm` (not `npm` or `yarn`). The lockfile is `pnpm-lock.yaml`.
