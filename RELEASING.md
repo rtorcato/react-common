@@ -35,7 +35,7 @@ Version bumps are automated, but these are not — do them in the same PR as the
 - [ ] **AGENTS.md + `skills/react-common/SKILL.md`** updated together if the public
       surface changed (they must stay in sync).
 - [ ] **Changeset added** describing the change and bump type.
-- [ ] Relevant **`ROADMAP.md` / milestone** item ticked.
+- [ ] Relevant **[GitHub milestone](https://github.com/rtorcato/react-common/milestones)** item ticked.
 
 The TypeDoc API reference under `apps/docs/docs/api` regenerates on every docs build,
 so it never needs manual edits.
