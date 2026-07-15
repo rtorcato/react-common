@@ -39,8 +39,7 @@
 		"test": "vitest",
 		"test:watch": "vitest --watch",
 		"coverage": "vitest run --coverage",
-		"prepack": "cp ../../AGENTS.md AGENTS.md",
-		"postpack": "rm -f AGENTS.md"
+		"prepack": "cp ../../AGENTS.md AGENTS.md"
 	},
 	"files": [
 		"AGENTS.md",
