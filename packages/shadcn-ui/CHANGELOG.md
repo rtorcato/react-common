@@ -1,5 +1,11 @@
 # [1.4.0](https://github.com/rtorcato/shadcn-ui/compare/v1.3.0...v1.4.0) (2026-07-04)
 
+## 1.7.0
+
+### Minor Changes
+
+- cb9b1d3: Add `ThemeToggle` (ui-extended): a light/dark toggle built on `next-themes` and the `Button` primitive. Pairs with `ThemeProvider`; token-based styling, SSR-safe (renders a stable icon until mounted), accessible label. Importable from `@rtorcato/shadcn-ui/components/ui-extended/theme-toggle`.
+
 ## 1.6.0
 
 ### Minor Changes
