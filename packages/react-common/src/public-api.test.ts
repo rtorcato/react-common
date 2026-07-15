@@ -13,6 +13,8 @@ describe('public API surface', () => {
 			  "cn",
 			  "useClickOutside",
 			  "useDebounce",
+			  "useEventListener",
+			  "useInterval",
 			  "useIsMobile",
 			  "useLocalStorage",
 			  "useMediaQuery",
