@@ -294,6 +294,10 @@
 			"types": "./dist/components/ui-extended/page-header.d.ts",
 			"import": "./dist/components/ui-extended/page-header.js"
 		},
+		"./components/ui-extended/theme-toggle": {
+			"types": "./dist/components/ui-extended/theme-toggle.d.ts",
+			"import": "./dist/components/ui-extended/theme-toggle.js"
+		},
 		"./hooks": {
 			"types": "./dist/hooks/index.d.ts",
 			"import": "./dist/hooks/index.js"
