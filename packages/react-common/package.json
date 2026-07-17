@@ -62,8 +62,8 @@
 		}
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.5.3",
-		"@rtorcato/js-tooling": "^2.30.0",
+		"@biomejs/biome": "^2.5.4",
+		"@rtorcato/js-tooling": "^2.47.0",
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/react": "^16.3.2",
 		"@types/react": "^19.2.17",
@@ -78,7 +78,7 @@
 		"react-dom": "^19.2.7",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.9.3",
-		"vite": "^8.1.4",
+		"vite": "^8.1.5",
 		"vitest": "^4.1.10"
 	},
 	"dependencies": {
