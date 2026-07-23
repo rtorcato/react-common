@@ -176,6 +176,9 @@ jobs:
           cache: pnpm
           registry-url: "https://registry.npmjs.org"
       - run: pnpm install --frozen-lockfile
+      # OIDC trusted publishing needs npm CLI >= 11.5.1; the runner ships 10.x.
+      - name: 📦 Upgrade npm for OIDC trusted publishing
+        run: npm install -g npm@latest
       # Opens/updates a "Version Packages" PR when changesets are present;
       # when that PR merges, `publish` builds and publishes changed packages.
       - name: Changesets release
@@ -187,5 +190,3 @@ jobs:
           title: "chore(release): version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
