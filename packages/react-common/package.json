@@ -74,8 +74,8 @@
 		"esbuild": "^0.28.1",
 		"esbuild-node-externals": "1.23.1",
 		"jsdom": "^26.0.0",
-		"react": "^19.2.7",
-		"react-dom": "^19.2.7",
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.9.3",
 		"vite": "^8.1.5",
@@ -87,8 +87,8 @@
 		"tailwind-merge": "3.6.0"
 	},
 	"peerDependencies": {
-		"react": "^19.2.7",
-		"react-dom": "^19.2.7"
+		"react": "^19.2.8",
+		"react-dom": "^19.2.8"
 	},
 	"peerDependenciesMeta": {
 		"@types/react": {
