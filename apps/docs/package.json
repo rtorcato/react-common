@@ -26,7 +26,7 @@
 	},
 	"devDependencies": {
 		"@docusaurus/module-type-aliases": "^3.10.2",
-		"@playwright/test": "^1.60.0",
+		"@playwright/test": "^1.62.0",
 		"@docusaurus/tsconfig": "^3.10.2",
 		"@docusaurus/types": "^3.10.2",
 		"@rtorcato/shared-docs": "github:rtorcato/shared-docs",
