@@ -29,7 +29,7 @@
 		"@playwright/test": "^1.60.0",
 		"@docusaurus/tsconfig": "^3.10.2",
 		"@docusaurus/types": "^3.10.2",
-		"@rtorcato/shared-docs": "github:rtorcato/shared-docs",
+		"@rtorcato/shared-docs": "^1.4.2",
 		"@types/react": "^19.2.17",
 		"docusaurus-plugin-typedoc": "^1.4.2",
 		"typedoc": "^0.28.19",
