@@ -12,4 +12,4 @@ allowBuilds:
 # Whitelist our own packages from pnpm's minimum-release-age supply-chain policy.
 minimumReleaseAgeExclude:
   - "@rtorcato/js-common"
-  - "@rtorcato/js-tooling"
+  - "@rtorcato/repo-tooling"

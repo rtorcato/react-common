@@ -53,8 +53,8 @@ pnpm build        # build every package (build-prod)
 
 Scripts run recursively (`pnpm -r`) across the workspace. Tooling (TypeScript,
 Biome, Vitest, Commitlint, Husky, CI) is shared from
-[`@rtorcato/js-tooling`](https://github.com/rtorcato/js-tooling) — run
-`npx @rtorcato/js-tooling doctor` to check for drift.
+[`@rtorcato/repo-tooling`](https://github.com/rtorcato/repo-tooling) — run
+`npx @rtorcato/repo-tooling doctor` to check for drift.
 
 ## Contributing
 

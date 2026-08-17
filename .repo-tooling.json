@@ -1,5 +1,5 @@
 {
-  "$schema": "https://rtorcato.github.io/js-tooling/schemas/lockfile.json",
+  "$schema": "https://rtorcato.github.io/repo-tooling/schemas/lockfile.json",
   "version": 1,
   "config": {
     "projectName": "react-common",

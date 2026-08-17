@@ -23,7 +23,7 @@ granular token that bypasses 2FA) — a classic *Publish* token fails in CI with
 `ERR_PNPM_OTP_NON_INTERACTIVE` because the registry demands an interactive OTP.
 
 Migration to OIDC **Trusted Publishing** (no long-lived token) is tracked in
-[js-tooling#201](https://github.com/rtorcato/js-tooling/issues/201); 2FA-bypass tokens
+[repo-tooling#201](https://github.com/rtorcato/repo-tooling/issues/201); 2FA-bypass tokens
 keep working until ~January 2027.
 
 ## Checklist for any release that adds or changes a public API

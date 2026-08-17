@@ -1,17 +1,17 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-// `js-tooling doctor` text-matches on @rtorcato/js-tooling/vitest/config; we
+// `repo-tooling doctor` text-matches on @rtorcato/repo-tooling/vitest/config; we
 // actually compose the React variant below, but importing the base satisfies
 // the drift check without changing runtime behavior.
-import '@rtorcato/js-tooling/vitest/config'
-import sharedConfig from '@rtorcato/js-tooling/vitest/react'
+import '@rtorcato/repo-tooling/vitest/config'
+import sharedConfig from '@rtorcato/repo-tooling/vitest/react'
 import react from '@vitejs/plugin-react'
 import { defineConfig, mergeConfig } from 'vite'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // The shared preset's setupFiles, coverage.include, coverage.thresholds, and
-// resolve.alias resolve against js-tooling's own package directory, so we
+// resolve.alias resolve against repo-tooling's own package directory, so we
 // inherit the runtime/env settings but redefine paths below.
 const sharedTrimmed = {
 	test: {
