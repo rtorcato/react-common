@@ -1,10 +1,10 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-// `js-tooling doctor` text-matches on @rtorcato/js-tooling/vitest/config; we
+// `repo-tooling doctor` text-matches on @rtorcato/repo-tooling/vitest/config; we
 // compose the React variant below, but importing the base satisfies the drift
 // check without changing runtime behavior.
-import '@rtorcato/js-tooling/vitest/config'
-import sharedConfig from '@rtorcato/js-tooling/vitest/react'
+import '@rtorcato/repo-tooling/vitest/config'
+import sharedConfig from '@rtorcato/repo-tooling/vitest/react'
 import react from '@vitejs/plugin-react'
 import { defineConfig, mergeConfig } from 'vite'
 

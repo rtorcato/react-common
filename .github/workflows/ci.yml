@@ -143,7 +143,7 @@ jobs:
           node-version: "22"
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec js-tooling doctor
+      - run: pnpm exec repo-tooling doctor
 
   release:
     runs-on: ubuntu-latest

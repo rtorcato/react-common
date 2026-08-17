@@ -1,5 +1,5 @@
 {
-  "extends": "@rtorcato/js-tooling/typescript/react",
+  "extends": "@rtorcato/repo-tooling/typescript/react",
   "compilerOptions": {
     "ignoreDeprecations": "5.0",
     "baseUrl": ".",

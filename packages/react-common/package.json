@@ -35,7 +35,7 @@
 		"check:fix": "pnpm exec biome check --fix",
 		"check": "pnpm exec biome check .",
 		"typecheck": "tsc --noEmit",
-		"doctor": "js-tooling doctor",
+		"doctor": "repo-tooling doctor",
 		"test": "vitest",
 		"test:watch": "vitest --watch",
 		"coverage": "vitest run --coverage",
@@ -63,7 +63,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.4",
-		"@rtorcato/js-tooling": "^2.47.0",
+		"@rtorcato/repo-tooling": "^3.10.1",
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/react": "^16.3.2",
 		"@types/react": "^19.2.17",

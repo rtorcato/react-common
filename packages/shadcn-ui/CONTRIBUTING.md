@@ -8,7 +8,7 @@ Thanks for picking this up. This file covers the conventions specific to `@rtorc
 pnpm install
 ```
 
-All dependencies (including `@rtorcato/js-tooling`) resolve from the public npm registry — no token needed.
+All dependencies (including `@rtorcato/repo-tooling`) resolve from the public npm registry — no token needed.
 
 Node version: see `.nvmrc` (currently `22`). Use `nvm use` or your tool of choice.
 
@@ -82,14 +82,14 @@ This repo leans on two sibling packages so we don't reinvent infrastructure:
 
 | Package | Use case |
 |---|---|
-| [`@rtorcato/js-tooling`](https://github.com/rtorcato/js-tooling) | TypeScript, Biome, Vitest, commitlint, semantic-release, esbuild config |
+| [`@rtorcato/repo-tooling`](https://github.com/rtorcato/repo-tooling) | TypeScript, Biome, Vitest, commitlint, semantic-release, esbuild config |
 | [`@rtorcato/js-common`](https://github.com/rtorcato/js-common) | Runtime utilities (date, formatting, arrays, async, validation) |
 
-`@rtorcato/js-tooling` is published to the public npm registry and installed as a normal version spec. Dependabot keeps it updated. (`@rtorcato/js-common` isn't a dependency here — it's a compatible companion package, install it separately if a consumer wants it.)
+`@rtorcato/repo-tooling` is published to the public npm registry and installed as a normal version spec. Dependabot keeps it updated. (`@rtorcato/js-common` isn't a dependency here — it's a compatible companion package, install it separately if a consumer wants it.)
 
 ## Commits
 
-[Conventional Commits](https://www.conventionalcommits.org/) is enforced by commitlint on every commit (`commitlint.config.mjs` re-exports the shared `@rtorcato/js-tooling/commitlint/config`).
+[Conventional Commits](https://www.conventionalcommits.org/) is enforced by commitlint on every commit (`commitlint.config.mjs` re-exports the shared `@rtorcato/repo-tooling/commitlint/config`).
 
 Use `pnpm commit` for an interactive prompt that walks you through type/scope/subject. Or write commits by hand following the spec:
 

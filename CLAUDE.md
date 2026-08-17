@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-`react-common` — a **pnpm monorepo** of `@rtorcato` React packages, hosted on GitHub (`github.com/rtorcato/react-common`). The repo root is private/unpublished; it publishes packages to the public **npm** registry. Tooling follows the `@rtorcato/js-tooling` standard, matching `js-common` / `browser-common`.
+`react-common` — a **pnpm monorepo** of `@rtorcato` React packages, hosted on GitHub (`github.com/rtorcato/react-common`). The repo root is private/unpublished; it publishes packages to the public **npm** registry. Tooling follows the `@rtorcato/repo-tooling` standard, matching `js-common` / `browser-common`.
 
 Workspace layout (`pnpm-workspace.yaml`: `packages/*`, `apps/*`):
 
@@ -43,13 +43,13 @@ Requires **Node ≥ 22** (`.nvmrc`) and pnpm `11.1.3` (`packageManager`).
 ## Code style (Biome)
 
 - Indentation: **tabs**, line width **100**, **single quotes**.
-- Each package has its own `biome.jsonc` extending `@rtorcato/js-tooling/biome` — do not switch back to ESLint/Prettier.
+- Each package has its own `biome.jsonc` extending `@rtorcato/repo-tooling/biome` — do not switch back to ESLint/Prettier.
 
 ## TypeScript
 
 - Path aliases: `@/*` and `~/*` both map to `./src/*` (per package).
 - JSX: `react-jsx` (no `import React` needed in component files).
-- Base config comes from `@rtorcato/js-tooling/typescript/react`.
+- Base config comes from `@rtorcato/repo-tooling/typescript/react`.
 - `@rtorcato/react-common` uses source-condition exports (`exports` → `src`, `publishConfig.exports` → `dist`) so `pnpm verify` typechecks/tests the workspace without a pre-build; publishing swaps to `dist`.
 
 ## Build: entry points are NOT fully dynamic
@@ -58,14 +58,14 @@ Requires **Node ≥ 22** (`.nvmrc`) and pnpm `11.1.3` (`packageManager`).
 
 `packages/react-common/build.mjs` builds a single barrel entry (`src/index.ts`).
 
-## Shared config from `@rtorcato/js-tooling`
+## Shared config from `@rtorcato/repo-tooling`
 
-Build, lint, TypeScript, Biome, Vitest, and commitlint config are imported from `@rtorcato/js-tooling` (public npm, v2 peer-dep model — the underlying tools are peer deps in `devDependencies`). If behavior seems wrong but local config looks fine, the source of truth is likely in that package — bump it or coordinate a change there. Run `npx @rtorcato/js-tooling doctor` to check for drift.
+Build, lint, TypeScript, Biome, Vitest, and commitlint config are imported from `@rtorcato/repo-tooling` (public npm, v2 peer-dep model — the underlying tools are peer deps in `devDependencies`). If behavior seems wrong but local config looks fine, the source of truth is likely in that package — bump it or coordinate a change there. Run `npx @rtorcato/repo-tooling doctor` to check for drift.
 
 ## Testing
 
 - Framework: Vitest with `@testing-library/react` and `jsdom`.
-- Setup file: `src/test/setup.ts` per package (imports `@testing-library/jest-dom` + `@rtorcato/js-tooling/vitest/jsdom-shims`).
+- Setup file: `src/test/setup.ts` per package (imports `@testing-library/jest-dom` + `@rtorcato/repo-tooling/vitest/jsdom-shims`).
 - Run a single test: `pnpm --filter <pkg> test -- -t 'test name'` or `pnpm --filter <pkg> test path/to/file.test.tsx`.
 
 ## Branch flow

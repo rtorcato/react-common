@@ -3,7 +3,7 @@
 Active roadmap. Sibling repos referenced throughout:
 
 - [`@rtorcato/js-common`](https://github.com/rtorcato/js-common) — runtime utilities
-- [`@rtorcato/js-tooling`](https://github.com/rtorcato/js-tooling) — TS / Biome / Vitest / commitlint / semantic-release configs
+- [`@rtorcato/repo-tooling`](https://github.com/rtorcato/repo-tooling) — TS / Biome / Vitest / commitlint / semantic-release configs
 
 ---
 
