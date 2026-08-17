@@ -70,8 +70,8 @@ importers:
         specifier: ^1.60.0
         version: 1.61.1
       '@rtorcato/shared-docs':
-        specifier: github:rtorcato/shared-docs
-        version: https://codeload.github.com/rtorcato/shared-docs/tar.gz/3b9778f59b1a07055fab1f4e9cfa4a0446d48785(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: ^1.4.2
+        version: 1.4.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@types/react':
         specifier: ^19.2.17
         version: 19.2.17
@@ -3871,9 +3871,8 @@ packages:
       vitest:
         optional: true
 
-  '@rtorcato/shared-docs@https://codeload.github.com/rtorcato/shared-docs/tar.gz/3b9778f59b1a07055fab1f4e9cfa4a0446d48785':
-    resolution: {gitHosted: true, integrity: sha512-uBNmrOJep9s7WMuchDXO4YR84INQS86HthtHr0yO3iy0RLCAvqBG8JFbd3+QrlM22AEpAEwWy9J2CgeQYyxqQQ==, tarball: https://codeload.github.com/rtorcato/shared-docs/tar.gz/3b9778f59b1a07055fab1f4e9cfa4a0446d48785}
-    version: 1.0.0
+  '@rtorcato/shared-docs@1.4.2':
+    resolution: {integrity: sha512-Bgr3SdJ2Wn3unEJ8wWQThPBNsqrqksnEstIgTnCAw5Z9zrxgENaJxAtKjymxgJJqT5IyClIbB8HtB4B8Lk67CA==}
     engines: {node: '>=22'}
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
@@ -13978,7 +13977,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@rtorcato/shared-docs@https://codeload.github.com/rtorcato/shared-docs/tar.gz/3b9778f59b1a07055fab1f4e9cfa4a0446d48785(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@rtorcato/shared-docs@1.4.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
