@@ -52,7 +52,6 @@ export default mergeConfig(
 					// them directly. They contribute noise, not signal.
 					'src/components/index.ts',
 					'src/hooks/index.ts',
-					'src/lib/index.ts',
 				],
 				// Floor sits a few points below the current ~84% lines (ui-extended
 				// drags the average down) so routine source edits don't trip CI, while
