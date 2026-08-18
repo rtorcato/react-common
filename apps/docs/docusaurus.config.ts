@@ -175,7 +175,7 @@ const config: Config = {
 			copyright: `Copyright © ${new Date().getFullYear()} Richard Torcato. Built with Docusaurus.`,
 		},
 		prism: {
-			theme: prismThemes.vsDark,
+			theme: prismThemes.github,
 			darkTheme: prismThemes.vsDark,
 			additionalLanguages: ['bash', 'json', 'typescript', 'tsx'],
 		},
