@@ -7,9 +7,9 @@ sidebar_position: 3
 # Tailwind setup
 
 `@rtorcato/shadcn-ui` ships its components as compiled JS plus a single
-stylesheet. Two steps get a consumer app rendering styled components.
+pre-compiled stylesheet. Importing that stylesheet is the whole setup.
 
-## 1. Import the stylesheet
+## Import the stylesheet
 
 The package builds `src/styles/globals.css` into `dist/styles.css`, exposed as
 the `@rtorcato/shadcn-ui/styles.css` subpath. Import it once, at your app root,
@@ -21,30 +21,26 @@ import './theme.css' // optional — your token overrides (see Theming)
 ```
 
 This stylesheet carries the design tokens (CSS variables), the `.dark` mode
-block, and a Tailwind v4 `@theme inline` block, so no extra config is needed for
-the tokens themselves.
+block, a Tailwind v4 `@theme inline` block, and — because it is compiled through
+Tailwind at publish time — **every utility class the components themselves use**.
 
-## 2. Point Tailwind at the package
+## You don't need to scan the package
 
-Tailwind only emits utility classes it sees used. Since the components live in
-`node_modules`, add the package's built output to your content globs so the
-classes they use ship in your build:
+Because `dist/styles.css` is already compiled, there is nothing to add to your
+Tailwind sources. Classes you pass yourself (`<Button className="mt-4" />`) live
+in your own source files and are picked up by your own Tailwind build as usual.
 
-```ts
-import type { Config } from 'tailwindcss'
+If you do want Tailwind to scan the package anyway — v4 skips `node_modules`
+during automatic source detection — register it from your CSS with `@source`
+(the path is relative to the stylesheet), not from a JS config:
 
-const config: Config = {
-  content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@rtorcato/shadcn-ui/dist/**/*.{js,mjs}',
-  ],
-}
-
-export default config
+```css
+@import 'tailwindcss';
+@source '../node_modules/@rtorcato/shadcn-ui/dist';
 ```
 
 ## Tailwind v4 only
 
 The package is Tailwind v4 CSS-first: the tokens come from the `@theme inline`
-block already in `dist/styles.css`, so there is nothing else to do. It ships no
-JS `tailwind.config.ts`, and Tailwind v3 is not supported.
+block in `dist/styles.css`. It ships no JS `tailwind.config.ts`, and Tailwind v3
+is not supported.

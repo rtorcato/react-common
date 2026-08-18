@@ -42,27 +42,19 @@ pnpm add react react-dom lucide-react tailwindcss tw-animate-css
 
 ## Setup
 
-### 1. Import the stylesheet
+Import the stylesheet once at your app root — that's the whole setup:
 
 ```ts
 import '@rtorcato/shadcn-ui/styles.css'
 ```
 
-### 2. Tell Tailwind to scan the package
+`dist/styles.css` is compiled through Tailwind at publish time, so it already contains every utility class the components use alongside the design tokens and the `@theme inline` block. There is nothing to add to your Tailwind sources; classes you pass yourself (`<Button className="mt-4" />`) come from your own files and your own Tailwind build handles them.
 
-Tailwind v4 needs the package source in its content globs so utility classes used inside components ship to your build:
+If you do want Tailwind to scan the package anyway — v4 skips `node_modules` during automatic source detection — register it from your CSS with `@source` (relative to the stylesheet), not from a JS config:
 
-```ts
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
-  content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './node_modules/@rtorcato/shadcn-ui/dist/**/*.{js,mjs}',
-  ],
-}
-
-export default config
+```css
+@import 'tailwindcss';
+@source '../node_modules/@rtorcato/shadcn-ui/dist';
 ```
 
 ## Usage
