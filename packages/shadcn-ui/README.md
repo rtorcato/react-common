@@ -222,7 +222,7 @@ pnpm component-add <name>     # wraps `npx shadcn@latest add`
 
 The esbuild wrapper (`build.mjs`) auto-discovers entry points by scanning `src/components/`, `src/lib/`, and `src/hooks/` — new files are picked up automatically. Add a matching subpath entry under `exports` in `package.json` so consumers can import it.
 
-See [`CLAUDE.md`](./CLAUDE.md) for the full contributor guide and [`TODOS.md`](./TODOS.md) for the active roadmap.
+See [`CLAUDE.md`](./CLAUDE.md) for the full contributor guide and the [issue tracker](https://github.com/rtorcato/react-common/issues) for the active roadmap.
 
 ## Releases
 
