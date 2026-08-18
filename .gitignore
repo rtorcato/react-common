@@ -22,6 +22,7 @@ dist/
 build/
 out/
 tsconfig*.tsbuildinfo
+packages/shadcn-ui/meta.json
 
 # System files
 .DS_Store
