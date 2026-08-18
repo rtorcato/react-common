@@ -23,6 +23,7 @@ build/
 out/
 storybook-static/
 tsconfig*.tsbuildinfo
+packages/shadcn-ui/meta.json
 
 # System files
 .DS_Store
