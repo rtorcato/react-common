@@ -21,8 +21,8 @@ importers:
         specifier: ^21.2.0
         version: 21.2.0
       '@rtorcato/repo-tooling':
-        specifier: ^3.10.1
-        version: 3.10.2(@biomejs/biome@2.5.4)(@commitlint/cli@21.2.1(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@21.2.0)(@types/node@26.1.1)(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.28.1))(esbuild@0.28.1)(tslib@2.8.1)(typescript@5.9.3)(vitest@4.1.10)
+        specifier: ^3.12.1
+        version: 3.12.1(@biomejs/biome@2.5.4)(@commitlint/cli@21.2.1(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@21.2.0)(@types/node@26.1.1)(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.28.1))(esbuild@0.28.1)(tslib@2.8.1)(typescript@5.9.3)(vitest@4.1.10)
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -104,8 +104,8 @@ importers:
         specifier: ^2.5.4
         version: 2.5.4
       '@rtorcato/repo-tooling':
-        specifier: ^3.10.1
-        version: 3.10.2(@biomejs/biome@2.5.4)(@commitlint/cli@21.2.1(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@21.2.0)(@types/node@26.1.1)(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.28.1))(esbuild@0.28.1)(tslib@2.8.1)(typescript@5.9.3)(vitest@4.1.10)
+        specifier: ^3.12.1
+        version: 3.12.1(@biomejs/biome@2.5.4)(@commitlint/cli@21.2.1(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@21.2.0)(@types/node@26.1.1)(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.28.1))(esbuild@0.28.1)(tslib@2.8.1)(typescript@5.9.3)(vitest@4.1.10)
       '@testing-library/jest-dom':
         specifier: ^7.0.0
         version: 7.0.1(@testing-library/dom@10.4.1)(vitest@4.1.10)
@@ -222,8 +222,8 @@ importers:
         specifier: ^21.0.1
         version: 21.2.0
       '@rtorcato/repo-tooling':
-        specifier: ^3.10.1
-        version: 3.10.2(@biomejs/biome@2.5.4)(@commitlint/cli@21.2.1(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@21.2.0)(@types/node@26.1.1)(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.28.1))(esbuild@0.28.1)(tslib@2.8.1)(typescript@5.9.3)(vitest@4.1.10)
+        specifier: ^3.12.1
+        version: 3.12.1(@biomejs/biome@2.5.4)(@commitlint/cli@21.2.1(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@21.2.0)(@types/node@26.1.1)(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.28.1))(esbuild@0.28.1)(tslib@2.8.1)(typescript@5.9.3)(vitest@4.1.10)
       '@storybook/addon-a11y':
         specifier: ^10.5.2
         version: 10.5.2(storybook@10.5.2(@types/react@19.2.17)(react@19.2.8))
@@ -3741,8 +3741,8 @@ packages:
       rollup:
         optional: true
 
-  '@rtorcato/repo-tooling@3.10.2':
-    resolution: {integrity: sha512-u4831cHB8ipbOwEna3MnVV4B6qr/9X7WdVK9FzPQMxMoQWMobJVBK3ncA9KVBiG5H/ym+zHfzDPGCM676ZT/DA==}
+  '@rtorcato/repo-tooling@3.12.1':
+    resolution: {integrity: sha512-O4SCzwCnhoDBZNu3c8Ns1C4tu+TM6GOSMIoUtuo/W6/RsMUonGoftBpZqfHhKJhBRldPBLj0spaD3RfJvjSYSg==}
     engines: {node: '>=22'}
     hasBin: true
     peerDependencies:
@@ -11160,7 +11160,7 @@ snapshots:
       '@docusaurus/logger': 3.10.2
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.19))(esbuild@0.28.1)(html-minifier-terser@7.2.0)(postcss@8.5.19)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       babel-plugin-dynamic-import-node: 2.3.3
-      fs-extra: 11.3.6
+      fs-extra: 11.4.0
       tslib: 2.8.1
     transitivePeerDependencies:
       - '@minify-html/node'
@@ -11314,7 +11314,7 @@ snapshots:
       escape-html: 1.0.3
       estree-util-value-to-estree: 3.5.0
       file-loader: 6.2.0(webpack@5.108.4(esbuild@0.28.1)(postcss@8.5.19))
-      fs-extra: 11.3.6
+      fs-extra: 11.4.0
       image-size: 2.0.2
       mdast-util-mdx: 3.0.0
       mdast-util-to-string: 4.0.0
@@ -11389,7 +11389,7 @@ snapshots:
       cheerio: 1.0.0-rc.12
       combine-promises: 1.2.0
       feed: 4.2.2
-      fs-extra: 11.3.6
+      fs-extra: 11.4.0
       lodash: 4.18.1
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
@@ -11436,7 +11436,7 @@ snapshots:
       '@docusaurus/utils-validation': 3.10.2(esbuild@0.28.1)(postcss@8.5.19)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@types/react-router-config': 5.0.11
       combine-promises: 1.2.0
-      fs-extra: 11.3.6
+      fs-extra: 11.4.0
       js-yaml: 4.3.0
       lodash: 4.18.1
       react: 19.2.8
@@ -11476,7 +11476,7 @@ snapshots:
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.19))(esbuild@0.28.1)(html-minifier-terser@7.2.0)(postcss@8.5.19)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.19))(esbuild@0.28.1)(html-minifier-terser@7.2.0)(postcss@8.5.19)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@docusaurus/utils-validation': 3.10.2(esbuild@0.28.1)(postcss@8.5.19)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      fs-extra: 11.3.6
+      fs-extra: 11.4.0
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
       tslib: 2.8.1
@@ -11543,7 +11543,7 @@ snapshots:
       '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.2.17)(react@19.2.8))(debug@4.4.3)(esbuild@0.28.1)(postcss@8.5.19)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)(typescript@5.9.3)
       '@docusaurus/types': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.19))(esbuild@0.28.1)(html-minifier-terser@7.2.0)(postcss@8.5.19)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.19))(esbuild@0.28.1)(html-minifier-terser@7.2.0)(postcss@8.5.19)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      fs-extra: 11.3.6
+      fs-extra: 11.4.0
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
       react-json-view-lite: 2.5.0(react@19.2.8)
@@ -11676,7 +11676,7 @@ snapshots:
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.19))(esbuild@0.28.1)(html-minifier-terser@7.2.0)(postcss@8.5.19)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@docusaurus/utils-common': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.19))(esbuild@0.28.1)(html-minifier-terser@7.2.0)(postcss@8.5.19)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@docusaurus/utils-validation': 3.10.2(esbuild@0.28.1)(postcss@8.5.19)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      fs-extra: 11.3.6
+      fs-extra: 11.4.0
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
       sitemap: 7.1.3
@@ -11893,7 +11893,7 @@ snapshots:
       algoliasearch-helper: 3.29.2(algoliasearch@5.55.2)
       clsx: 2.1.1
       eta: 2.2.0
-      fs-extra: 11.3.6
+      fs-extra: 11.4.0
       lodash: 4.18.1
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
@@ -11928,7 +11928,7 @@ snapshots:
 
   '@docusaurus/theme-translations@3.10.2':
     dependencies:
-      fs-extra: 11.3.6
+      fs-extra: 11.4.0
       tslib: 2.8.1
 
   '@docusaurus/tsconfig@3.10.2': {}
@@ -11990,7 +11990,7 @@ snapshots:
       '@docusaurus/logger': 3.10.2
       '@docusaurus/utils': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.19))(esbuild@0.28.1)(html-minifier-terser@7.2.0)(postcss@8.5.19)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@docusaurus/utils-common': 3.10.2(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.19))(esbuild@0.28.1)(html-minifier-terser@7.2.0)(postcss@8.5.19)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
-      fs-extra: 11.3.6
+      fs-extra: 11.4.0
       joi: 17.13.4
       js-yaml: 4.3.0
       lodash: 4.18.1
@@ -12022,7 +12022,7 @@ snapshots:
       escape-string-regexp: 4.0.0
       execa: 5.1.1
       file-loader: 6.2.0(webpack@5.108.4(esbuild@0.28.1)(postcss@8.5.19))
-      fs-extra: 11.3.6
+      fs-extra: 11.4.0
       github-slugger: 1.5.0
       globby: 11.1.0
       jiti: 1.21.7
@@ -13942,7 +13942,7 @@ snapshots:
       estree-walker: 2.0.2
       picomatch: 4.0.5
 
-  '@rtorcato/repo-tooling@3.10.2(@biomejs/biome@2.5.4)(@commitlint/cli@21.2.1(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@21.2.0)(@types/node@26.1.1)(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.28.1))(esbuild@0.28.1)(tslib@2.8.1)(typescript@5.9.3)(vitest@4.1.10)':
+  '@rtorcato/repo-tooling@3.12.1(@biomejs/biome@2.5.4)(@commitlint/cli@21.2.1(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.0)(@commitlint/types@21.2.0)(@types/node@26.1.1)(conventional-changelog-conventionalcommits@9.3.1)(esbuild-node-externals@1.23.1(esbuild@0.28.1))(esbuild@0.28.1)(tslib@2.8.1)(typescript@5.9.3)(vitest@4.1.10)':
     dependencies:
       chalk: 5.6.2
       commander: 15.0.0
