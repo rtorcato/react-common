@@ -43,11 +43,8 @@ const config: Config = {
 export default config
 ```
 
-## Tailwind v3 vs v4
+## Tailwind v4 only
 
-The package supports both consumer paths without extra setup:
-
-- **Tailwind v4** — consumes the `@theme inline` block already in
-  `dist/styles.css`. Nothing else to do.
-- **Tailwind v3** — the package also ships a `tailwind.config.ts` with the
-  `hsl(var(--xxx))` token mappings you can extend from.
+The package is Tailwind v4 CSS-first: the tokens come from the `@theme inline`
+block already in `dist/styles.css`, so there is nothing else to do. It ships no
+JS `tailwind.config.ts`, and Tailwind v3 is not supported.

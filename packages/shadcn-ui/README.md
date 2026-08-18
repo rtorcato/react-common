@@ -208,9 +208,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
 }
 ```
 
-### Tailwind v3 vs v4 consumers
+### Tailwind v4 only
 
-This package ships both a Tailwind v3 `tailwind.config.ts` (with `hsl(var(--xxx))` mappings) and a Tailwind v4 `@theme inline` block in `dist/styles.css`. Either consumer path works without extra setup.
+This package is Tailwind v4 CSS-first. Design tokens live in the `@theme inline` block in `dist/styles.css` — importing the stylesheet is the whole setup. There is no JS `tailwind.config.ts`, and Tailwind v3 is not supported.
 
 ## Development
 
