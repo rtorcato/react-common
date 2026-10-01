@@ -182,7 +182,7 @@ jobs:
       # Opens/updates a "Version Packages" PR when changesets are present;
       # when that PR merges, `publish` builds and publishes changed packages.
       - name: Changesets release
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
           version: pnpm version-packages
           publish: pnpm release
