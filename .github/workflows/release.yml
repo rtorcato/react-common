@@ -45,13 +45,13 @@ jobs:
       - name: 📦 Upgrade npm for OIDC trusted publishing
         run: npm install -g npm@latest
       # Opens/updates a "Version Packages" PR when changesets are present;
-      # when that PR merges, `publish` builds and publishes changed packages.
+      # when that PR merges, `publish-script` builds and publishes changed packages.
+      # v2 reads the token only from `github-token`, not from the GITHUB_TOKEN env.
       - name: Changesets release
-        uses: changesets/action@v1
+        uses: changesets/action@v2
         with:
-          version: pnpm version-packages
-          publish: pnpm release
-          commit: "chore(release): version packages"
-          title: "chore(release): version packages"
-        env:
-          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+          version-script: pnpm version-packages
+          publish-script: pnpm release
+          commit-message: "chore(release): version packages"
+          pr-title: "chore(release): version packages"
