@@ -44,6 +44,7 @@
 	--su-surface: #ffffff;
 	--su-surface2: #f3f6f9;
 	--su-code-bg: #f3f6f9;
+	--su-code-title-bg: #e9eef4;
 	--su-border: rgba(12, 18, 28, 0.1);
 	--su-border2: rgba(12, 18, 28, 0.16);
 	--su-heading: #0a0e16;
@@ -83,6 +84,7 @@
 	--su-surface: #111824;
 	--su-surface2: #0d131d;
 	--su-code-bg: #0c111b;
+	--su-code-title-bg: #0a0e16;
 	--su-border: rgba(255, 255, 255, 0.08);
 	--su-border2: rgba(255, 255, 255, 0.14);
 	--su-heading: #ffffff;
@@ -198,29 +200,29 @@ body,
 }
 
 /* ---------- Code ----------
-   Prism is vsDark in both light & dark mode, so fenced code blocks stay dark
-   in BOTH themes; inline code keeps the themed background. */
+   Prism is github in light mode and vsDark in dark, so the code surface follows
+   the theme via the --su-code-* tokens; inline code keeps the themed background. */
 .theme-code-block,
 div[class*="codeBlockContainer"],
 pre[class*="language-"] {
 	border: 1px solid var(--su-border);
 	border-radius: 12px;
-	background: #0c111b !important;
+	background: var(--su-code-bg) !important;
 }
 .theme-code-block code,
 pre[class*="language-"] code {
 	background: transparent !important;
-	color: #dfe5ee;
+	color: var(--su-text);
 }
 div[class*="codeBlockTitle"] {
-	background: #0a0e16 !important;
-	color: #94a1b4 !important;
+	background: var(--su-code-title-bg) !important;
+	color: var(--su-muted) !important;
 	border-bottom: 1px solid var(--su-border);
 }
 [data-theme="light"] .theme-code-block,
 [data-theme="light"] div[class*="codeBlockContainer"],
 [data-theme="light"] pre[class*="language-"] {
-	border-color: rgba(12, 18, 28, 0.16);
+	border-color: var(--su-border2);
 	box-shadow: 0 8px 24px -18px rgba(12, 18, 28, 0.5);
 }
 code {
