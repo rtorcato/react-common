@@ -9,6 +9,9 @@ on:
       - '.github/workflows/docs.yml'
       - 'pnpm-workspace.yaml'
       - 'pnpm-lock.yaml'
+  # Changesets publishes GitHub Releases; the changelog page is built from them.
+  release:
+    types: [published]
   workflow_dispatch:
 
 permissions:
@@ -44,6 +47,9 @@ jobs:
 
       - name: Build docs
         run: pnpm --filter @rtorcato/react-common-docs build
+        env:
+          # sync-changelog reads GitHub Releases; the token lifts the API rate limit.
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build Storybook
         run: pnpm --filter @rtorcato/shadcn-ui build-storybook
