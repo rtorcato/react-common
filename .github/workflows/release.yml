@@ -7,13 +7,18 @@ on:
   milestone:
     types: [closed]
 
-# A newer request supersedes an older one still waiting for approval (#753).
+# Queue rather than cancel: with no `release` environment yet there is no
+# approval wait to supersede, so cancelling could only kill a publish already
+# in flight (rtorcato/repo-tooling#790).
 concurrency:
   group: release
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   release:
+    # Publish only from the default branch until the `release` environment's
+    # approval gate exists; a dispatch from any other branch is skipped.
+    if: github.event_name == 'milestone' || github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -22,7 +27,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          ref: ${{ github.event_name == 'workflow_dispatch' && github.ref || github.event.repository.default_branch }}
+          ref: ${{ github.event.repository.default_branch }}
           fetch-depth: 0
           # RELEASE_TOKEN (admin PAT) lets the changesets action push the
           # "Version Packages" PR to a protected main; falls back to GITHUB_TOKEN.
