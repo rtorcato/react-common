@@ -67,14 +67,11 @@ The custom esbuild wrapper (`build.mjs`) auto-discovers entry points by scanning
 }
 ```
 
-## Tailwind v3 vs v4
+## Tailwind v4 (CSS-first)
 
-This package supports both:
+This package targets Tailwind v4 only. `dist/styles.css` ships a `@theme inline` block that maps the CSS variables to design tokens automatically — consumers just import the stylesheet.
 
-- **Tailwind v4 consumers** (recommended) — `dist/styles.css` ships a `@theme inline` block that maps CSS variables to design tokens automatically. They just need to import the stylesheet.
-- **Tailwind v3 consumers** — `tailwind.config.ts` at the repo root has the equivalent `hsl(var(--xxx))` mappings under `theme.extend.colors`. They can copy or import this config.
-
-If you're updating theme tokens, change them in **both** places — `src/styles/globals.css` (`@theme inline` block) and `tailwind.config.ts` — until we drop v3 support.
+Theme tokens live in exactly one place: `src/styles/globals.css`. There is no JS `tailwind.config.ts` to keep in sync.
 
 ## Companion packages
 
