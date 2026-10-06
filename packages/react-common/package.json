@@ -63,23 +63,23 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.8",
-		"@rtorcato/repo-tooling": "^3.12.1",
+		"@rtorcato/repo-tooling": "^4.4.0",
 		"@testing-library/jest-dom": "^7.0.0",
 		"@testing-library/react": "^16.3.2",
 		"@types/react": "^19.2.18",
 		"@types/react-dom": "^19.2.4",
 		"@vitejs/plugin-react": "^6.0.5",
-		"@vitest/coverage-v8": "^4.1.10",
+		"@vitest/coverage-v8": "^5.0.2",
 		"cross-env": "^10.1.0",
 		"esbuild": "^0.28.2",
-		"esbuild-node-externals": "1.23.1",
-		"jsdom": "^26.0.0",
+		"esbuild-node-externals": "2.0.0",
+		"jsdom": "^30.1.1",
 		"react": "^19.2.8",
 		"react-dom": "^19.2.8",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.9.3",
 		"vite": "^8.2.1",
-		"vitest": "^4.1.10"
+		"vitest": "^5.0.2"
 	},
 	"dependencies": {
 		"clsx": "^2.1.1",
