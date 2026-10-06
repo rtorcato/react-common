@@ -9,7 +9,9 @@ on:
       - '.github/workflows/docs.yml'
       - 'pnpm-workspace.yaml'
       - 'pnpm-lock.yaml'
-  # Changesets publishes GitHub Releases; the changelog page is built from them.
+  # Changesets publishes GitHub Releases, and the changelog page is built from
+  # them. A release run's ref is the tag, which the github-pages environment
+  # (main only) rejects, so the `redispatch` job re-runs this workflow on main.
   release:
     types: [published]
   workflow_dispatch:
@@ -24,7 +26,19 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  redispatch:
+    if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - run: gh workflow run docs.yml --repo "$GITHUB_REPOSITORY" --ref "$DEFAULT_BRANCH"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+
   build:
+    if: github.event_name != 'release'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
