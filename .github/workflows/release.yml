@@ -1,0 +1,52 @@
+name: 🚀 Release
+
+# On demand only, never per merge (#740): a dispatch (hotfix, ad hoc) or a
+# closed milestone ("ship this batch").
+on:
+  workflow_dispatch:
+  milestone:
+    types: [closed]
+
+# A newer request supersedes an older one still waiting for approval (#753).
+concurrency:
+  group: release
+  cancel-in-progress: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.ref || github.event.repository.default_branch }}
+          fetch-depth: 0
+          # RELEASE_TOKEN (admin PAT) lets the changesets action push the
+          # "Version Packages" PR to a protected main; falls back to GITHUB_TOKEN.
+          token: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.1.3
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: pnpm
+          registry-url: "https://registry.npmjs.org"
+      - run: pnpm install --frozen-lockfile
+      # OIDC trusted publishing needs npm CLI >= 11.5.1; the runner ships 10.x.
+      - name: 📦 Upgrade npm for OIDC trusted publishing
+        run: npm install -g npm@latest
+      # Opens/updates a "Version Packages" PR when changesets are present;
+      # when that PR merges, `publish` builds and publishes changed packages.
+      - name: Changesets release
+        uses: changesets/action@v1
+        with:
+          version: pnpm version-packages
+          publish: pnpm release
+          commit: "chore(release): version packages"
+          title: "chore(release): version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN || secrets.GITHUB_TOKEN }}
