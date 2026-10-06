@@ -1,4 +1,14 @@
-# 1.0.0 (2025-06-19)
+# Changelog
+
+Release notes for `@rtorcato/react-common` and `@rtorcato/shadcn-ui` are published
+to [GitHub Releases](https://github.com/rtorcato/react-common/releases) and shown on
+the docs site's changelog page.
+
+The entry below is pre-migration history from the old GitLab repository
+(`gitlab.com/rtorcato/common-react`). Its version number is unrelated to the
+packages' npm versions, and its commit links point at that retired repository.
+
+## 1.0.0 (2025-06-19, GitLab `common-react`)
 
 
 ### Bug Fixes
