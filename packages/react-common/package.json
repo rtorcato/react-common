@@ -62,7 +62,7 @@
 		}
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^2.5.4",
+		"@biomejs/biome": "^2.5.8",
 		"@rtorcato/repo-tooling": "^3.12.1",
 		"@testing-library/jest-dom": "^7.0.0",
 		"@testing-library/react": "^16.3.2",
@@ -71,14 +71,14 @@
 		"@vitejs/plugin-react": "^6.0.5",
 		"@vitest/coverage-v8": "^4.1.10",
 		"cross-env": "^10.1.0",
-		"esbuild": "^0.28.1",
+		"esbuild": "^0.28.2",
 		"esbuild-node-externals": "1.23.1",
 		"jsdom": "^26.0.0",
 		"react": "^19.2.8",
 		"react-dom": "^19.2.8",
 		"rimraf": "^6.0.1",
 		"typescript": "^5.9.3",
-		"vite": "^8.1.5",
+		"vite": "^8.2.1",
 		"vitest": "^4.1.10"
 	},
 	"dependencies": {
