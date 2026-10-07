@@ -111,6 +111,24 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
 
+  bundle-size:
+    runs-on: ubuntu-latest
+    needs: check-skip
+    if: needs.check-skip.outputs.should-skip != 'true'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11.1.3
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      # The gate gzips the built artifacts in dist/, so it needs a build first.
+      - run: pnpm build
+      - run: pnpm --filter @rtorcato/shadcn-ui bundle-size
+
   docs-build:
     runs-on: ubuntu-latest
     needs: check-skip

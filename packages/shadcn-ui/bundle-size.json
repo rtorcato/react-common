@@ -1,7 +1,6 @@
 {
   "tolerance": 0.1,
   "entries": {
-    "./components/MyComponent": 112,
     "./components/ui-extended/confirm-dialog": 142,
     "./components/ui-extended/data-table": 136,
     "./components/ui-extended/date-picker-with-presets": 146,
@@ -62,8 +61,7 @@
     "./components/ui/toggle": 121,
     "./components/ui/toggle-group": 129,
     "./components/ui/tooltip": 146,
-    "./hooks": 323,
-    "./theme-provider": 101
+    "./hooks": 107
   },
   "chunksTotal": 48905
 }
