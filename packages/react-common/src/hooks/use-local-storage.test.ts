@@ -1,4 +1,6 @@
 import { act, renderHook } from '@testing-library/react'
+import { createElement } from 'react'
+import { renderToString } from 'react-dom/server'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { useLocalStorage } from '~/hooks/use-local-storage'
@@ -64,5 +66,22 @@ describe('useLocalStorage', () => {
 
 		expect(result.current[0]).toBe('next')
 		expect(setItemSpy).toHaveBeenCalled()
+	})
+
+	it('renders initialValue first so SSR and hydration markup match (#184)', () => {
+		window.localStorage.setItem('theme', JSON.stringify('dark'))
+		function Probe() {
+			return useLocalStorage('theme', 'light')[0]
+		}
+		expect(renderToString(createElement(Probe))).toBe('light')
+
+		const seen: string[] = []
+		const { result } = renderHook(() => {
+			const r = useLocalStorage('theme', 'light')
+			seen.push(r[0])
+			return r
+		})
+		expect(seen[0]).toBe('light')
+		expect(result.current[0]).toBe('dark')
 	})
 })
