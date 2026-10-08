@@ -7,7 +7,7 @@
     "email": "rtorcato@me.com",
     "url": "https://github.com/rtorcato"
   },
-  "homepage": "https://rtorcato.github.io/react-common/",
+  "homepage": "https://docs.torcato.dev/react-common/",
   "repository": "https://github.com/rtorcato/react-common",
   "license": "ISC",
   "keywords": ["react", "shadcn-ui", "hooks", "tailwind", "typescript"]

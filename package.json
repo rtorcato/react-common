@@ -6,7 +6,7 @@
   "author": "Richard Torcato",
   "description": "Monorepo of common React packages (@rtorcato/*).",
   "license": "ISC",
-  "homepage": "https://github.com/rtorcato/react-common#readme",
+  "homepage": "https://docs.torcato.dev/react-common/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rtorcato/react-common.git"

@@ -4,7 +4,7 @@ import { defineConfig, devices } from '@playwright/test'
  * Playwright config for the react-common docs site.
  *
  * - Boots the production build via `pnpm serve` (port 3000). The built site is
- *   closer to what users hit on GitHub Pages and avoids HMR-related flake.
+ *   closer to what users hit on docs.torcato.dev and avoids HMR-related flake.
  * - Two chromium projects: mobile (Pixel 7) and desktop (1280x720). The mobile
  *   navbar drawer is the main thing worth pinning, so mobile is primary.
  * - Behavioral smoke tests only — no screenshot/visual assertions yet.
