@@ -1,5 +1,14 @@
 # @rtorcato/react-common
 
+## 0.3.1
+
+### Patch Changes
+
+- 3f9f2c2: `useLocalStorage` no longer reads `localStorage` during render. It now returns
+  `initialValue` on the first render and loads the stored value in an effect, so
+  server and client markup match and SSR apps no longer get a hydration mismatch.
+  The stored value shows up one commit after mount.
+
 ## 0.3.0
 
 ### Minor Changes
