@@ -17,11 +17,104 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Auto-merge patch and minor updates
+      - uses: actions/checkout@v7
+
+      # The group name is Dependabot's opinion, not a safety property: a package
+      # in both devDependencies and peerDependencies is classified "development"
+      # and lands in dev-minor, while peerDependencies ship to consumers of a
+      # published package (#458). So resolve every bumped name against the
+      # tracked manifests and stand down if any of them reaches a consumer.
+      #
+      # npm-specific by design. A repo with no package.json (Swift, Python) finds
+      # nothing here and falls back to the group + semver gate below.
+      - name: Check whether any bumped package ships to consumers
+        id: gate
+        env:
+          NAMES: ${{ steps.metadata.outputs.dependency-names }}
+        run: |
+          set -euo pipefail
+
+          # A private workspace publishes nothing, so its deps reach nobody.
+          ships=$(git ls-files -- 'package.json' '*/package.json' | while read -r f; do
+            if [ "$(jq -r '.private // false' "$f")" = 'true' ]; then continue; fi
+            jq -r '((.dependencies // {}) + (.optionalDependencies // {}) + (.peerDependencies // {})) | keys[]' "$f"
+          done | sort -u)
+
+          safe=true
+          # No names reported means we cannot verify anything — fail closed.
+          if [ -z "${NAMES//[, ]/}" ]; then
+            echo "::notice::no dependency names reported — leaving this PR for a human"
+            echo "reason=Dependabot reported no dependency names, so nothing could be verified" >> "$GITHUB_OUTPUT"
+            safe=false
+          fi
+          for name in ${NAMES//,/ }; do
+            if printf '%s\n' "$ships" | grep -qxF -- "$name"; then
+              echo "::notice::$name ships to consumers — leaving this PR for a human"
+              echo "reason=$name ships to consumers of this package" >> "$GITHUB_OUTPUT"
+              safe=false
+              break
+            fi
+          done
+          echo "safe=$safe" >> "$GITHUB_OUTPUT"
+
+      # Belt and braces: the dev-minor group is already declared minor+patch in
+      # dependabot.yml, but this workflow is the security gate and shouldn't
+      # trust a config file a consumer repo can edit independently.
+      #
+      # github-actions bumps are ungrouped, so they report an empty
+      # dependency-group and are matched by ecosystem instead (#452). They reach
+      # no consumer of the published package, and their squash subject is
+      # "ci(deps): …", which cuts no release. Majors still fall through to a
+      # human — the update-type clause below applies to them too.
+      - name: Auto-merge dev-dependency and CI action patch and minor updates
+        id: merge
         if: |
-          steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
-          steps.metadata.outputs.update-type == 'version-update:semver-minor'
+          steps.gate.outputs.safe == 'true' &&
+          (steps.metadata.outputs.dependency-group == 'dev-minor' ||
+          steps.metadata.outputs.package-ecosystem == 'github-actions') &&
+          (steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+          steps.metadata.outputs.update-type == 'version-update:semver-minor')
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Everything the step above declines needs a human, and a notice in the
+      # Actions log is not one (#694). Assign the repo owner and say why in a
+      # single comment, edited in place on every later run rather than repeated.
+      - name: Hand the PR to a human
+        if: steps.merge.outcome == 'skipped'
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          OWNER: ${{ github.repository_owner }}
+          REASON: ${{ steps.gate.outputs.reason }}
+          UPDATE_TYPE: ${{ steps.metadata.outputs.update-type }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "$REASON" ]; then
+            case "$UPDATE_TYPE" in
+              version-update:semver-major) REASON="this is a major version bump" ;;
+              version-update:semver-minor | version-update:semver-patch)
+                REASON="this is neither a dev-minor group bump nor a CI action bump, so it may ship to consumers" ;;
+              *) REASON="Dependabot reported no update type, so nothing could be verified" ;;
+            esac
+          fi
+
+          marker='<!-- dependabot-automerge:manual-review -->'
+          body="$marker
+          Not auto-merged: $REASON. Leaving this for @$OWNER to review and merge by hand."
+
+          ids=$(gh api --paginate "repos/$REPO/issues/$PR_NUMBER/comments" \
+            --jq ".[] | select(.body | startswith(\"$marker\")) | .id")
+          if [ -n "$ids" ]; then
+            gh api -X PATCH "repos/$REPO/issues/comments/${ids%%$'\n'*}" -f body="$body" > /dev/null
+          else
+            gh pr comment "$PR_URL" --body "$body"
+          fi
+
+          # An organisation login cannot be assigned; the comment still stands.
+          gh pr edit "$PR_URL" --add-assignee "$OWNER" || echo "::warning::could not assign $OWNER"
