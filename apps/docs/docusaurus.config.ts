@@ -12,7 +12,7 @@ const PROJECT_FAMILY = projectFamilyItems()
 const config: Config = {
 	title: 'react-common',
 	tagline: 'A React component library built on shadcn/ui, Radix UI, and Tailwind CSS v4.',
-	favicon: 'img/favicon.svg',
+	favicon: 'img/favicon.ico',
 
 	url: 'https://docs.torcato.dev',
 	baseUrl: '/react-common/',
@@ -114,6 +114,7 @@ const config: Config = {
 	],
 
 	themeConfig: {
+		image: 'img/social-card.png',
 		colorMode: {
 			defaultMode: 'dark',
 			respectPrefersColorScheme: true,
