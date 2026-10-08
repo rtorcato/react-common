@@ -3,7 +3,7 @@
 build/
 
 # Storybook colocated for local StorybookEmbed previews (pnpm storybook:local).
-# In prod it's copied into build/storybook by docs.yml instead.
+# In prod `pnpm build` copies it into build/storybook instead.
 static/storybook/
 
 # typedoc-generated API reference (regenerated on build) — see #9

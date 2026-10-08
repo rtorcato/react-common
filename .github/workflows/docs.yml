@@ -18,12 +18,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
   redispatch:
@@ -37,52 +31,71 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
 
-  build:
+  # https://docs.torcato.dev/react-common/ (Storybook at /react-common/storybook/,
+  # built by the docs app's `build` script).
+  # Pinned to a tag, never @main: this job hands over the Cloudflare secrets.
+  cloudflare:
+    if: github.event_name != 'release'
+    permissions:
+      contents: read
+    uses: rtorcato/repo-tooling/.github/workflows/docs-deploy-cloudflare.yml@v6.0.0
+    with:
+      build-filter: '@rtorcato/react-common-docs'
+      worker-name: react-common-docs
+      base-path: /react-common/
+      route: docs.torcato.dev/react-common/*
+    secrets:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+  # Old site: rtorcato.github.io/react-common/ now only redirects to the new address.
+  # GitHub Pages can't redirect server-side, so every path gets a meta-refresh
+  # stub (index.html, plus 404.html so deep links land on the same page there).
+  # ponytail: delete these two jobs once Pages is disabled in the repo settings.
+  pages-redirect-build:
     if: github.event_name != 'release'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v7
+      - name: Write redirect stub
+        run: |
+          mkdir -p stub
+          cat > stub/index.html <<'EOF'
+          <!doctype html>
+          <html lang="en">
+          <head>
+          <meta charset="utf-8">
+          <title>react-common docs have moved</title>
+          <link rel="canonical" href="https://docs.torcato.dev/react-common/">
+          <meta name="robots" content="noindex">
+          <meta http-equiv="refresh" content="0; url=https://docs.torcato.dev/react-common/">
+          <script>
+          location.replace('https://docs.torcato.dev' + location.pathname + location.search + location.hash)
+          </script>
+          </head>
+          <body>
+          <p>The react-common docs have moved to <a href="https://docs.torcato.dev/react-common/">docs.torcato.dev/react-common</a>.</p>
+          </body>
+          </html>
+          EOF
+          cp stub/index.html stub/404.html
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v6
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: '22'
-          cache: pnpm
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v6
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Build docs
-        run: pnpm --filter @rtorcato/react-common-docs build
-        env:
-          # sync-changelog reads GitHub Releases; the token lifts the API rate limit.
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Build Storybook
-        run: pnpm --filter @rtorcato/shadcn-ui build-storybook
-
-      - name: Colocate Storybook under the docs site
-        # Served at /react-common/storybook/ (base path set in .storybook/main.ts).
-        run: cp -r packages/shadcn-ui/storybook-static apps/docs/build/storybook
-
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: apps/docs/build
+          path: stub
 
-  deploy:
+  pages-redirect-deploy:
+    needs: pages-redirect-build
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

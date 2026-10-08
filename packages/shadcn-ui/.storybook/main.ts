@@ -16,8 +16,8 @@ const config: StorybookConfig = {
 			'@': path.resolve(process.cwd(), 'src'),
 			'~': path.resolve(process.cwd(), 'src'),
 		}
-		// The production build is deployed under the docs Pages site at
-		// /react-common/storybook/ (see .github/workflows/docs.yml). Dev stays at /.
+		// The production build is deployed under the docs site at
+		// /react-common/storybook/ (see apps/docs `build`). Dev stays at /.
 		if (configType === 'PRODUCTION') {
 			viteConfig.base = '/react-common/storybook/'
 		}

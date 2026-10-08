@@ -8,6 +8,8 @@ React packages to the public npm registry. The repo itself is private and
 unpublished; the umbrella name `react-common` is the brand and the docs-site
 identity.
 
+📖 **Docs:** https://docs.torcato.dev/react-common/
+
 ## Packages
 
 | Package | Description |
