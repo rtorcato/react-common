@@ -10,7 +10,7 @@ interface StorybookEmbedProps {
 
 /**
  * Embeds a deployed Storybook story as an isolated iframe. Storybook is served
- * alongside the docs at /react-common/storybook/ (see docs.yml), and its own
+ * alongside the docs at /react-common/storybook/ (see apps/docs `build`), and its own
  * document scopes the shadcn/Tailwind styles — so demos render without leaking
  * into the Docusaurus theme.
  */
