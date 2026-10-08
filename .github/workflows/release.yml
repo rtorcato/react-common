@@ -7,19 +7,22 @@ on:
   milestone:
     types: [closed]
 
-# Queue rather than cancel: with no `release` environment yet there is no
-# approval wait to supersede, so cancelling could only kill a publish already
-# in flight (rtorcato/repo-tooling#790).
+# Queue rather than cancel: a newer run waits for the one ahead of it (approval
+# included) instead of killing a publish already in flight
+# (rtorcato/repo-tooling#790).
 concurrency:
   group: release
   cancel-in-progress: false
 
 jobs:
   release:
-    # Publish only from the default branch until the `release` environment's
-    # approval gate exists; a dispatch from any other branch is skipped.
+    # Publish only from the default branch; a dispatch from any other branch is
+    # skipped. The `release` environment adds a required-reviewer gate on top.
     if: github.event_name == 'milestone' || github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: ubuntu-latest
+    # npm trusted publishing for both packages is bound to release.yml +
+    # environment `release`; without it the OIDC publish fails with E404.
+    environment: release
     permissions:
       contents: write
       pull-requests: write
