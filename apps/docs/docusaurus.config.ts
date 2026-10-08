@@ -14,7 +14,7 @@ const config: Config = {
 	tagline: 'A React component library built on shadcn/ui, Radix UI, and Tailwind CSS v4.',
 	favicon: 'img/favicon.svg',
 
-	url: 'https://rtorcato.github.io',
+	url: 'https://docs.torcato.dev',
 	baseUrl: '/react-common/',
 
 	organizationName: 'rtorcato',
@@ -137,7 +137,7 @@ const config: Config = {
 					items: [{ label: 'All on GitHub →', href: GITHUB_PROFILE }, ...PROJECT_FAMILY],
 				},
 				{
-					// Deployed alongside the docs site (see .github/workflows/docs.yml).
+					// Built into the docs site by the `build` script (apps/docs/package.json).
 					href: 'pathname:///react-common/storybook/',
 					label: 'Storybook',
 					position: 'right',

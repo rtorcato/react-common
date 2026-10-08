@@ -7,7 +7,7 @@
 		"storybook:local": "pnpm --filter @rtorcato/shadcn-ui build-storybook && rm -rf static/storybook && cp -r ../../packages/shadcn-ui/storybook-static static/storybook",
 		"start": "node ../../scripts/sync-changelog.mjs && docusaurus start",
 		"dev": "node ../../scripts/sync-changelog.mjs && docusaurus start",
-		"build": "node ../../scripts/sync-changelog.mjs && docusaurus build",
+		"build": "node ../../scripts/sync-changelog.mjs && docusaurus build && pnpm --filter @rtorcato/shadcn-ui build-storybook && rm -rf build/storybook && cp -r ../../packages/shadcn-ui/storybook-static build/storybook",
 		"serve": "docusaurus serve",
 		"clear": "docusaurus clear",
 		"swizzle": "docusaurus swizzle",
