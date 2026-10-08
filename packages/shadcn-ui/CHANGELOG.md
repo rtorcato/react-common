@@ -1,5 +1,31 @@
 # [1.4.0](https://github.com/rtorcato/shadcn-ui/compare/v1.3.0...v1.4.0) (2026-07-04)
 
+## 1.7.2
+
+### Patch Changes
+
+- e45929a: Delete the dead Tailwind v3 `tailwind.config.ts` and wire the radius scale into `@theme inline`.
+
+  The JS config was never loaded — the package is Tailwind v4 CSS-first with no `@config` directive — and it was excluded from the published tarball. `@theme inline` in `globals.css` now declares `--radius-sm/md/lg/xl` derived from `--radius`, so `rounded-sm/md/lg/xl` track the `--radius` override instead of falling back to Tailwind's defaults. At the default `--radius: 0.5rem` the emitted values are unchanged.
+
+- 2fbff6f: Drop the `src/lib/index.ts` re-export barrel, which removes the undocumented
+  `@rtorcato/shadcn-ui/lib/index` build output. `cn` is unaffected — import it
+  from `@rtorcato/shadcn-ui/lib/utils` (or from `@rtorcato/react-common`, where
+  it is defined).
+- 1f46d8b: Drop the `esbuild-analyzer` dependency and the `package:analyzer` scripts.
+
+  `esbuild-analyzer` was declared in `dependencies`, so every consumer of the
+  package installed it at runtime even though nothing in shipped code imports it.
+  Its only use was the `package:analyzer` script, which read the stale committed
+  `meta.json` metafile — now deleted and gitignored.
+
+- b017612: Declare `class-variance-authority` as a runtime dependency. It is imported by
+  shipped code (`Button`, `Badge`, `Alert`, and others) but was only listed in
+  `devDependencies`, so under pnpm's isolated `node_modules` consumers hit
+  `Module not found: Can't resolve 'class-variance-authority'`.
+- Updated dependencies [3f9f2c2]
+  - @rtorcato/react-common@0.3.1
+
 ## 1.7.1
 
 ### Patch Changes
