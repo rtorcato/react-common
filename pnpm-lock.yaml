@@ -70,8 +70,8 @@ importers:
         specifier: ^1.62.1
         version: 1.62.1
       '@rtorcato/shared-docs':
-        specifier: ^1.4.2
-        version: 1.4.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: ^1.15.1
+        version: 1.15.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@types/react':
         specifier: ^19.2.18
         version: 19.2.18
@@ -4000,12 +4000,18 @@ packages:
       vitest:
         optional: true
 
-  '@rtorcato/shared-docs@1.4.2':
-    resolution: {integrity: sha512-Bgr3SdJ2Wn3unEJ8wWQThPBNsqrqksnEstIgTnCAw5Z9zrxgENaJxAtKjymxgJJqT5IyClIbB8HtB4B8Lk67CA==}
+  '@rtorcato/shared-docs@1.15.1':
+    resolution: {integrity: sha512-WKCswyEKtvBtsksmdCEf53kEEI9oo9H2NwYp8TXVwvEaueIVVYvjSy0D/eyDUFcQsh3SnULssfVHpWZP201Emw==}
     engines: {node: '>=22'}
+    hasBin: true
     peerDependencies:
       react: ^18.0.0 || ^19.0.0
       react-dom: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
   '@shikijs/engine-oniguruma@3.23.0':
     resolution: {integrity: sha512-1nWINwKXxKKLqPibT5f4pAFLej9oZzQTsby8942OTlsJzOBZ0MWKiwzMsd+jhzu8YPCHAswGnnN1YtQfirL35g==}
@@ -14204,8 +14210,8 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@rtorcato/shared-docs@1.4.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
-    dependencies:
+  '@rtorcato/shared-docs@1.15.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+    optionalDependencies:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
 
