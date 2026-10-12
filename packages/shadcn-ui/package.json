@@ -310,7 +310,7 @@
 		"@biomejs/biome": "^2.5.8",
 		"@commitlint/cli": "^21.2.1",
 		"@commitlint/config-conventional": "^21.2.3",
-		"@rtorcato/repo-tooling": "^5.5.2",
+		"@rtorcato/repo-tooling": "^6.0.0",
 		"@storybook/addon-a11y": "^10.5.7",
 		"@storybook/addon-themes": "^10.5.7",
 		"@storybook/react-vite": "^10.5.7",
