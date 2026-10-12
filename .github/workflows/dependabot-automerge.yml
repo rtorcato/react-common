@@ -66,7 +66,7 @@ jobs:
       # no consumer of the published package, and their squash subject is
       # "ci(deps): …", which cuts no release. Majors still fall through to a
       # human — the update-type clause below applies to them too.
-      - name: Auto-merge dev-dependency and CI action patch and minor updates
+      - name: Label dev-dependency and CI action patch and minor updates for review
         id: merge
         if: |
           steps.gate.outputs.safe == 'true' &&
@@ -74,10 +74,11 @@ jobs:
           steps.metadata.outputs.package-ecosystem == 'github-actions') &&
           (steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
           steps.metadata.outputs.update-type == 'version-update:semver-minor')
-        run: gh pr merge --auto --squash "$PR_URL"
+        run: gh pr edit "$PR_URL" --add-label "$LABEL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LABEL: "ai-review"
 
       # Everything the step above declines needs a human, and a notice in the
       # Actions log is not one (#694). Assign the repo owner and say why in a
