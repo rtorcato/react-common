@@ -81,6 +81,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: check-skip
     if: needs.check-skip.outputs.should-skip != 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        # The engines floor and the newest Node.
+        node: ["22", "26"]
     steps:
       - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
@@ -88,7 +93,7 @@ jobs:
           version: 11.1.3
       - uses: actions/setup-node@v7
         with:
-          node-version: "22"
+          node-version: ${{ matrix.node }}
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       # Runs the suite under coverage so the per-package thresholds
@@ -146,3 +151,19 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm exec repo-tooling doctor
+
+  # The single required check. Branch protection requires only `ci`, so adding a job or
+  # changing the Node matrix never touches protection again. Skipped jobs pass; a failed
+  # or cancelled one fails the gate.
+  ci:
+    runs-on: ubuntu-latest
+    needs: [check-skip, lint, typecheck, commitlint, test, build, docs-build, doctor]
+    if: always()
+    permissions: {}
+    steps:
+      - name: Every needed job passed or was skipped
+        env:
+          RESULTS: ${{ join(needs.*.result, ' ') }}
+        run: |
+          echo "$RESULTS"
+          [[ " $RESULTS " != *" failure "* && " $RESULTS " != *" cancelled "* ]]
