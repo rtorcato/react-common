@@ -1,6 +1,8 @@
 import Link from '@docusaurus/Link'
+import useBaseUrl from '@docusaurus/useBaseUrl'
 import Siblings from '@rtorcato/shared-docs/components/Siblings'
 import Layout from '@theme/Layout'
+import ThemedImage from '@theme/ThemedImage'
 import clsx from 'clsx'
 import type { ReactElement } from 'react'
 import InstallTabs from '@rtorcato/shared-docs/components/InstallTabs'
@@ -135,10 +137,14 @@ function CodeWindow(): ReactElement {
 }
 
 function Hero(): ReactElement {
+	const mark = { light: useBaseUrl('/img/logo.svg'), dark: useBaseUrl('/img/logo-dark.svg') }
 	return (
 		<header className={styles.hero}>
 			<div className={styles.heroGlow} aria-hidden />
 			<div className={styles.heroInner}>
+				<div className={styles.heroMark}>
+					<ThemedImage alt="" sources={mark} width={72} height={72} />
+				</div>
 				<h1 className={styles.heroTitle}>
 					Components, hooks, and utilities
 					<br />

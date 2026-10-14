@@ -22,6 +22,15 @@
 	margin: 0 auto;
 	text-align: center;
 }
+.heroMark {
+	display: flex;
+	justify-content: center;
+	margin: 0 0 22px;
+}
+/* Dark mode only: the accent glow from the family-mark spec. */
+html[data-theme="dark"] .heroMark {
+	filter: drop-shadow(0 0 28px rgba(45, 212, 191, 0.45));
+}
 .heroTitle {
 	margin: 0 0 20px;
 	font-size: 54px;
