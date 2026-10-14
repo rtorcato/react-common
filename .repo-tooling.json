@@ -23,12 +23,13 @@
       },
       "gitHooks": true,
       "commitLint": true,
-      "semanticRelease": true,
+      "semanticRelease": false,
       "securityAutomation": true,
-      "bundler": "tsup"
+      "bundler": "none",
+      "changesets": true
     },
-    "writtenBy": "@rtorcato/repo-tooling@6.0.0",
-    "writtenAt": "2026-10-12T13:28:52.625Z"
+    "writtenBy": "@rtorcato/repo-tooling@6.1.0",
+    "writtenAt": "2026-10-14T03:26:52.662Z"
   },
   "rules": {
     "mcp": {
