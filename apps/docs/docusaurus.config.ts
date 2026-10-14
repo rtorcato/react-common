@@ -12,7 +12,7 @@ const PROJECT_FAMILY = projectFamilyItems()
 const config: Config = {
 	title: 'react-common',
 	tagline: 'A React component library built on shadcn/ui, Radix UI, and Tailwind CSS v4.',
-	favicon: 'img/favicon.ico',
+	favicon: 'img/favicon.svg',
 
 	url: 'https://docs.torcato.dev',
 	baseUrl: '/react-common/',
@@ -120,13 +120,13 @@ const config: Config = {
 			respectPrefersColorScheme: true,
 		},
 		navbar: {
-			// The wordmark is baked into the SVG logo (light + dark), so title stays empty.
-			title: '',
+			// The logo is the tile mark only (light + dark); the package name is the title.
+			title: 'react-common',
 			logo: {
 				alt: 'react-common',
 				src: 'img/logo.svg',
 				srcDark: 'img/logo-dark.svg',
-				width: 150,
+				width: 26,
 				height: 26,
 			},
 			items: [
@@ -146,6 +146,11 @@ const config: Config = {
 				{
 					href: 'https://github.com/rtorcato/react-common',
 					label: 'GitHub',
+					position: 'right',
+				},
+				{
+					href: 'https://www.npmjs.com/package/@rtorcato/shadcn-ui',
+					label: 'npm',
 					position: 'right',
 				},
 			],
