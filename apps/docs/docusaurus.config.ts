@@ -1,6 +1,6 @@
 import type * as Preset from '@docusaurus/preset-classic'
 import type { Config } from '@docusaurus/types'
-import { projectFamilyItems } from '@rtorcato/shared-docs'
+import { footerCopyright, projectFamilyItems } from '@rtorcato/shared-docs'
 import { themes as prismThemes } from 'prism-react-renderer'
 
 // The @rtorcato open-source family — single source of truth in @rtorcato/shared-docs.
@@ -68,6 +68,9 @@ const config: Config = {
 	],
 
 	plugins: [
+		// `torcato.dev /` navbar breadcrumb + `← torcato.dev` drawer row. The footer
+		// row comes from footerCopyright() below.
+		'@rtorcato/shared-docs/docusaurus',
 		[
 			// Generates the API reference under docs/api on every build, so it can't
 			// go stale. One page per module (hook/util/provider) — mirror the barrel
@@ -178,7 +181,7 @@ const config: Config = {
 					items: PROJECT_FAMILY,
 				},
 			],
-			copyright: `Copyright © ${new Date().getFullYear()} Richard Torcato. Built with Docusaurus.`,
+			copyright: footerCopyright(),
 		},
 		prism: {
 			theme: prismThemes.github,
