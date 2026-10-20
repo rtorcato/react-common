@@ -12,13 +12,13 @@
 
 /* ---------- Light (default) ---------- */
 :root {
-	--ifm-color-primary: #0d9488;
-	--ifm-color-primary-dark: #0c857b;
-	--ifm-color-primary-darker: #0b7d74;
-	--ifm-color-primary-darkest: #09675f;
-	--ifm-color-primary-light: #0ea395;
-	--ifm-color-primary-lighter: #0fab9c;
-	--ifm-color-primary-lightest: #14c4b3;
+	--ifm-color-primary: #0f766e;
+	--ifm-color-primary-dark: #0d6860;
+	--ifm-color-primary-darker: #0c6059;
+	--ifm-color-primary-darkest: #0a4a45;
+	--ifm-color-primary-light: #11847a;
+	--ifm-color-primary-lighter: #128b81;
+	--ifm-color-primary-lightest: #14998e;
 
 	--ifm-font-family-base: "Geist", system-ui, -apple-system, sans-serif;
 	--ifm-font-family-monospace: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
@@ -30,15 +30,15 @@
 	--ifm-navbar-background-color: rgba(255, 255, 255, 0.8);
 	--ifm-heading-color: #0a0e16;
 	--ifm-font-color-base: #374253;
-	--ifm-link-color: #0d9488;
+	--ifm-link-color: #0f766e;
 	--ifm-toc-border-color: rgba(12, 18, 28, 0.1);
 	--ifm-code-background: #f3f6f9;
 	--docusaurus-highlighted-code-line-bg: rgba(20, 184, 166, 0.14);
 
 	/* react-common custom tokens */
-	--su-accent: #0d9488;
+	--su-accent: #0f766e;
 	--su-accent-fill: #14b8a6;
-	--su-on-accent: #ffffff;
+	--su-on-accent: #04201c;
 	--su-bg: #ffffff;
 	--su-bg2: #f6f8fb;
 	--su-surface: #ffffff;
@@ -50,7 +50,7 @@
 	--su-heading: #0a0e16;
 	--su-text: #374253;
 	--su-muted: #5b6675;
-	--su-faint: #8a95a5;
+	--su-faint: #5f6b7a;
 	--su-accent-soft: rgba(20, 184, 166, 0.12);
 	--su-accent-border: rgba(20, 184, 166, 0.45);
 	--su-shadow: 0 22px 50px -26px rgba(20, 28, 44, 0.3);
@@ -90,7 +90,7 @@
 	--su-heading: #ffffff;
 	--su-text: #dfe5ee;
 	--su-muted: #94a1b4;
-	--su-faint: #647184;
+	--su-faint: #768397;
 	--su-accent-soft: rgba(45, 212, 191, 0.12);
 	--su-accent-border: rgba(45, 212, 191, 0.34);
 	--su-shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.75);
@@ -376,4 +376,45 @@ html[data-theme="dark"] .footer__copyright {
 }
 .footer__link-item:hover {
 	color: var(--su-accent) !important;
+}
+
+/* ---------- Prism token contrast ----------
+   Prism writes each token's colour inline, so these overrides need !important.
+   Light values are the github theme tokens that failed 4.5:1 on the #f3f6f9 code
+   surface (string and namespace included); dark fixes the vsDark constant token. */
+[data-theme="light"] .token.comment,
+[data-theme="light"] .token.prolog,
+[data-theme="light"] .token.doctype,
+[data-theme="light"] .token.cdata {
+	color: #5f6b7a !important;
+}
+[data-theme="light"] .token.string,
+[data-theme="light"] .token.attr-value {
+	color: #b0124f !important;
+}
+[data-theme="light"] .token.namespace {
+	opacity: 1 !important;
+}
+[data-theme="light"] .token.entity,
+[data-theme="light"] .token.url,
+[data-theme="light"] .token.symbol,
+[data-theme="light"] .token.number,
+[data-theme="light"] .token.boolean,
+[data-theme="light"] .token.variable,
+[data-theme="light"] .token.constant,
+[data-theme="light"] .token.property,
+[data-theme="light"] .token.regex,
+[data-theme="light"] .token.inserted {
+	color: #0b7285 !important;
+}
+[data-theme="light"] .token.atrule,
+[data-theme="light"] .token.attr-name {
+	color: #0550ae !important;
+}
+[data-theme="light"] .token.function,
+[data-theme="light"] .token.deleted {
+	color: #b31d28 !important;
+}
+[data-theme="dark"] .token.constant {
+	color: #8f95d6 !important;
 }
