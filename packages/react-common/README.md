@@ -1,3 +1,10 @@
+<!-- brand-kit:banner:start -->
+<picture>
+  <source media="(max-width: 640px)" srcset="https://raw.githubusercontent.com/rtorcato/react-common/main/brand/banner-mobile.png">
+  <img src="https://raw.githubusercontent.com/rtorcato/react-common/main/brand/banner.png" alt="react-common banner" width="1600">
+</picture>
+<!-- brand-kit:banner:end -->
+
 # @rtorcato/react-common
 
 [![npm version](https://img.shields.io/npm/v/@rtorcato/react-common.svg)](https://www.npmjs.com/package/@rtorcato/react-common)
