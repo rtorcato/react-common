@@ -6,6 +6,7 @@ import ThemedImage from '@theme/ThemedImage'
 import clsx from 'clsx'
 import type { ReactElement } from 'react'
 import InstallTabs from '@rtorcato/shared-docs/components/InstallTabs'
+import UseWithAI from '@rtorcato/shared-docs/components/UseWithAI'
 import styles from './index.module.css'
 
 /* ------------------------------------------------------------------ */
@@ -234,6 +235,12 @@ export default function Home(): ReactElement {
 		<Layout description="A React component library built on shadcn/ui, Radix UI, and Tailwind CSS v4.">
 			<main>
 				<Hero />
+				<UseWithAI
+					repo="rtorcato/react-common"
+					plugin="react-common"
+					skill="react-common"
+					pkg="@rtorcato/react-common"
+				/>
 				<Pillars />
 				<Groups />
 				<Siblings self="@rtorcato/react-common" />
