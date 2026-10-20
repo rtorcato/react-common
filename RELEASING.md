@@ -16,6 +16,25 @@ semantic-release. Do **not** hand-edit versions in `package.json`; Changesets ow
    (`pnpm build && changeset publish`) and publishes the changed packages to public npm
    with provenance, then tags the release.
 
+## Beta pre-releases (npm `beta` dist-tag)
+
+`.changeset/pre.json` puts Changesets in **pre mode** with the `beta` tag. While it is
+on `main`, the flow above is unchanged, but versions come out as `x.y.z-beta.N` and
+`changeset publish` publishes them under the **`beta`** dist-tag, so `latest` does not
+move. Pre mode is repo-wide: it applies to both `@rtorcato/react-common` and
+`@rtorcato/shadcn-ui`.
+
+```bash
+pnpm add @rtorcato/react-common@beta
+```
+
+Nothing publishes until a changeset exists and the Version Packages PR is merged, and
+the `release` environment still needs rtorcato's approval.
+
+To ship a stable release again, leave pre mode in a PR: `pnpm changeset pre exit`, then
+merge it. The next Version Packages PR then bumps to the stable versions and publishes
+to `latest`.
+
 ## npm authentication
 
 Publishing uses the `NPM_TOKEN` secret. It **must be an npm _Automation_ token** (or a
