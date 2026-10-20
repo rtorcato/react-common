@@ -233,15 +233,24 @@ code {
 .markdown table,
 .theme-doc-markdown table,
 article table {
-	display: table;
+	/* ponytail: below the 997px sidebar breakpoint, scroll wide tables inside their own box (#227) */
+	display: block;
 	width: 100%;
 	border-collapse: separate;
 	border-spacing: 0;
 	margin: 22px 0;
 	border: 1px solid var(--su-border);
 	border-radius: 12px;
-	overflow: hidden;
+	overflow-x: auto;
 	font-size: 14px;
+}
+@media (min-width: 997px) {
+	.markdown table,
+	.theme-doc-markdown table,
+	article table {
+		display: table;
+		overflow: hidden;
+	}
 }
 .markdown table thead,
 article table thead {
