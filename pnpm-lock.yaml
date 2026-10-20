@@ -70,8 +70,8 @@ importers:
         specifier: ^1.62.1
         version: 1.62.1
       '@rtorcato/shared-docs':
-        specifier: ^1.15.1
-        version: 1.15.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: ^1.17.0
+        version: 1.17.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@types/react':
         specifier: ^19.2.18
         version: 19.2.18
@@ -4000,8 +4000,8 @@ packages:
       vitest:
         optional: true
 
-  '@rtorcato/shared-docs@1.15.1':
-    resolution: {integrity: sha512-WKCswyEKtvBtsksmdCEf53kEEI9oo9H2NwYp8TXVwvEaueIVVYvjSy0D/eyDUFcQsh3SnULssfVHpWZP201Emw==}
+  '@rtorcato/shared-docs@1.17.0':
+    resolution: {integrity: sha512-oWaABnA0X8JliORgddmnI2swfZotHdimkPWat+korowzFDtqYk1S6Rv2JbylQaBvjbgkisoUxip7HgLtdGrvIA==}
     engines: {node: '>=22'}
     hasBin: true
     peerDependencies:
@@ -14207,7 +14207,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@rtorcato/shared-docs@1.15.1(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@rtorcato/shared-docs@1.17.0(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     optionalDependencies:
       react: 19.2.8
       react-dom: 19.2.8(react@19.2.8)
