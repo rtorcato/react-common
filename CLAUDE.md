@@ -78,7 +78,7 @@ Releases are driven by **Changesets** (not semantic-release):
 
 - **Conventional Commits are required** — `commitlint` validates the latest message in CI. Use `git commit -m` with a conventional message.
 - Add a changeset for any user-facing change: `pnpm changeset` (root). It records which packages bump and how.
-- On merge to `main`, the Changesets GitHub Action opens/updates a "Version Packages" PR; merging **that** PR runs `pnpm release` (`pnpm build && changeset publish`) to publish changed packages to **public npm** with provenance. Requires the `NPM_TOKEN` secret.
+- Merging to `main` does not publish. The `release` job in `.github/workflows/release.yml` runs on a manual dispatch or a closed milestone; the Changesets GitHub Action opens/updates a "Version Packages" PR. After that PR merges, run the job again: with no changesets pending it runs `pnpm release` (`pnpm build && changeset publish`) to publish changed packages to **public npm** with provenance. Requires the `NPM_TOKEN` secret and approval in the `release` environment.
 - Do **not** bump versions in `package.json` by hand — Changesets owns them.
 - `husky` + `lint-staged` runs Biome on staged files before each commit; `pre-push` runs `pnpm verify`.
 - Skip CI by including `[skip ci]` in the commit message.
