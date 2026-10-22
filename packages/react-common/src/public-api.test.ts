@@ -12,6 +12,7 @@ describe('public API surface', () => {
 			  "ThemeProvider",
 			  "cn",
 			  "useClickOutside",
+			  "useCopy",
 			  "useDebounce",
 			  "useEventListener",
 			  "useInterval",
