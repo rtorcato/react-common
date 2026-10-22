@@ -235,7 +235,7 @@ See [`CLAUDE.md`](./CLAUDE.md) for the full contributor guide and the [issue tra
 
 ## Releases
 
-Versioning and publishing are handled by [Changesets](https://github.com/changesets/changesets) in GitHub Actions. Add a changeset (`pnpm changeset` from the repo root) with your PR; when it merges to `main`, the Changesets action opens a "Version Packages" PR, and merging that publishes the changed packages to the public npm registry. Do **not** bump the version in `package.json` manually.
+Versioning and publishing are handled by [Changesets](https://github.com/changesets/changesets) in GitHub Actions. Add a changeset (`pnpm changeset` from the repo root) with your PR; merging to `main` does not publish. The release workflow (`.github/workflows/release.yml`, run by a manual dispatch or a closed milestone) runs the Changesets action, which opens a "Version Packages" PR. Merge that PR, then run the workflow again to publish the changed packages to the public npm registry. Do **not** bump the version in `package.json` manually.
 
 ## License
 

@@ -8,13 +8,16 @@ semantic-release. Do **not** hand-edit versions in `package.json`; Changesets ow
 1. **Add a changeset** for any user-facing change: `pnpm changeset` (root). Pick the
    affected packages and bump type (patch/minor/major); it writes a file under
    `.changeset/`. Commit it with your change.
-2. **Merge to `main`.** The `release` job in `.github/workflows/ci.yml` runs the
-   Changesets action, which opens (or updates) a **"chore(release): version packages"**
-   PR that consumes the pending changesets, bumps versions, and updates each
-   `CHANGELOG.md`.
-3. **Merge the Version Packages PR.** On that merge, the same job runs `pnpm release`
-   (`pnpm build && changeset publish`) and publishes the changed packages to public npm
-   with provenance, then tags the release.
+2. **Merge to `main`.** Merging does not publish. The `release` job in
+   `.github/workflows/release.yml` runs only on a manual dispatch (`workflow_dispatch`) or
+   when a milestone is closed. It runs the Changesets action, which opens (or updates) a
+   **"chore(release): version packages"** PR that consumes the pending changesets, bumps
+   versions, and updates each `CHANGELOG.md`.
+3. **Merge the Version Packages PR, then run the release job again** (same triggers).
+   With no changesets pending, the Changesets action runs `pnpm release`
+   (`pnpm build && changeset publish`), which publishes the changed packages to public
+   npm with provenance and tags the release. The job runs in the `release` environment,
+   which has a required-reviewer gate, so it waits for approval before it publishes.
 
 ## Beta pre-releases (npm `beta` dist-tag)
 
@@ -28,8 +31,9 @@ move. Pre mode is repo-wide: it applies to both `@rtorcato/react-common` and
 pnpm add @rtorcato/react-common@beta
 ```
 
-Nothing publishes until a changeset exists and the Version Packages PR is merged, and
-the `release` environment still needs rtorcato's approval.
+Nothing publishes until the `release` job runs (manual dispatch or a closed milestone)
+with the Version Packages PR merged, and the `release` environment still needs
+rtorcato's approval.
 
 To ship a stable release again, leave pre mode in a PR: `pnpm changeset pre exit`, then
 merge it. The next Version Packages PR then bumps to the stable versions and publishes
