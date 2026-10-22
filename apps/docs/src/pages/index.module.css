@@ -111,18 +111,24 @@ html[data-theme="dark"] .heroMark {
 	font: 500 12px var(--ifm-font-family-monospace);
 	color: var(--su-faint);
 }
-.codePre {
+/* The body is a @theme/CodeBlock (Prism highlighting); strip its own frame so
+   the window doesn't draw a second one. Selectors outrank custom.css's
+   [data-theme="light"] code-block border and shadow. */
+.heroCode .codeBody :global(.theme-code-block),
+.heroCode .codeBody :global(pre[class*="language-"]) {
 	margin: 0;
+	border: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+.heroCode .codeBody :global(pre[class*="language-"]) code {
 	padding: 18px;
 	font: 500 13px / 1.8 var(--ifm-font-family-monospace);
-	color: var(--su-text);
-	overflow: auto;
-	background: transparent;
 }
 
 /* Sections */
 .section {
-	max-width: 1120px;
+	max-width: 1200px;
 	margin: 0 auto;
 	padding: 54px 24px 8px;
 }
