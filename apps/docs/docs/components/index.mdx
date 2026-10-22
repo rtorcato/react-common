@@ -4,6 +4,13 @@ description: The @rtorcato/shadcn-ui component catalog — shadcn primitives plu
 sidebar_position: 5
 ---
 
+{/* Muted plain monospace, not the accent code style custom.css gives column 2 (#229). */}
+export const Subpath = ({ children }) => (
+	<span style={{ font: '13px var(--ifm-font-family-monospace)', color: 'var(--su-muted)' }}>
+		{children}
+	</span>
+)
+
 # Components
 
 `@rtorcato/shadcn-ui` ships two kinds of components, each imported from its own
@@ -35,58 +42,58 @@ Hand-written, not on ui.shadcn.com — see each page for props and a live demo:
 
 Stock shadcn/ui. Import from `@rtorcato/shadcn-ui/components/ui/<name>`.
 
-| Component | Import subpath | Upstream | Live |
+| Component | Subpath | Upstream | Live |
 | --- | --- | --- | --- |
-| `accordion` | `@rtorcato/shadcn-ui/components/ui/accordion` | [docs](https://ui.shadcn.com/docs/components/accordion) | [story](pathname:///react-common/storybook/?path=/story/ui-accordion--default) |
-| `alert` | `@rtorcato/shadcn-ui/components/ui/alert` | [docs](https://ui.shadcn.com/docs/components/alert) | [story](pathname:///react-common/storybook/?path=/story/ui-alert--default) |
-| `alert-dialog` | `@rtorcato/shadcn-ui/components/ui/alert-dialog` | [docs](https://ui.shadcn.com/docs/components/alert-dialog) | [story](pathname:///react-common/storybook/?path=/story/ui-alertdialog--default) |
-| `aspect-ratio` | `@rtorcato/shadcn-ui/components/ui/aspect-ratio` | [docs](https://ui.shadcn.com/docs/components/aspect-ratio) | [story](pathname:///react-common/storybook/?path=/story/ui-aspectratio--default) |
-| `avatar` | `@rtorcato/shadcn-ui/components/ui/avatar` | [docs](https://ui.shadcn.com/docs/components/avatar) | [story](pathname:///react-common/storybook/?path=/story/ui-avatar--default) |
-| `badge` | `@rtorcato/shadcn-ui/components/ui/badge` | [docs](https://ui.shadcn.com/docs/components/badge) | [story](pathname:///react-common/storybook/?path=/story/ui-badge--default) |
-| `breadcrumb` | `@rtorcato/shadcn-ui/components/ui/breadcrumb` | [docs](https://ui.shadcn.com/docs/components/breadcrumb) | [story](pathname:///react-common/storybook/?path=/story/ui-breadcrumb--default) |
-| `button` | `@rtorcato/shadcn-ui/components/ui/button` | [docs](https://ui.shadcn.com/docs/components/button) | [story](pathname:///react-common/storybook/?path=/story/ui-button--default) |
-| `button-group` | `@rtorcato/shadcn-ui/components/ui/button-group` | [docs](https://ui.shadcn.com/docs/components/button-group) | [story](pathname:///react-common/storybook/?path=/story/ui-buttongroup--default) |
-| `calendar` | `@rtorcato/shadcn-ui/components/ui/calendar` | [docs](https://ui.shadcn.com/docs/components/calendar) | [story](pathname:///react-common/storybook/?path=/story/ui-calendar--single) |
-| `card` | `@rtorcato/shadcn-ui/components/ui/card` | [docs](https://ui.shadcn.com/docs/components/card) | [story](pathname:///react-common/storybook/?path=/story/ui-card--default) |
-| `carousel` | `@rtorcato/shadcn-ui/components/ui/carousel` | [docs](https://ui.shadcn.com/docs/components/carousel) | [story](pathname:///react-common/storybook/?path=/story/ui-carousel--default) |
-| `chart` | `@rtorcato/shadcn-ui/components/ui/chart` | [docs](https://ui.shadcn.com/docs/components/chart) | [story](pathname:///react-common/storybook/?path=/story/ui-chart--bars) |
-| `checkbox` | `@rtorcato/shadcn-ui/components/ui/checkbox` | [docs](https://ui.shadcn.com/docs/components/checkbox) | [story](pathname:///react-common/storybook/?path=/story/ui-checkbox--default) |
-| `collapsible` | `@rtorcato/shadcn-ui/components/ui/collapsible` | [docs](https://ui.shadcn.com/docs/components/collapsible) | [story](pathname:///react-common/storybook/?path=/story/ui-collapsible--default) |
-| `command` | `@rtorcato/shadcn-ui/components/ui/command` | [docs](https://ui.shadcn.com/docs/components/command) | [story](pathname:///react-common/storybook/?path=/story/ui-command--default) |
-| `context-menu` | `@rtorcato/shadcn-ui/components/ui/context-menu` | [docs](https://ui.shadcn.com/docs/components/context-menu) | [story](pathname:///react-common/storybook/?path=/story/ui-contextmenu--default) |
-| `dialog` | `@rtorcato/shadcn-ui/components/ui/dialog` | [docs](https://ui.shadcn.com/docs/components/dialog) | [story](pathname:///react-common/storybook/?path=/story/ui-dialog--default) |
-| `drawer` | `@rtorcato/shadcn-ui/components/ui/drawer` | [docs](https://ui.shadcn.com/docs/components/drawer) | [story](pathname:///react-common/storybook/?path=/story/ui-drawer--default) |
-| `dropdown-menu` | `@rtorcato/shadcn-ui/components/ui/dropdown-menu` | [docs](https://ui.shadcn.com/docs/components/dropdown-menu) | [story](pathname:///react-common/storybook/?path=/story/ui-dropdownmenu--default) |
-| `empty` | `@rtorcato/shadcn-ui/components/ui/empty` | [docs](https://ui.shadcn.com/docs/components/empty) | [story](pathname:///react-common/storybook/?path=/story/ui-empty--default) |
-| `field` | `@rtorcato/shadcn-ui/components/ui/field` | [docs](https://ui.shadcn.com/docs/components/field) | [story](pathname:///react-common/storybook/?path=/story/ui-field--default) |
-| `form` | `@rtorcato/shadcn-ui/components/ui/form` | [docs](https://ui.shadcn.com/docs/components/form) | [story](pathname:///react-common/storybook/?path=/story/ui-form--default) |
-| `hover-card` | `@rtorcato/shadcn-ui/components/ui/hover-card` | [docs](https://ui.shadcn.com/docs/components/hover-card) | [story](pathname:///react-common/storybook/?path=/story/ui-hovercard--default) |
-| `input` | `@rtorcato/shadcn-ui/components/ui/input` | [docs](https://ui.shadcn.com/docs/components/input) | [story](pathname:///react-common/storybook/?path=/story/ui-input--default) |
-| `input-group` | `@rtorcato/shadcn-ui/components/ui/input-group` | [docs](https://ui.shadcn.com/docs/components/input-group) | [story](pathname:///react-common/storybook/?path=/story/ui-inputgroup--with-leading-icon) |
-| `input-otp` | `@rtorcato/shadcn-ui/components/ui/input-otp` | [docs](https://ui.shadcn.com/docs/components/input-otp) | [story](pathname:///react-common/storybook/?path=/story/ui-inputotp--default) |
-| `item` | `@rtorcato/shadcn-ui/components/ui/item` | [docs](https://ui.shadcn.com/docs/components/item) | [story](pathname:///react-common/storybook/?path=/story/ui-item--default) |
-| `kbd` | `@rtorcato/shadcn-ui/components/ui/kbd` | [docs](https://ui.shadcn.com/docs/components/kbd) | [story](pathname:///react-common/storybook/?path=/story/ui-kbd--single) |
-| `label` | `@rtorcato/shadcn-ui/components/ui/label` | [docs](https://ui.shadcn.com/docs/components/label) | [story](pathname:///react-common/storybook/?path=/story/ui-label--default) |
-| `menubar` | `@rtorcato/shadcn-ui/components/ui/menubar` | [docs](https://ui.shadcn.com/docs/components/menubar) | [story](pathname:///react-common/storybook/?path=/story/ui-menubar--default) |
-| `navigation-menu` | `@rtorcato/shadcn-ui/components/ui/navigation-menu` | [docs](https://ui.shadcn.com/docs/components/navigation-menu) | [story](pathname:///react-common/storybook/?path=/story/ui-navigationmenu--default) |
-| `pagination` | `@rtorcato/shadcn-ui/components/ui/pagination` | [docs](https://ui.shadcn.com/docs/components/pagination) | [story](pathname:///react-common/storybook/?path=/story/ui-pagination--default) |
-| `popover` | `@rtorcato/shadcn-ui/components/ui/popover` | [docs](https://ui.shadcn.com/docs/components/popover) | [story](pathname:///react-common/storybook/?path=/story/ui-popover--default) |
-| `progress` | `@rtorcato/shadcn-ui/components/ui/progress` | [docs](https://ui.shadcn.com/docs/components/progress) | [story](pathname:///react-common/storybook/?path=/story/ui-progress--default) |
-| `radio-group` | `@rtorcato/shadcn-ui/components/ui/radio-group` | [docs](https://ui.shadcn.com/docs/components/radio-group) | [story](pathname:///react-common/storybook/?path=/story/ui-radiogroup--default) |
-| `resizable` | `@rtorcato/shadcn-ui/components/ui/resizable` | [docs](https://ui.shadcn.com/docs/components/resizable) | [story](pathname:///react-common/storybook/?path=/story/ui-resizable--horizontal) |
-| `scroll-area` | `@rtorcato/shadcn-ui/components/ui/scroll-area` | [docs](https://ui.shadcn.com/docs/components/scroll-area) | [story](pathname:///react-common/storybook/?path=/story/ui-scrollarea--default) |
-| `select` | `@rtorcato/shadcn-ui/components/ui/select` | [docs](https://ui.shadcn.com/docs/components/select) | [story](pathname:///react-common/storybook/?path=/story/ui-select--default) |
-| `separator` | `@rtorcato/shadcn-ui/components/ui/separator` | [docs](https://ui.shadcn.com/docs/components/separator) | [story](pathname:///react-common/storybook/?path=/story/ui-separator--horizontal) |
-| `sheet` | `@rtorcato/shadcn-ui/components/ui/sheet` | [docs](https://ui.shadcn.com/docs/components/sheet) | [story](pathname:///react-common/storybook/?path=/story/ui-sheet--right) |
-| `sidebar` | `@rtorcato/shadcn-ui/components/ui/sidebar` | [docs](https://ui.shadcn.com/docs/components/sidebar) | [story](pathname:///react-common/storybook/?path=/story/ui-sidebar--default) |
-| `skeleton` | `@rtorcato/shadcn-ui/components/ui/skeleton` | [docs](https://ui.shadcn.com/docs/components/skeleton) | [story](pathname:///react-common/storybook/?path=/story/ui-skeleton--default) |
-| `slider` | `@rtorcato/shadcn-ui/components/ui/slider` | [docs](https://ui.shadcn.com/docs/components/slider) | [story](pathname:///react-common/storybook/?path=/story/ui-slider--default) |
-| `sonner` | `@rtorcato/shadcn-ui/components/ui/sonner` | [docs](https://ui.shadcn.com/docs/components/sonner) | [story](pathname:///react-common/storybook/?path=/story/ui-sonner--default) |
-| `spinner` | `@rtorcato/shadcn-ui/components/ui/spinner` | [docs](https://ui.shadcn.com/docs/components/spinner) | [story](pathname:///react-common/storybook/?path=/story/ui-spinner--default) |
-| `switch` | `@rtorcato/shadcn-ui/components/ui/switch` | [docs](https://ui.shadcn.com/docs/components/switch) | [story](pathname:///react-common/storybook/?path=/story/ui-switch--default) |
-| `table` | `@rtorcato/shadcn-ui/components/ui/table` | [docs](https://ui.shadcn.com/docs/components/table) | [story](pathname:///react-common/storybook/?path=/story/ui-table--default) |
-| `tabs` | `@rtorcato/shadcn-ui/components/ui/tabs` | [docs](https://ui.shadcn.com/docs/components/tabs) | [story](pathname:///react-common/storybook/?path=/story/ui-tabs--default) |
-| `textarea` | `@rtorcato/shadcn-ui/components/ui/textarea` | [docs](https://ui.shadcn.com/docs/components/textarea) | [story](pathname:///react-common/storybook/?path=/story/ui-textarea--default) |
-| `toggle` | `@rtorcato/shadcn-ui/components/ui/toggle` | [docs](https://ui.shadcn.com/docs/components/toggle) | [story](pathname:///react-common/storybook/?path=/story/ui-toggle--default) |
-| `toggle-group` | `@rtorcato/shadcn-ui/components/ui/toggle-group` | [docs](https://ui.shadcn.com/docs/components/toggle-group) | [story](pathname:///react-common/storybook/?path=/story/ui-togglegroup--multiple) |
-| `tooltip` | `@rtorcato/shadcn-ui/components/ui/tooltip` | [docs](https://ui.shadcn.com/docs/components/tooltip) | [story](pathname:///react-common/storybook/?path=/story/ui-tooltip--default) |
+| `accordion` | <Subpath>ui/accordion</Subpath> | [docs](https://ui.shadcn.com/docs/components/accordion) | [story](pathname:///react-common/storybook/?path=/story/ui-accordion--default) |
+| `alert` | <Subpath>ui/alert</Subpath> | [docs](https://ui.shadcn.com/docs/components/alert) | [story](pathname:///react-common/storybook/?path=/story/ui-alert--default) |
+| `alert-dialog` | <Subpath>ui/alert-dialog</Subpath> | [docs](https://ui.shadcn.com/docs/components/alert-dialog) | [story](pathname:///react-common/storybook/?path=/story/ui-alertdialog--default) |
+| `aspect-ratio` | <Subpath>ui/aspect-ratio</Subpath> | [docs](https://ui.shadcn.com/docs/components/aspect-ratio) | [story](pathname:///react-common/storybook/?path=/story/ui-aspectratio--default) |
+| `avatar` | <Subpath>ui/avatar</Subpath> | [docs](https://ui.shadcn.com/docs/components/avatar) | [story](pathname:///react-common/storybook/?path=/story/ui-avatar--default) |
+| `badge` | <Subpath>ui/badge</Subpath> | [docs](https://ui.shadcn.com/docs/components/badge) | [story](pathname:///react-common/storybook/?path=/story/ui-badge--default) |
+| `breadcrumb` | <Subpath>ui/breadcrumb</Subpath> | [docs](https://ui.shadcn.com/docs/components/breadcrumb) | [story](pathname:///react-common/storybook/?path=/story/ui-breadcrumb--default) |
+| `button` | <Subpath>ui/button</Subpath> | [docs](https://ui.shadcn.com/docs/components/button) | [story](pathname:///react-common/storybook/?path=/story/ui-button--default) |
+| `button-group` | <Subpath>ui/button-group</Subpath> | [docs](https://ui.shadcn.com/docs/components/button-group) | [story](pathname:///react-common/storybook/?path=/story/ui-buttongroup--default) |
+| `calendar` | <Subpath>ui/calendar</Subpath> | [docs](https://ui.shadcn.com/docs/components/calendar) | [story](pathname:///react-common/storybook/?path=/story/ui-calendar--single) |
+| `card` | <Subpath>ui/card</Subpath> | [docs](https://ui.shadcn.com/docs/components/card) | [story](pathname:///react-common/storybook/?path=/story/ui-card--default) |
+| `carousel` | <Subpath>ui/carousel</Subpath> | [docs](https://ui.shadcn.com/docs/components/carousel) | [story](pathname:///react-common/storybook/?path=/story/ui-carousel--default) |
+| `chart` | <Subpath>ui/chart</Subpath> | [docs](https://ui.shadcn.com/docs/components/chart) | [story](pathname:///react-common/storybook/?path=/story/ui-chart--bars) |
+| `checkbox` | <Subpath>ui/checkbox</Subpath> | [docs](https://ui.shadcn.com/docs/components/checkbox) | [story](pathname:///react-common/storybook/?path=/story/ui-checkbox--default) |
+| `collapsible` | <Subpath>ui/collapsible</Subpath> | [docs](https://ui.shadcn.com/docs/components/collapsible) | [story](pathname:///react-common/storybook/?path=/story/ui-collapsible--default) |
+| `command` | <Subpath>ui/command</Subpath> | [docs](https://ui.shadcn.com/docs/components/command) | [story](pathname:///react-common/storybook/?path=/story/ui-command--default) |
+| `context-menu` | <Subpath>ui/context-menu</Subpath> | [docs](https://ui.shadcn.com/docs/components/context-menu) | [story](pathname:///react-common/storybook/?path=/story/ui-contextmenu--default) |
+| `dialog` | <Subpath>ui/dialog</Subpath> | [docs](https://ui.shadcn.com/docs/components/dialog) | [story](pathname:///react-common/storybook/?path=/story/ui-dialog--default) |
+| `drawer` | <Subpath>ui/drawer</Subpath> | [docs](https://ui.shadcn.com/docs/components/drawer) | [story](pathname:///react-common/storybook/?path=/story/ui-drawer--default) |
+| `dropdown-menu` | <Subpath>ui/dropdown-menu</Subpath> | [docs](https://ui.shadcn.com/docs/components/dropdown-menu) | [story](pathname:///react-common/storybook/?path=/story/ui-dropdownmenu--default) |
+| `empty` | <Subpath>ui/empty</Subpath> | [docs](https://ui.shadcn.com/docs/components/empty) | [story](pathname:///react-common/storybook/?path=/story/ui-empty--default) |
+| `field` | <Subpath>ui/field</Subpath> | [docs](https://ui.shadcn.com/docs/components/field) | [story](pathname:///react-common/storybook/?path=/story/ui-field--default) |
+| `form` | <Subpath>ui/form</Subpath> | [docs](https://ui.shadcn.com/docs/components/form) | [story](pathname:///react-common/storybook/?path=/story/ui-form--default) |
+| `hover-card` | <Subpath>ui/hover-card</Subpath> | [docs](https://ui.shadcn.com/docs/components/hover-card) | [story](pathname:///react-common/storybook/?path=/story/ui-hovercard--default) |
+| `input` | <Subpath>ui/input</Subpath> | [docs](https://ui.shadcn.com/docs/components/input) | [story](pathname:///react-common/storybook/?path=/story/ui-input--default) |
+| `input-group` | <Subpath>ui/input-group</Subpath> | [docs](https://ui.shadcn.com/docs/components/input-group) | [story](pathname:///react-common/storybook/?path=/story/ui-inputgroup--with-leading-icon) |
+| `input-otp` | <Subpath>ui/input-otp</Subpath> | [docs](https://ui.shadcn.com/docs/components/input-otp) | [story](pathname:///react-common/storybook/?path=/story/ui-inputotp--default) |
+| `item` | <Subpath>ui/item</Subpath> | [docs](https://ui.shadcn.com/docs/components/item) | [story](pathname:///react-common/storybook/?path=/story/ui-item--default) |
+| `kbd` | <Subpath>ui/kbd</Subpath> | [docs](https://ui.shadcn.com/docs/components/kbd) | [story](pathname:///react-common/storybook/?path=/story/ui-kbd--single) |
+| `label` | <Subpath>ui/label</Subpath> | [docs](https://ui.shadcn.com/docs/components/label) | [story](pathname:///react-common/storybook/?path=/story/ui-label--default) |
+| `menubar` | <Subpath>ui/menubar</Subpath> | [docs](https://ui.shadcn.com/docs/components/menubar) | [story](pathname:///react-common/storybook/?path=/story/ui-menubar--default) |
+| `navigation-menu` | <Subpath>ui/navigation-menu</Subpath> | [docs](https://ui.shadcn.com/docs/components/navigation-menu) | [story](pathname:///react-common/storybook/?path=/story/ui-navigationmenu--default) |
+| `pagination` | <Subpath>ui/pagination</Subpath> | [docs](https://ui.shadcn.com/docs/components/pagination) | [story](pathname:///react-common/storybook/?path=/story/ui-pagination--default) |
+| `popover` | <Subpath>ui/popover</Subpath> | [docs](https://ui.shadcn.com/docs/components/popover) | [story](pathname:///react-common/storybook/?path=/story/ui-popover--default) |
+| `progress` | <Subpath>ui/progress</Subpath> | [docs](https://ui.shadcn.com/docs/components/progress) | [story](pathname:///react-common/storybook/?path=/story/ui-progress--default) |
+| `radio-group` | <Subpath>ui/radio-group</Subpath> | [docs](https://ui.shadcn.com/docs/components/radio-group) | [story](pathname:///react-common/storybook/?path=/story/ui-radiogroup--default) |
+| `resizable` | <Subpath>ui/resizable</Subpath> | [docs](https://ui.shadcn.com/docs/components/resizable) | [story](pathname:///react-common/storybook/?path=/story/ui-resizable--horizontal) |
+| `scroll-area` | <Subpath>ui/scroll-area</Subpath> | [docs](https://ui.shadcn.com/docs/components/scroll-area) | [story](pathname:///react-common/storybook/?path=/story/ui-scrollarea--default) |
+| `select` | <Subpath>ui/select</Subpath> | [docs](https://ui.shadcn.com/docs/components/select) | [story](pathname:///react-common/storybook/?path=/story/ui-select--default) |
+| `separator` | <Subpath>ui/separator</Subpath> | [docs](https://ui.shadcn.com/docs/components/separator) | [story](pathname:///react-common/storybook/?path=/story/ui-separator--horizontal) |
+| `sheet` | <Subpath>ui/sheet</Subpath> | [docs](https://ui.shadcn.com/docs/components/sheet) | [story](pathname:///react-common/storybook/?path=/story/ui-sheet--right) |
+| `sidebar` | <Subpath>ui/sidebar</Subpath> | [docs](https://ui.shadcn.com/docs/components/sidebar) | [story](pathname:///react-common/storybook/?path=/story/ui-sidebar--default) |
+| `skeleton` | <Subpath>ui/skeleton</Subpath> | [docs](https://ui.shadcn.com/docs/components/skeleton) | [story](pathname:///react-common/storybook/?path=/story/ui-skeleton--default) |
+| `slider` | <Subpath>ui/slider</Subpath> | [docs](https://ui.shadcn.com/docs/components/slider) | [story](pathname:///react-common/storybook/?path=/story/ui-slider--default) |
+| `sonner` | <Subpath>ui/sonner</Subpath> | [docs](https://ui.shadcn.com/docs/components/sonner) | [story](pathname:///react-common/storybook/?path=/story/ui-sonner--default) |
+| `spinner` | <Subpath>ui/spinner</Subpath> | [docs](https://ui.shadcn.com/docs/components/spinner) | [story](pathname:///react-common/storybook/?path=/story/ui-spinner--default) |
+| `switch` | <Subpath>ui/switch</Subpath> | [docs](https://ui.shadcn.com/docs/components/switch) | [story](pathname:///react-common/storybook/?path=/story/ui-switch--default) |
+| `table` | <Subpath>ui/table</Subpath> | [docs](https://ui.shadcn.com/docs/components/table) | [story](pathname:///react-common/storybook/?path=/story/ui-table--default) |
+| `tabs` | <Subpath>ui/tabs</Subpath> | [docs](https://ui.shadcn.com/docs/components/tabs) | [story](pathname:///react-common/storybook/?path=/story/ui-tabs--default) |
+| `textarea` | <Subpath>ui/textarea</Subpath> | [docs](https://ui.shadcn.com/docs/components/textarea) | [story](pathname:///react-common/storybook/?path=/story/ui-textarea--default) |
+| `toggle` | <Subpath>ui/toggle</Subpath> | [docs](https://ui.shadcn.com/docs/components/toggle) | [story](pathname:///react-common/storybook/?path=/story/ui-toggle--default) |
+| `toggle-group` | <Subpath>ui/toggle-group</Subpath> | [docs](https://ui.shadcn.com/docs/components/toggle-group) | [story](pathname:///react-common/storybook/?path=/story/ui-togglegroup--multiple) |
+| `tooltip` | <Subpath>ui/tooltip</Subpath> | [docs](https://ui.shadcn.com/docs/components/tooltip) | [story](pathname:///react-common/storybook/?path=/story/ui-tooltip--default) |

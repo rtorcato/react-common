@@ -163,7 +163,13 @@ const config: Config = {
 			links: [
 				{
 					title: 'Documentation',
-					items: [{ label: 'Getting started', to: '/docs' }],
+					items: [
+						{ label: 'Getting started', to: '/docs/getting-started' },
+						{ label: 'Tailwind setup', to: '/docs/tailwind-setup' },
+						{ label: 'Theming', to: '/docs/theming' },
+						{ label: 'Hooks', to: '/docs/hooks' },
+						{ label: 'Components', to: '/docs/components' },
+					],
 				},
 				{
 					title: 'Resources',
