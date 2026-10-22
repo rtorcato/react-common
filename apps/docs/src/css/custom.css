@@ -194,10 +194,6 @@ body,
 .footer__col {
 	font-size: 14px;
 }
-.footer__link-item svg,
-.footer__link-item [class*="iconExternalLink"] {
-	display: none;
-}
 
 /* ---------- Code ----------
    Prism is github in light mode and vsDark in dark, so the code surface follows

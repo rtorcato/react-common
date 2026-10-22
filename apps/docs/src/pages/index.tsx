@@ -1,6 +1,7 @@
 import Link from '@docusaurus/Link'
 import useBaseUrl from '@docusaurus/useBaseUrl'
 import Siblings from '@rtorcato/shared-docs/components/Siblings'
+import CodeBlock from '@theme/CodeBlock'
 import Layout from '@theme/Layout'
 import ThemedImage from '@theme/ThemedImage'
 import clsx from 'clsx'
@@ -132,7 +133,9 @@ function CodeWindow(): ReactElement {
 				<span className={styles.dot} style={{ background: '#28c840' }} />
 				<span className={styles.codeFile}>example.tsx</span>
 			</div>
-			<pre className={styles.codePre}>{HERO_CODE}</pre>
+			<div className={styles.codeBody}>
+				<CodeBlock language="tsx">{HERO_CODE}</CodeBlock>
+			</div>
 		</div>
 	)
 }
@@ -235,14 +238,14 @@ export default function Home(): ReactElement {
 		<Layout description="A React component library built on shadcn/ui, Radix UI, and Tailwind CSS v4.">
 			<main>
 				<Hero />
+				<Pillars />
+				<Groups />
 				<UseWithAI
 					repo="rtorcato/react-common"
 					plugin="react-common"
 					skill="react-common"
 					pkg="@rtorcato/react-common"
 				/>
-				<Pillars />
-				<Groups />
 				<Siblings self="@rtorcato/react-common" />
 			</main>
 		</Layout>

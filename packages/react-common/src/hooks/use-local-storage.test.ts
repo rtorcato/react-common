@@ -47,10 +47,57 @@ describe('useLocalStorage', () => {
 		expect(window.localStorage.getItem('count')).toBe(JSON.stringify(2))
 	})
 
-	it('falls back to initialValue when stored JSON is invalid', () => {
+	it('falls back to initialValue when stored JSON is invalid or the wrong type', () => {
 		window.localStorage.setItem('bad', '{not-json')
-		const { result } = renderHook(() => useLocalStorage('bad', 'safe'))
-		expect(result.current[0]).toBe('safe')
+		window.localStorage.setItem('wrong', JSON.stringify('text'))
+		window.localStorage.setItem('obj', JSON.stringify({ a: 1 }))
+		expect(renderHook(() => useLocalStorage('bad', 'safe')).result.current[0]).toBe('safe')
+		expect(renderHook(() => useLocalStorage('bad', { a: 0 })).result.current[0]).toEqual({ a: 0 })
+		expect(renderHook(() => useLocalStorage('wrong', 7)).result.current[0]).toBe(7)
+		expect(renderHook(() => useLocalStorage('obj', [] as number[])).result.current[0]).toEqual([])
+	})
+
+	it('skips the type check when initialValue is null', () => {
+		window.localStorage.setItem('n', JSON.stringify({ a: 1 }))
+		const { result } = renderHook(() => useLocalStorage<{ a: number } | null>('n', null))
+		expect(result.current[0]).toEqual({ a: 1 })
+	})
+
+	it('ignores a stored value that fails the isValid guard', () => {
+		window.localStorage.setItem('bad', '{not-json')
+		window.localStorage.setItem('wrong', JSON.stringify('text'))
+		const isNumber = (v: unknown): v is number => typeof v === 'number'
+		expect(renderHook(() => useLocalStorage('bad', 7, isNumber)).result.current[0]).toBe(7)
+		expect(renderHook(() => useLocalStorage('wrong', 7, isNumber)).result.current[0]).toBe(7)
+	})
+
+	it('keeps a stored value that passes the isValid guard', () => {
+		window.localStorage.setItem('n', JSON.stringify(3))
+		const { result } = renderHook(() =>
+			useLocalStorage('n', 7, (v): v is number => typeof v === 'number')
+		)
+		expect(result.current[0]).toBe(3)
+	})
+
+	it('clear removes the entry and resets to initialValue', () => {
+		window.localStorage.setItem('n', JSON.stringify(3))
+		const { result } = renderHook(() => useLocalStorage('n', 7))
+		expect(result.current[0]).toBe(3)
+
+		act(() => {
+			result.current[2]()
+		})
+
+		expect(result.current[0]).toBe(7)
+		expect(window.localStorage.getItem('n')).toBeNull()
+	})
+
+	it('keeps initialValue when storage is blocked', () => {
+		vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+			throw new Error('blocked')
+		})
+		const { result } = renderHook(() => useLocalStorage('k', 'init'))
+		expect(result.current[0]).toBe('init')
 	})
 
 	it('swallows setItem errors without breaking state updates', () => {

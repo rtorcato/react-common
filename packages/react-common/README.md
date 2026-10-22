@@ -39,7 +39,7 @@ import { useDebounce, useLocalStorage, cn, ThemeProvider } from '@rtorcato/react
 | --- | --- |
 | `useClickOutside` | Fire a callback when a click lands outside a ref. |
 | `useDebounce` | Debounce a rapidly-changing value. |
-| `useLocalStorage` | State synced to `localStorage`. |
+| `useLocalStorage` | State synced to `localStorage` via `@rtorcato/browser-common`. Optional `isValid` guard; third item clears the entry. |
 | `useMediaQuery` | Subscribe to a CSS media query. |
 | `useIsMobile` | `true` below the 768px breakpoint. |
 | `useSidebar` | Minimal open/close state helper. |
