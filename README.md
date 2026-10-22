@@ -47,6 +47,13 @@ vs subpath imports, `styles.css` + Tailwind setup, theming).
 /plugin install react-common@react-common
 ```
 
+**Any agent with the [`skills`](https://www.npmjs.com/package/skills) CLI** —
+install the skill straight from GitHub, no clone or package install:
+
+```bash
+npx skills add https://github.com/rtorcato/react-common --skill react-common
+```
+
 **Other tools (Cursor / Copilot / Codex)** — read [`AGENTS.md`](./AGENTS.md),
 the cross-tool convention many agents pick up automatically. It stays in sync
 with the Claude skill in [`skills/react-common/SKILL.md`](./skills/react-common/SKILL.md).
