@@ -5,14 +5,24 @@ import {
 } from '@rtorcato/browser-common/localstorage'
 import * as React from 'react'
 
+// getLocalStorage returns the raw string when JSON.parse fails. A real stored
+// string is JSON-quoted, so a returned string equal to the raw entry means the
+// parse failed. ponytail: reads window directly; drop once browser-common can
+// signal parse failure itself.
+function isRawString(key: string, item: unknown): boolean {
+	return typeof item === 'string' && window.localStorage.getItem(key) === item
+}
+
 /**
  * State persisted to `localStorage` as JSON. The first render uses `initialValue`
  * and storage is read after mount, so it matches the server render.
  *
  * `isValid` guards the stored value: when it returns false (stale schema,
  * hand-edited entry) the stored value is ignored and `initialValue` is kept.
- * Without it, whatever `getLocalStorage` returns is trusted, which includes the
- * raw string for an entry that isn't valid JSON.
+ * Without it, a stored value is kept only if its `typeof` (and array-ness)
+ * matches `initialValue`, which rejects the raw string `getLocalStorage` returns
+ * for an entry that isn't valid JSON. The check is skipped when `initialValue` is
+ * `null` or `undefined`; for union types, pass `isValid`.
  *
  * The third tuple item removes the entry and resets to `initialValue`.
  */
@@ -33,7 +43,14 @@ export function useLocalStorage<T>(
 		const item = getLocalStorage(key)
 		if (item === null) return
 		const validate = isValidRef.current
-		if (!validate || validate(item)) setStoredValue(item as T)
+		const initial = initialRef.current
+		const ok = validate
+			? validate(item)
+			: initial == null ||
+				(typeof item === typeof initial &&
+					Array.isArray(item) === Array.isArray(initial) &&
+					!isRawString(key, item))
+		if (ok) setStoredValue(item as T)
 	}, [key])
 
 	const setValue = React.useCallback(

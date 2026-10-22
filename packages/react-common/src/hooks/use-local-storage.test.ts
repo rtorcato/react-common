@@ -47,6 +47,22 @@ describe('useLocalStorage', () => {
 		expect(window.localStorage.getItem('count')).toBe(JSON.stringify(2))
 	})
 
+	it('falls back to initialValue when stored JSON is invalid or the wrong type', () => {
+		window.localStorage.setItem('bad', '{not-json')
+		window.localStorage.setItem('wrong', JSON.stringify('text'))
+		window.localStorage.setItem('obj', JSON.stringify({ a: 1 }))
+		expect(renderHook(() => useLocalStorage('bad', 'safe')).result.current[0]).toBe('safe')
+		expect(renderHook(() => useLocalStorage('bad', { a: 0 })).result.current[0]).toEqual({ a: 0 })
+		expect(renderHook(() => useLocalStorage('wrong', 7)).result.current[0]).toBe(7)
+		expect(renderHook(() => useLocalStorage('obj', [] as number[])).result.current[0]).toEqual([])
+	})
+
+	it('skips the type check when initialValue is null', () => {
+		window.localStorage.setItem('n', JSON.stringify({ a: 1 }))
+		const { result } = renderHook(() => useLocalStorage<{ a: number } | null>('n', null))
+		expect(result.current[0]).toEqual({ a: 1 })
+	})
+
 	it('ignores a stored value that fails the isValid guard', () => {
 		window.localStorage.setItem('bad', '{not-json')
 		window.localStorage.setItem('wrong', JSON.stringify('text'))
