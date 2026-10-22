@@ -7,7 +7,7 @@ import * as React from 'react'
 
 // getLocalStorage returns the raw string when JSON.parse fails. A real stored
 // string is JSON-quoted, so a returned string equal to the raw entry means the
-// parse failed. ponytail: reads window directly; drop once browser-common can
+// parse failed. Reads window directly; drop once browser-common can
 // signal parse failure itself.
 function isRawString(key: string, item: unknown): boolean {
 	return typeof item === 'string' && window.localStorage.getItem(key) === item
