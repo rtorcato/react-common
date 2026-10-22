@@ -12,6 +12,8 @@
 [![Bundle size](https://img.shields.io/bundlephobia/minzip/@rtorcato/react-common)](https://bundlephobia.com/package/@rtorcato/react-common)
 [![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
 
+[<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy me a coffee" height="40">](https://buymeacoffee.com/rtorcato)
+
 The foundation package of the
 [react-common](https://github.com/rtorcato/react-common) monorepo — the headless
 React hooks plus the `cn` class-merge utility and `ThemeProvider`, with zero UI
