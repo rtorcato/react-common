@@ -15,7 +15,7 @@ hooks, the `cn` class-merge utility, `ThemeProvider`; zero UI deps).
    ```ts
    import { cn, useIsMobile, usePrevious, useToggle, ThemeProvider } from '@rtorcato/react-common'
    ```
-   Exports: `useClickOutside`, `useDebounce`, `useLocalStorage`,
+   Exports: `useClickOutside`, `useCopy`, `useDebounce`, `useLocalStorage`,
    `useMediaQuery`, `useIsMobile`, `useSidebar`, `usePrevious`, `useToggle`,
    `cn`, and `ThemeProvider` / `useTheme` (next-themes re-export).
 

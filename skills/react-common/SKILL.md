@@ -15,7 +15,7 @@ component library and depends on `react-common`.
    ```ts
    import { cn, useIsMobile, usePrevious, useToggle, ThemeProvider } from '@rtorcato/react-common'
    ```
-   Exports: hooks `useClickOutside`, `useDebounce`, `useLocalStorage`,
+   Exports: hooks `useClickOutside`, `useCopy`, `useDebounce`, `useLocalStorage`,
    `useMediaQuery`, `useIsMobile`, `useSidebar`, `usePrevious`, `useToggle`; the
    `cn` class-merge utility; and `ThemeProvider` / `useTheme` (re-exported from
    next-themes).

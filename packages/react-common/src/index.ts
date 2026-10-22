@@ -1,5 +1,6 @@
 // Hooks
 export * from './hooks/use-click-outside'
+export * from './hooks/use-copy'
 export * from './hooks/use-debounce'
 export * from './hooks/use-event-listener'
 export * from './hooks/use-interval'
