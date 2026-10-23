@@ -160,6 +160,9 @@ importers:
 
   packages/shadcn-ui:
     dependencies:
+      '@rtorcato/js-common':
+        specifier: ^6.1.0
+        version: 6.1.0(@inquirer/prompts@8.7.3(@types/node@26.1.1))(chalk@6.0.1)(commander@15.0.0)
       '@rtorcato/react-common':
         specifier: workspace:*
         version: link:../react-common
@@ -3891,6 +3894,46 @@ packages:
   '@rtorcato/browser-common@3.0.0':
     resolution: {integrity: sha512-Oxz22X/e0xJw0CyKpuAmNnv2YUk5bnrI/3mVPEzVhs+GRvyxELFODmVamk2WUJzEnGUNX3OYT0mTzY+8KffTDg==}
     engines: {node: '>=22'}
+
+  '@rtorcato/js-common@6.1.0':
+    resolution: {integrity: sha512-FsvCsrGCUtOWYnC2YtLLQHpArD6WcNUcuPHNrMvNH/+UiDVgAyfkYWjVxt6e3hTil+HCPofu5S2swZ9q9bGfdA==}
+    engines: {node: '>=24'}
+    hasBin: true
+    peerDependencies:
+      '@inquirer/prompts': ^8.7.2
+      chalk: ^6.0.1
+      chalk-animation: ^2.0.3
+      commander: ^15.0.0
+      figlet: ^1.12.0
+      gradient-string: ^3.0.0
+      pino: ^10.1.0
+      pino-pretty: ^13.0.0
+      short-uuid: ^6.0.3
+      uuid: ^14.0.2
+      zod: ^4.6.5
+    peerDependenciesMeta:
+      '@inquirer/prompts':
+        optional: true
+      chalk:
+        optional: true
+      chalk-animation:
+        optional: true
+      commander:
+        optional: true
+      figlet:
+        optional: true
+      gradient-string:
+        optional: true
+      pino:
+        optional: true
+      pino-pretty:
+        optional: true
+      short-uuid:
+        optional: true
+      uuid:
+        optional: true
+      zod:
+        optional: true
 
   '@rtorcato/repo-tooling@6.0.0':
     resolution: {integrity: sha512-zReKrcSvdVof8yMvLv6kZH2pwm07zeiTLLZxlOXC0DOhTaPuU5jthOMtb3k3YZtONrCN2w2Y8gt34qURl9x83Q==}
@@ -14202,6 +14245,12 @@ snapshots:
       picomatch: 4.0.5
 
   '@rtorcato/browser-common@3.0.0': {}
+
+  '@rtorcato/js-common@6.1.0(@inquirer/prompts@8.7.3(@types/node@26.1.1))(chalk@6.0.1)(commander@15.0.0)':
+    optionalDependencies:
+      '@inquirer/prompts': 8.7.3(@types/node@26.1.1)
+      chalk: 6.0.1
+      commander: 15.0.0
 
   '@rtorcato/repo-tooling@6.0.0(@biomejs/biome@2.5.8)(@commitlint/cli@21.2.1(@types/node@26.1.1)(conventional-commits-parser@7.1.0)(typescript@5.9.3))(@commitlint/config-conventional@21.2.3)(@commitlint/types@21.2.3)(@types/node@26.1.1)(conventional-changelog-conventionalcommits@10.2.1)(esbuild-node-externals@2.0.0(esbuild@0.28.2))(esbuild@0.28.2)(tslib@2.8.1)(typescript@5.9.3)(vitest@5.0.3)':
     dependencies:
