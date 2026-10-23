@@ -8,8 +8,10 @@ import StorybookEmbed from '@site/src/components/StorybookEmbed'
 # Data table
 
 A generic table built on [@tanstack/react-table](https://tanstack.com/table):
-sorting, pagination, and a column-visibility dropdown out of the box. Re-exports
-`ColumnDef` so you can define columns without a separate import.
+sorting, pagination, and a column-visibility dropdown out of the box. Exports
+`ColumnDef` so you can define columns without a separate import. It is bound to
+the table's feature set (`DataTableFeatures`), so import it from here rather than
+from `@tanstack/react-table`.
 
 ```ts
 import { DataTable, type ColumnDef } from '@rtorcato/shadcn-ui/components/ui-extended/data-table'
@@ -34,7 +36,25 @@ const columns: ColumnDef<Payment>[] = [
 
 | Prop | Type | Default | Description |
 | --- | --- | --- | --- |
-| `columns` | `ColumnDef<TData>[]` | — | TanStack column definitions. |
-| `data` | `TData[]` | — | Rows to render. |
+| `columns` | `ColumnDef<TData>[]` | — | TanStack Table 9 column definitions, bound to `DataTableFeatures`. |
+| `data` | `TData[]` (`TData extends RowData`) | — | Rows to render. |
 | `pageSize` | `number` | `10` | Rows per page. |
 | `className` | `string` | — | Wrapper class. |
+
+## Upgrading from 1.x
+
+`DataTable` now runs on TanStack Table 9. Plain accessor/header/cell columns typed with
+`ColumnDef` from this module keep working unchanged. Check these if you go further:
+
+1. `@tanstack/react-table` is now `^9` (a runtime dependency of `@rtorcato/shadcn-ui`).
+   Types you import straight from it must also come from v9.
+2. `ColumnDef` is DataTable's own alias, bound to `DataTableFeatures`. Columns typed with
+   TanStack's own `ColumnDef`, or built with `createColumnHelper` for another feature set,
+   are not assignable.
+3. `TData` must extend `RowData` (`Record<string, any> | any[]`). Primitive or `unknown` rows
+   no longer type-check.
+4. v9 renames: `sortingFn` → `sortFn`, `getSortingFn` → `getSortFn`, `SortingFn` → `SortFn`,
+   `VisibilityState` → `ColumnVisibilityState`.
+5. `ColumnMeta` / `TableMeta` augmentation takes `TFeatures` as the first generic.
+6. Rows no longer carry a `data-state="selected"` attribute. No row-selection feature is
+   registered, and it always rendered `"false"` before.

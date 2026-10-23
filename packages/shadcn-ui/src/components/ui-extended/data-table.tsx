@@ -1,14 +1,21 @@
 'use client'
 
 import {
-	type ColumnDef,
-	flexRender,
-	getCoreRowModel,
-	getPaginationRowModel,
-	getSortedRowModel,
+	type ColumnVisibilityState,
+	columnVisibilityFeature,
+	createPaginatedRowModel,
+	createSortedRowModel,
+	type RowData,
+	rowPaginationFeature,
+	rowSortingFeature,
 	type SortingState,
-	useReactTable,
-	type VisibilityState,
+	sortFn_alphanumeric,
+	sortFn_basic,
+	sortFn_datetime,
+	sortFn_text,
+	type ColumnDef as TanstackColumnDef,
+	tableFeatures,
+	useTable,
 } from '@tanstack/react-table'
 import { ChevronDownIcon, ChevronsUpDownIcon, ChevronUpIcon } from 'lucide-react'
 import * as React from 'react'
@@ -29,31 +36,57 @@ import {
 } from '~/components/ui/table'
 import { cn } from '~/lib/utils'
 
-interface DataTableProps<TData> {
+const dataTableFeatures = tableFeatures({
+	columnVisibilityFeature,
+	rowPaginationFeature,
+	rowSortingFeature,
+	paginatedRowModel: createPaginatedRowModel(),
+	sortedRowModel: createSortedRowModel(),
+	sortFns: {
+		alphanumeric: sortFn_alphanumeric,
+		basic: sortFn_basic,
+		datetime: sortFn_datetime,
+		text: sortFn_text,
+	},
+})
+
+type DataTableFeatures = typeof dataTableFeatures
+
+/** v8-shaped column def bound to DataTable's feature set. */
+type ColumnDef<TData extends RowData, TValue = unknown> = TanstackColumnDef<
+	DataTableFeatures,
+	TData,
+	TValue
+>
+
+interface DataTableProps<TData extends RowData> {
 	columns: ColumnDef<TData>[]
 	data: TData[]
 	pageSize?: number
 	className?: string
 }
 
-function DataTable<TData>({ columns, data, pageSize = 10, className }: DataTableProps<TData>) {
+function DataTable<TData extends RowData>({
+	columns,
+	data,
+	pageSize = 10,
+	className,
+}: DataTableProps<TData>) {
 	const [sorting, setSorting] = React.useState<SortingState>([])
-	const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
+	const [columnVisibility, setColumnVisibility] = React.useState<ColumnVisibilityState>({})
 
-	const table = useReactTable({
+	const table = useTable({
+		features: dataTableFeatures,
 		data,
 		columns,
-		getCoreRowModel: getCoreRowModel(),
-		getPaginationRowModel: getPaginationRowModel(),
-		getSortedRowModel: getSortedRowModel(),
 		onSortingChange: setSorting,
 		onColumnVisibilityChange: setColumnVisibility,
-		initialState: { pagination: { pageSize } },
+		initialState: { pagination: { pageIndex: 0, pageSize } },
 		state: { sorting, columnVisibility },
 	})
 
-	const { pageIndex, pageSize: currentPageSize } = table.getState().pagination
-	const totalRows = table.getFilteredRowModel().rows.length
+	const { pageIndex, pageSize: currentPageSize } = table.state.pagination
+	const totalRows = table.getPrePaginatedRowModel().rows.length
 	const from = totalRows === 0 ? 0 : pageIndex * currentPageSize + 1
 	const to = Math.min((pageIndex + 1) * currentPageSize, totalRows)
 
@@ -97,7 +130,7 @@ function DataTable<TData>({ columns, data, pageSize = 10, className }: DataTable
 												onClick={header.column.getToggleSortingHandler()}
 												className="flex items-center gap-1 hover:text-foreground"
 											>
-												{flexRender(header.column.columnDef.header, header.getContext())}
+												<table.FlexRender header={header} />
 												{header.column.getIsSorted() === 'asc' ? (
 													<ChevronUpIcon className="size-3.5" />
 												) : header.column.getIsSorted() === 'desc' ? (
@@ -107,7 +140,7 @@ function DataTable<TData>({ columns, data, pageSize = 10, className }: DataTable
 												)}
 											</button>
 										) : (
-											flexRender(header.column.columnDef.header, header.getContext())
+											<table.FlexRender header={header} />
 										)}
 									</TableHead>
 								))}
@@ -117,10 +150,10 @@ function DataTable<TData>({ columns, data, pageSize = 10, className }: DataTable
 					<TableBody>
 						{table.getRowModel().rows.length > 0 ? (
 							table.getRowModel().rows.map((row) => (
-								<TableRow key={row.id} data-state={row.getIsSelected() && 'selected'}>
+								<TableRow key={row.id}>
 									{row.getVisibleCells().map((cell) => (
 										<TableCell key={cell.id}>
-											{flexRender(cell.column.columnDef.cell, cell.getContext())}
+											<table.FlexRender cell={cell} />
 										</TableCell>
 									))}
 								</TableRow>
@@ -163,4 +196,4 @@ function DataTable<TData>({ columns, data, pageSize = 10, className }: DataTable
 
 export { DataTable }
 export type { DataTableProps }
-export type { ColumnDef } from '@tanstack/react-table'
+export type { ColumnDef, DataTableFeatures }
