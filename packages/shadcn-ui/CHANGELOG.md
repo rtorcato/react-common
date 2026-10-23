@@ -1,5 +1,14 @@
 # [1.4.0](https://github.com/rtorcato/shadcn-ui/compare/v1.3.0...v1.4.0) (2026-07-04)
 
+## 1.7.3-beta.0
+
+### Patch Changes
+
+- Updated dependencies [1377953]
+- Updated dependencies [f7b782b]
+- Updated dependencies [e8bdb3e]
+  - @rtorcato/react-common@0.4.0-beta.0
+
 ## 1.7.2
 
 ### Patch Changes
