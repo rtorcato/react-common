@@ -1,5 +1,6 @@
 'use client'
 
+import { formatBytes } from '@rtorcato/js-common/numbers'
 import { FileIcon, UploadIcon, XIcon } from 'lucide-react'
 import * as React from 'react'
 import { Button } from '~/components/ui/button'
@@ -12,12 +13,6 @@ interface FileUploadProps {
 	disabled?: boolean
 	onFilesChange?: (files: File[]) => void
 	className?: string
-}
-
-function formatBytes(bytes: number): string {
-	if (bytes < 1024) return `${bytes} B`
-	if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`
-	return `${(bytes / (1024 * 1024)).toFixed(1)} MB`
 }
 
 function FileUpload({
@@ -39,7 +34,7 @@ function FileUpload({
 
 		for (const file of incoming) {
 			if (maxSize && file.size > maxSize) {
-				errs.push(`"${file.name}" exceeds the ${formatBytes(maxSize)} limit.`)
+				errs.push(`"${file.name}" exceeds the ${formatBytes(maxSize, { decimals: 1 })} limit.`)
 			} else {
 				valid.push(file)
 			}
@@ -101,7 +96,9 @@ function FileUpload({
 				</div>
 				{(accept || maxSize) && (
 					<p className="text-xs text-muted-foreground">
-						{[accept, maxSize && `Max ${formatBytes(maxSize)}`].filter(Boolean).join(' · ')}
+						{[accept, maxSize && `Max ${formatBytes(maxSize, { decimals: 1 })}`]
+							.filter(Boolean)
+							.join(' · ')}
 					</p>
 				)}
 			</button>
@@ -136,7 +133,7 @@ function FileUpload({
 							<FileIcon className="size-4 shrink-0 text-muted-foreground" />
 							<span className="flex-1 truncate">{file.name}</span>
 							<span className="shrink-0 text-xs text-muted-foreground">
-								{formatBytes(file.size)}
+								{formatBytes(file.size, { decimals: 1 })}
 							</span>
 							<Button
 								type="button"
