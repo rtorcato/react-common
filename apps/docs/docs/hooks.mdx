@@ -24,6 +24,20 @@ import { usePrevious, useToggle } from '@rtorcato/react-common'
 | `useIsMobile` | `true` below the mobile breakpoint. |
 | `usePrevious` | The value from the previous render. |
 | `useToggle` | Boolean state with toggle/set helpers. |
+| `useHasMounted` | `false` until the component has mounted on the client. |
+
+## `useHasMounted`
+
+`false` on the server and the first client render, `true` after mount. Defer
+browser-only values with it so the first client render matches the server HTML.
+
+```tsx
+function ThemeLabel() {
+  const mounted = useHasMounted()
+  const { theme } = useTheme()
+  return <span>{mounted ? theme : null}</span>
+}
+```
 
 ## `usePrevious`
 
