@@ -38,7 +38,7 @@ Target a single package with `pnpm --filter @rtorcato/shadcn-ui <script>`, or `c
 
 CI gates that must pass before merge: `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build` (separate jobs in `.github/workflows/ci.yml`).
 
-Requires **Node ≥ 22** (`.nvmrc`) and pnpm `11.1.3` (`packageManager`).
+Requires **Node ≥ 24** (`.nvmrc`) and pnpm `11.1.3` (`packageManager`).
 
 ## Code style (Biome)
 

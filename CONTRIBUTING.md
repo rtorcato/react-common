@@ -4,7 +4,7 @@ Thanks for your interest. This pnpm monorepo publishes two packages to npm: `@rt
 
 ## Prerequisites
 
-- Node.js ≥ 22 (a `.nvmrc` is checked in)
+- Node.js ≥ 24 (a `.nvmrc` is checked in)
 - pnpm 11.1.3, pinned via `packageManager` (use Corepack or install it). Never `npm` or `yarn`.
 - git
 
