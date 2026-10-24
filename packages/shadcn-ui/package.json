@@ -296,10 +296,6 @@
 			"types": "./dist/components/ui-extended/theme-toggle.d.ts",
 			"import": "./dist/components/ui-extended/theme-toggle.js"
 		},
-		"./hooks": {
-			"types": "./dist/hooks/index.d.ts",
-			"import": "./dist/hooks/index.js"
-		},
 		"./lib/*": {
 			"types": "./dist/lib/*.d.ts",
 			"import": "./dist/lib/*.js"

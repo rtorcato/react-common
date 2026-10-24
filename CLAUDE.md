@@ -9,10 +9,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Workspace layout (`pnpm-workspace.yaml`: `packages/*`, `apps/*`):
 
 - `packages/shadcn-ui` — `@rtorcato/shadcn-ui`, the React 19 shadcn/ui component library (shadcn/ui + Radix primitives, extended `ui-extended` components, Tailwind CSS v4). Published on npm from `1.4.x`.
-- `packages/react-common` — `@rtorcato/react-common`, the foundation package: headless hooks (`useClickOutside`, `useDebounce`, `useLocalStorage`, `useMediaQuery`, `useIsMobile`, `useSidebar`), the `cn` class-merge utility, and `ThemeProvider`.
+- `packages/react-common` — `@rtorcato/react-common`, the foundation package: headless hooks (`useClickOutside`, `useDebounce`, `useLocalStorage`, `useMediaQuery`, `useIsMobile`), the `cn` class-merge utility, and `ThemeProvider`.
 - `apps/docs` — `@rtorcato/react-common-docs`, the private Docusaurus site.
 
-`@rtorcato/shadcn-ui` depends on `@rtorcato/react-common` (`workspace:*`) for `cn` (re-exported internally via `~/lib/utils`) and `useIsMobile`. It re-exports only the sonner-coupled `useToast` from its own `/hooks` subpath. `@rtorcato/react-common` has no workspace deps.
+`@rtorcato/shadcn-ui` depends on `@rtorcato/react-common` (`workspace:*`) for `cn` (re-exported internally via `~/lib/utils`) and `useIsMobile`. `@rtorcato/react-common` has no workspace deps.
 
 ## Where utilities live (js-common boundary)
 

@@ -60,8 +60,7 @@
     "./components/ui/textarea": 96,
     "./components/ui/toggle": 121,
     "./components/ui/toggle-group": 129,
-    "./components/ui/tooltip": 146,
-    "./hooks": 107
+    "./components/ui/tooltip": 146
   },
   "chunksTotal": 48905
 }

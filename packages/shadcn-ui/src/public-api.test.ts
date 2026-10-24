@@ -42,7 +42,6 @@ describe('public API surface', () => {
 		const nonComponent = subpaths.filter((k) => !k.startsWith('./components/')).sort()
 		expect(nonComponent).toMatchInlineSnapshot(`
 			[
-			  "./hooks",
 			  "./lib/*",
 			  "./styles.css",
 			]

@@ -16,7 +16,7 @@ hooks, the `cn` class-merge utility, `ThemeProvider`; zero UI deps).
    import { cn, useIsMobile, usePrevious, useToggle, ThemeProvider } from '@rtorcato/react-common'
    ```
    Exports: `useClickOutside`, `useCopy`, `useDebounce`, `useHasMounted`, `useLocalStorage`,
-   `useMediaQuery`, `useIsMobile`, `useSidebar`, `usePrevious`, `useToggle`,
+   `useMediaQuery`, `useIsMobile`, `usePrevious`, `useToggle`,
    `cn`, and `ThemeProvider` / `useTheme` (next-themes re-export).
 
 2. **Import `@rtorcato/shadcn-ui` from the subpath, never the package root** —
@@ -24,7 +24,6 @@ hooks, the `cn` class-merge utility, `ThemeProvider`; zero UI deps).
    ```ts
    import { Button } from '@rtorcato/shadcn-ui/components/ui/button'
    import { DataTable } from '@rtorcato/shadcn-ui/components/ui-extended/data-table'
-   import { useToast } from '@rtorcato/shadcn-ui/hooks'
    ```
 
 3. **Using components?** Import `@rtorcato/shadcn-ui/styles.css` once at the app

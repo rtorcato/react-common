@@ -3,8 +3,6 @@
   "entry": [
     "src/components/ui/*.tsx",
     "src/components/ui-extended/*.tsx",
-    "src/hooks/index.ts",
-    "src/hooks/*.{ts,tsx}",
     "src/lib/*.ts",
     ".storybook/{main,preview}.ts",
     "src/**/*.stories.{ts,tsx}"

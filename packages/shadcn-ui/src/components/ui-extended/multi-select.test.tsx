@@ -46,4 +46,31 @@ describe('MultiSelect', () => {
 		const trigger = screen.getByRole('combobox')
 		expect(trigger).toHaveAttribute('aria-expanded', 'false')
 	})
+
+	it('pressing Enter on a badge remove button removes that value', async () => {
+		const user = userEvent.setup()
+		const onValueChange = vi.fn()
+		render(
+			<MultiSelect options={options} value={['apple', 'banana']} onValueChange={onValueChange} />
+		)
+
+		screen.getByRole('button', { name: /remove apple/i }).focus()
+		await user.keyboard('{Enter}')
+
+		expect(onValueChange).toHaveBeenCalledWith(['banana'])
+	})
+
+	it('selecting and deselecting an option in the list toggles it', async () => {
+		const user = userEvent.setup()
+		const onValueChange = vi.fn()
+		const { rerender } = render(<MultiSelect options={options} onValueChange={onValueChange} />)
+
+		await user.click(screen.getByRole('combobox'))
+		await user.click(await screen.findByText('Banana'))
+		expect(onValueChange).toHaveBeenLastCalledWith(['banana'])
+
+		rerender(<MultiSelect options={options} value={['banana']} onValueChange={onValueChange} />)
+		await user.click(await screen.findByRole('option', { name: 'Banana' }))
+		expect(onValueChange).toHaveBeenLastCalledWith([])
+	})
 })

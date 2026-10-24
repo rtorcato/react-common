@@ -14,7 +14,7 @@
 
 [<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy me a coffee" height="40">](https://buymeacoffee.com/rtorcato)
 
-A pre-built [shadcn/ui](https://ui.shadcn.com) component library for React + Tailwind CSS v4. Install once — every shadcn component, the extended components, and the hooks are available via subpath imports. No more running `npx shadcn add <name>` in every new project.
+A pre-built [shadcn/ui](https://ui.shadcn.com) component library for React + Tailwind CSS v4. Install once — every shadcn component, and the extended components are available via subpath imports. No more running `npx shadcn add <name>` in every new project.
 
 ## Why this package
 
@@ -75,7 +75,6 @@ import { Button } from '@rtorcato/shadcn-ui/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@rtorcato/shadcn-ui/components/ui/card'
 import { Input } from '@rtorcato/shadcn-ui/components/ui/input'
 import { DataTable } from '@rtorcato/shadcn-ui/components/ui-extended/data-table'
-import { useToast } from '@rtorcato/shadcn-ui/hooks'
 import '@rtorcato/shadcn-ui/styles.css'
 
 export function App() {
@@ -113,11 +112,9 @@ Hand-written compositions on top of the primitives:
 - `multi-select` — multi-value Command + Popover combobox
 - `page-header` — title + breadcrumb + actions layout
 
-### Hooks (`hooks`)
+### Hooks
 
-`use-toast` — the sonner-coupled toast hook.
-
-The generic, headless hooks (`useClickOutside`, `useDebounce`, `useLocalStorage`, `useMediaQuery`, `useIsMobile`, `useSidebar`) now live in the foundation package [`@rtorcato/react-common`](https://www.npmjs.com/package/@rtorcato/react-common), alongside the `cn` class-merge utility (which this package re-exports internally) and `ThemeProvider` (no longer shipped here) — install it separately if you need them.
+This package ships no hooks. For toasts use `import { toast } from 'sonner'` with the `sonner` component's `<Toaster />`. The generic, headless hooks (`useClickOutside`, `useDebounce`, `useLocalStorage`, `useMediaQuery`, `useIsMobile`, `useToggle`, …) live in the foundation package [`@rtorcato/react-common`](https://www.npmjs.com/package/@rtorcato/react-common), alongside the `cn` class-merge utility (which this package re-exports internally) and `ThemeProvider` (no longer shipped here) — install it separately if you need them.
 
 ## Theming
 
@@ -229,7 +226,7 @@ To add a new shadcn component:
 pnpm component-add <name>     # wraps `npx shadcn@latest add`
 ```
 
-The esbuild wrapper (`build.mjs`) auto-discovers entry points by scanning `src/components/`, `src/lib/`, and `src/hooks/` — new files are picked up automatically. Add a matching subpath entry under `exports` in `package.json` so consumers can import it.
+The esbuild wrapper (`build.mjs`) auto-discovers entry points by scanning `src/components/` and `src/lib/` — new files are picked up automatically. Add a matching subpath entry under `exports` in `package.json` so consumers can import it.
 
 See [`CLAUDE.md`](./CLAUDE.md) for the full contributor guide and the [issue tracker](https://github.com/rtorcato/react-common/issues) for the active roadmap.
 

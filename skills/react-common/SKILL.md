@@ -16,7 +16,7 @@ component library and depends on `react-common`.
    import { cn, useIsMobile, usePrevious, useToggle, ThemeProvider } from '@rtorcato/react-common'
    ```
    Exports: hooks `useClickOutside`, `useCopy`, `useDebounce`, `useHasMounted`, `useLocalStorage`,
-   `useMediaQuery`, `useIsMobile`, `useSidebar`, `usePrevious`, `useToggle`; the
+   `useMediaQuery`, `useIsMobile`, `usePrevious`, `useToggle`; the
    `cn` class-merge utility; and `ThemeProvider` / `useTheme` (re-exported from
    next-themes).
 
@@ -27,7 +27,6 @@ component library and depends on `react-common`.
    // ✅ do
    import { Button } from '@rtorcato/shadcn-ui/components/ui/button'
    import { DataTable } from '@rtorcato/shadcn-ui/components/ui-extended/data-table'
-   import { useToast } from '@rtorcato/shadcn-ui/hooks'
    // ❌ don't — there is no '@rtorcato/shadcn-ui' root export
    import { Button } from '@rtorcato/shadcn-ui'
    ```

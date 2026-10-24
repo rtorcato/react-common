@@ -21,7 +21,6 @@ describe('public API surface', () => {
 			  "useLocalStorage",
 			  "useMediaQuery",
 			  "usePrevious",
-			  "useSidebar",
 			  "useTheme",
 			  "useToggle",
 			]
