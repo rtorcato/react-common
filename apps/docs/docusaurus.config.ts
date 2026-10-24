@@ -86,7 +86,6 @@ const config: Config = {
 					'../../packages/react-common/src/hooks/use-media-query.ts',
 					'../../packages/react-common/src/hooks/use-mobile.ts',
 					'../../packages/react-common/src/hooks/use-previous.ts',
-					'../../packages/react-common/src/hooks/use-sidebar.ts',
 					'../../packages/react-common/src/hooks/use-toggle.ts',
 					'../../packages/react-common/src/lib/utils.ts',
 					'../../packages/react-common/src/providers/theme-provider.tsx',

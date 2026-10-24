@@ -48,17 +48,13 @@ There are two component directories and the distinction matters:
 - Fully linted, fully tested. Treat like any other source file.
 - This is where most contributions land.
 
-### `src/hooks/` — custom React hooks
-
-Tests live next to the source (`use-toast.ts` + `use-toast.test.ts`). `src/hooks/index.ts` re-exports **only** `use-toast` for the consumer-facing `@rtorcato/shadcn-ui/hooks` entry point. The generic headless hooks (`use-mobile`, etc.) no longer live here — they moved to `@rtorcato/react-common`.
-
 ## Adding a new shadcn component
 
 ```bash
 pnpm component-add button-group
 ```
 
-The custom esbuild wrapper (`build.mjs`) auto-discovers entry points by scanning `src/components/`, `src/lib/`, and `src/hooks/`, so a new file is picked up automatically by the build. **But**: you also need to add a matching subpath entry under `exports` in `package.json` so consumers can import it. The pattern is:
+The custom esbuild wrapper (`build.mjs`) auto-discovers entry points by scanning `src/components/` and `src/lib/`, so a new file is picked up automatically by the build. **But**: you also need to add a matching subpath entry under `exports` in `package.json` so consumers can import it. The pattern is:
 
 ```jsonc
 "./components/ui/<name>": {
