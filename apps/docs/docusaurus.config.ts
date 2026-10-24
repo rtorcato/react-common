@@ -82,6 +82,7 @@ const config: Config = {
 				entryPoints: [
 					'../../packages/react-common/src/hooks/use-click-outside.ts',
 					'../../packages/react-common/src/hooks/use-debounce.ts',
+					'../../packages/react-common/src/hooks/use-has-mounted.ts',
 					'../../packages/react-common/src/hooks/use-local-storage.ts',
 					'../../packages/react-common/src/hooks/use-media-query.ts',
 					'../../packages/react-common/src/hooks/use-mobile.ts',

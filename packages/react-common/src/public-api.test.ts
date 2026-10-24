@@ -15,6 +15,7 @@ describe('public API surface', () => {
 			  "useCopy",
 			  "useDebounce",
 			  "useEventListener",
+			  "useHasMounted",
 			  "useInterval",
 			  "useIsMobile",
 			  "useLocalStorage",
