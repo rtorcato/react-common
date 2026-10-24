@@ -42,6 +42,7 @@ import { useDebounce, useLocalStorage, cn, ThemeProvider } from '@rtorcato/react
 | `useClickOutside` | Fire a callback when a click lands outside a ref. |
 | `useCopy` | `{ copy, copied }` over browser-common `copyToClipboard`; `copied` resets after a timeout (default 2000 ms). |
 | `useDebounce` | Debounce a rapidly-changing value. |
+| `useHasMounted` | `false` on the server and first client render, `true` after mount (hydration-safe browser-only values). |
 | `useLocalStorage` | State synced to `localStorage` via `@rtorcato/browser-common`. Optional `isValid` guard; third item clears the entry. |
 | `useMediaQuery` | Subscribe to a CSS media query. |
 | `useIsMobile` | `true` below the 768px breakpoint. |
