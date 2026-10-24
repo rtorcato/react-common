@@ -1,5 +1,32 @@
 # [1.4.0](https://github.com/rtorcato/shadcn-ui/compare/v1.3.0...v1.4.0) (2026-07-04)
 
+## 2.0.0-beta.0
+
+### Major Changes
+
+- 22b6213: Migrate `DataTable` to `@tanstack/react-table` 9 (runtime dependency `^8.21.3` → `^9.3.1`).
+  
+  - `ColumnDef` is now DataTable's own alias bound to the new exported `DataTableFeatures`; columns typed with TanStack's `ColumnDef` are not assignable.
+  - `TData` must extend `RowData`.
+  - v9 renames apply to custom column options (`sortingFn` → `sortFn`) and types (`VisibilityState` → `ColumnVisibilityState`).
+  - Table rows no longer render `data-state="selected"`.
+  
+  Plain accessor/header/cell columns typed with `ColumnDef` from `@rtorcato/shadcn-ui/components/ui-extended/data-table` need no change. See "Upgrading from 1.x" in the Data table docs.
+- 14b3213: Lock the 1.0 public API by removing two dead exports (breaking).
+  
+  - `@rtorcato/shadcn-ui`: remove `useToast` and the whole `./hooks` subpath. It reimplemented a toast store that nothing rendered; the `sonner` component has its own store. Replace with `import { toast } from 'sonner'`.
+  - `@rtorcato/react-common`: remove `useSidebar`. Replace with `useToggle`.
+
+### Patch Changes
+
+- aae271f: `FileUpload` now formats sizes with `formatBytes` from `@rtorcato/js-common` (new dependency) instead of an inline copy. Sizes of 1 GB and above now show in GB rather than as a large MB figure, and whole values drop the trailing `.0` (e.g. `1 KB`, not `1.0 KB`).
+- Updated dependencies [1377953]
+- Updated dependencies [14b3213]
+- Updated dependencies [f7b782b]
+- Updated dependencies [76e539e]
+- Updated dependencies [e8bdb3e]
+  - @rtorcato/react-common@1.0.0-beta.0
+
 ## 1.7.2
 
 ### Patch Changes
