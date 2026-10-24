@@ -185,7 +185,7 @@ importers:
         specifier: ^1.4.2
         version: 1.4.2(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       lucide-react:
-        specifier: ^0.545.0
+        specifier: ^0.545.0 || ^1.0.0
         version: 0.545.0(react@19.2.8)
       next-themes:
         specifier: ^0.4.6
