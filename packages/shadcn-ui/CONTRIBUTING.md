@@ -10,7 +10,7 @@ pnpm install
 
 All dependencies (including `@rtorcato/repo-tooling`) resolve from the public npm registry — no token needed.
 
-Node version: see `.nvmrc` (currently `22`). Use `nvm use` or your tool of choice.
+Node version: see `.nvmrc` (currently `24`). Use `nvm use` or your tool of choice.
 
 ## Running the workshop
 

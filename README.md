@@ -61,7 +61,7 @@ with the Claude skill in [`skills/react-common/SKILL.md`](./skills/react-common/
 
 ## Development
 
-Requires Node ≥ 22 and pnpm 11 (see `.nvmrc` / `packageManager`).
+Requires Node ≥ 24 and pnpm 11 (see `.nvmrc` / `packageManager`).
 
 ```bash
 pnpm install
