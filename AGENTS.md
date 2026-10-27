@@ -15,7 +15,7 @@ hooks, the `cn` class-merge utility, `ThemeProvider`; zero UI deps).
    ```ts
    import { cn, useIsMobile, usePrevious, useToggle, ThemeProvider } from '@rtorcato/react-common'
    ```
-   Exports: `useClickOutside`, `useCopy`, `useDebounce`, `useHasMounted`, `useLocalStorage`,
+   Exports: `useClickOutside`, `useCopy` (`{ copy, copied, failed }`), `useDebounce`, `useHasMounted`, `useLocalStorage`,
    `useMediaQuery`, `useIsMobile`, `usePrevious`, `useToggle`,
    `cn`, and `ThemeProvider` / `useTheme` (next-themes re-export).
 
@@ -25,6 +25,8 @@ hooks, the `cn` class-merge utility, `ThemeProvider`; zero UI deps).
    import { Button } from '@rtorcato/shadcn-ui/components/ui/button'
    import { DataTable } from '@rtorcato/shadcn-ui/components/ui-extended/data-table'
    ```
+   `ui-extended` also ships `CopyButton` (`components/ui-extended/copy-button`),
+   which wraps `useCopy`.
 
 3. **Using components?** Import `@rtorcato/shadcn-ui/styles.css` once at the app
    root, and add `./node_modules/@rtorcato/shadcn-ui/dist/**/*.{js,mjs}` to your

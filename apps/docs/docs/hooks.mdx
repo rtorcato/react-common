@@ -18,7 +18,7 @@ import { usePrevious, useToggle } from '@rtorcato/react-common'
 | Hook | Purpose |
 | --- | --- |
 | `useClickOutside` | Fire a callback when a click lands outside a ref. |
-| `useCopy` | Copy text to the clipboard, with a `copied` flag that resets. |
+| `useCopy` | Copy text to the clipboard, with `copied` / `failed` flags that reset. |
 | `useDebounce` | Debounce a rapidly-changing value. |
 | `useLocalStorage` | State synced to `localStorage`. |
 | `useMediaQuery` | Track a CSS media query. |
@@ -30,7 +30,7 @@ import { usePrevious, useToggle } from '@rtorcato/react-common'
 ## `useCopy`
 
 ```ts
-useCopy(timeout?: number): { copy: (text: string) => Promise<boolean>; copied: boolean }
+useCopy(timeout?: number): { copy: (text: string) => Promise<boolean>; copied: boolean; failed: boolean }
 ```
 
 `copy(text)` writes `text` to the clipboard. `copied` turns `true` when the copy
@@ -44,10 +44,12 @@ function CopyButton({ text }: { text: string }) {
 }
 ```
 
-`copy()` resolves to `true` on success. It resolves to `false`, and `copied`
-stays `false`, when the browser rejects the write or has no Clipboard API. Most
-browsers only allow clipboard writes on HTTPS and from a user gesture such as a
-click, so call `copy()` from an event handler.
+`copy()` resolves to `true` on success. It resolves to `false`, `copied` stays
+`false` and `failed` turns `true`, when the browser rejects the write or has no
+Clipboard API. `failed` also resets after `timeout`, and the two flags are never
+both `true`. Most browsers only allow clipboard writes on HTTPS and from a user
+gesture such as a click, so call `copy()` from an event handler. For a ready-made
+button, see [Copy button](./components/ui-extended/copy-button.mdx).
 
 ```tsx
 const ok = await copy(text)

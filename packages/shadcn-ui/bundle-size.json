@@ -2,6 +2,7 @@
   "tolerance": 0.1,
   "entries": {
     "./components/ui-extended/confirm-dialog": 142,
+    "./components/ui-extended/copy-button": 128,
     "./components/ui-extended/data-table": 136,
     "./components/ui-extended/date-picker-with-presets": 146,
     "./components/ui-extended/date-picker-with-range": 136,

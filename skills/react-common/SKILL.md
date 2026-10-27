@@ -15,7 +15,7 @@ component library and depends on `react-common`.
    ```ts
    import { cn, useIsMobile, usePrevious, useToggle, ThemeProvider } from '@rtorcato/react-common'
    ```
-   Exports: hooks `useClickOutside`, `useCopy`, `useDebounce`, `useHasMounted`, `useLocalStorage`,
+   Exports: hooks `useClickOutside`, `useCopy` (`{ copy, copied, failed }`), `useDebounce`, `useHasMounted`, `useLocalStorage`,
    `useMediaQuery`, `useIsMobile`, `usePrevious`, `useToggle`; the
    `cn` class-merge utility; and `ThemeProvider` / `useTheme` (re-exported from
    next-themes).
@@ -31,7 +31,8 @@ component library and depends on `react-common`.
    import { Button } from '@rtorcato/shadcn-ui'
    ```
    `components/ui/*` are the shadcn primitives; `components/ui-extended/*` are
-   hand-written compositions (data-table, multi-select, file-upload, …).
+   hand-written compositions (copy-button, data-table, multi-select, file-upload, …).
+   `CopyButton` wraps `useCopy`.
 
 3. **Using components? Import the stylesheet once and scan the package with
    Tailwind.** Import `@rtorcato/shadcn-ui/styles.css` at the app root, and add
