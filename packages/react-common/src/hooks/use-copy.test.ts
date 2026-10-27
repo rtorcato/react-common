@@ -65,4 +65,32 @@ describe('useCopy', () => {
 		expect(ok).toBe(false)
 		expect(result.current.copied).toBe(false)
 	})
+
+	it('sets failed on a failed copy, then resets it after the timeout', async () => {
+		writeText.mockRejectedValue(new Error('denied'))
+		const { result } = renderHook(() => useCopy(1000))
+		await act(async () => {
+			await result.current.copy('x')
+		})
+		expect(result.current.failed).toBe(true)
+		expect(result.current.copied).toBe(false)
+		act(() => {
+			vi.advanceTimersByTime(1000)
+		})
+		expect(result.current.failed).toBe(false)
+	})
+
+	it('clears failed straight away when a later copy succeeds', async () => {
+		writeText.mockRejectedValueOnce(new Error('denied'))
+		const { result } = renderHook(() => useCopy(1000))
+		await act(async () => {
+			await result.current.copy('x')
+		})
+		expect(result.current.failed).toBe(true)
+		await act(async () => {
+			await result.current.copy('y')
+		})
+		expect(result.current.failed).toBe(false)
+		expect(result.current.copied).toBe(true)
+	})
 })
