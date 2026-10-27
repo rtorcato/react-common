@@ -88,8 +88,8 @@ gh pr merge --auto --squash --delete-branch   # ships when CI is green
 
 Releases are driven by [Changesets](https://github.com/changesets/changesets):
 merging PRs with changesets does not publish. The release workflow
-(`.github/workflows/release.yml`, run by a manual dispatch or a closed milestone) opens
-a "Version Packages" PR; merge it, then run the workflow again to publish the changed
+(`.github/workflows/release.yml`, on every push to `main`) opens or updates a
+"Version Packages" PR. Merging that PR, plus one approval, publishes the changed
 packages to npm. See [RELEASING.md](./RELEASING.md) for the full flow,
 npm-token requirements, and the public-API change checklist.
 
