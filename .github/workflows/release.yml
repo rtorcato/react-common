@@ -98,6 +98,7 @@ jobs:
       cancel-in-progress: false
     runs-on: ubuntu-latest
     permissions:
+      actions: write
       contents: write
       pull-requests: write
       id-token: write
@@ -136,6 +137,7 @@ jobs:
       # mode tag, e.g. beta), then tags it and creates its GitHub release. No
       # NPM_TOKEN: OIDC trusted publishing, via `id-token: write` above.
       - name: 🚀 Publish to npm
+        id: publish
         uses: changesets/action@ae32849d5ba541f9ae29e40e22a623bc13562f51 # v2.1.2
         with:
           publish-script: pnpm changeset publish
@@ -143,3 +145,13 @@ jobs:
           version-script: pnpm changeset version
           commit-message: 'chore(release): version packages'
           pr-title: 'chore(release): version packages'
+
+      # The docs changelog page is built from the GitHub releases. Releases made
+      # with GITHUB_TOKEN start no `release: published` run, but a GITHUB_TOKEN
+      # dispatch does start one, so rebuild the docs from here (#269).
+      - name: 📚 Rebuild the docs changelog
+        if: steps.publish.outputs.published == 'true'
+        run: gh workflow run docs.yml --repo "$GITHUB_REPOSITORY" --ref "$DEFAULT_BRANCH"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}

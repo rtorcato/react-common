@@ -9,33 +9,18 @@ on:
       - '.github/workflows/docs.yml'
       - 'pnpm-workspace.yaml'
       - 'pnpm-lock.yaml'
-  # Changesets publishes GitHub Releases, and the changelog page is built from
-  # them. A release run's ref is the tag, which the github-pages environment
-  # (main only) rejects, so the `redispatch` job re-runs this workflow on main.
-  release:
-    types: [published]
+  # release.yml dispatches this after a publish, so the changelog page (built
+  # from the GitHub releases) picks up the new ones.
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  redispatch:
-    if: github.event_name == 'release'
-    runs-on: ubuntu-latest
-    permissions:
-      actions: write
-    steps:
-      - run: gh workflow run docs.yml --repo "$GITHUB_REPOSITORY" --ref "$DEFAULT_BRANCH"
-        env:
-          GH_TOKEN: ${{ github.token }}
-          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-
   # https://docs.torcato.dev/react-common/ (Storybook at /react-common/storybook/,
   # built by the docs app's `build` script).
   # Pinned to a tag, never @main: this job hands over the Cloudflare secrets.
   cloudflare:
-    if: github.event_name != 'release'
     permissions:
       contents: read
     uses: rtorcato/repo-tooling/.github/workflows/docs-deploy-cloudflare.yml@v6.0.0
@@ -53,7 +38,6 @@ jobs:
   # stub (index.html, plus 404.html so deep links land on the same page there).
   # ponytail: delete these two jobs once Pages is disabled in the repo settings.
   pages-redirect-build:
-    if: github.event_name != 'release'
     runs-on: ubuntu-latest
     steps:
       - name: Write redirect stub
