@@ -21,7 +21,7 @@ const allEntryPoints = [
 	// ...libEntryPointsArrays.flat(),
 ]
 
-buildCode(allEntryPoints).catch((e) => {
+buildCode(allEntryPoints.filter((entry) => !entry.includes('.stories.'))).catch((e) => {
 	console.error(e)
 	process.exit(1)
 })
