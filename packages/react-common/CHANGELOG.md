@@ -1,5 +1,11 @@
 # @rtorcato/react-common
 
+## 1.0.0-beta.2
+
+### Minor Changes
+
+- 2e95c7c: Add `CopyButton` to `shadcn-ui` `ui-extended` (icon-only with tooltip, or labelled; copied and failed states; wraps `useCopy`). `useCopy` now also returns `failed`.
+
 ## 1.0.0-beta.1
 
 ### Major Changes
