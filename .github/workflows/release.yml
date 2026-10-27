@@ -9,19 +9,18 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# Queue rather than cancel: a newer run waits for the one ahead of it (approval
-# included) instead of killing a publish already in flight
-# (rtorcato/repo-tooling#790).
-concurrency:
-  group: release
-  cancel-in-progress: false
-
 jobs:
   # No environment: it only opens or updates the Version Packages PR, so it
   # never asks for an approval.
   version:
     # Release only from the default branch; a dispatch from another is skipped.
     if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    # Its own group, so a publish waiting for approval never holds it: a group
+    # keeps only one pending run, and a Version Packages PR merge queued behind
+    # that wait would be dropped by the next push.
+    concurrency:
+      group: release-version
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -46,8 +45,10 @@ jobs:
       - name: 📦 Setup pnpm
         uses: pnpm/action-setup@v6
 
+      # Ungated with RELEASE_TOKEN checked out, so no dependency install script
+      # runs here; `changeset version` needs no build.
       - name: 📦 Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --ignore-scripts
 
       # No publish-script: with changesets pending this opens or updates the
       # Version Packages PR; with none it does nothing.
@@ -89,6 +90,12 @@ jobs:
     # publishing is bound to release.yml + this environment, or the OIDC
     # publish fails with E404.
     environment: release
+    # Queue rather than cancel: a newer publish waits for the one ahead of it
+    # (approval included) instead of killing one already in flight
+    # (rtorcato/repo-tooling#790).
+    concurrency:
+      group: release
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     permissions:
       contents: write
