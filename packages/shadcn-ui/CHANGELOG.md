@@ -1,5 +1,16 @@
 # [1.4.0](https://github.com/rtorcato/shadcn-ui/compare/v1.3.0...v1.4.0) (2026-07-04)
 
+## 2.0.0-beta.2
+
+### Minor Changes
+
+- 2e95c7c: Add `CopyButton` to `shadcn-ui` `ui-extended` (icon-only with tooltip, or labelled; copied and failed states; wraps `useCopy`). `useCopy` now also returns `failed`.
+
+### Patch Changes
+
+- Updated dependencies [2e95c7c]
+  - @rtorcato/react-common@1.0.0-beta.2
+
 ## 2.0.0-beta.1
 
 ### Major Changes
