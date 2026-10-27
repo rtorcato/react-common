@@ -1,5 +1,17 @@
 # [1.4.0](https://github.com/rtorcato/shadcn-ui/compare/v1.3.0...v1.4.0) (2026-07-04)
 
+## 2.0.0-beta.1
+
+### Major Changes
+
+- b0667c0: Require Node 24 or newer (breaking). `engines.node` moves from `>=22.12` to `>=24`, matching `@rtorcato/js-common` 6.x, which `shadcn-ui` now depends on. Node 22 installs warn, and fail under `engine-strict`. Folded into the 1.0.0 pre-release, so it costs no extra major.
+
+### Patch Changes
+
+- d8d4370: Widen the `lucide-react` peer to `^0.545.0 || ^1.0.0`. The documented `pnpm add lucide-react` installs 1.x, which npm rejected with ERESOLVE. Every icon the components import exists in lucide-react 1.0.0 and 1.61.0.
+- Updated dependencies [b0667c0]
+  - @rtorcato/react-common@1.0.0-beta.1
+
 ## 2.0.0-beta.0
 
 ### Major Changes
