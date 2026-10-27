@@ -7,6 +7,12 @@ import StorybookEmbed from '@site/src/components/StorybookEmbed'
 
 # Copy button
 
+:::info Beta only
+`CopyButton` ships in `@rtorcato/shadcn-ui` **2.0.0-beta.2** and later. The
+`latest` release (1.7.x) doesn't have it, and the import fails with
+`ERR_PACKAGE_PATH_NOT_EXPORTED`. [Install the beta](../../getting-started#beta).
+:::
+
 A button that copies `value` to the clipboard. It is icon-only with a tooltip by
 default, or labelled with `showLabel`. After each attempt it shows a copied or
 failed state for `timeout` ms, then returns to idle. It wraps the
