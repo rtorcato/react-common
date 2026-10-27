@@ -59,7 +59,8 @@ function CopyButton({
 			disabled={disabled}
 			aria-label={showLabel ? undefined : label}
 			className={cn(
-				!showLabel && "relative after:absolute after:-inset-1 after:content-['']",
+				!showLabel &&
+					"relative after:absolute after:top-1/2 after:left-1/2 after:size-11 after:-translate-1/2 after:content-['']",
 				className
 			)}
 			onClick={async (event) => {
@@ -77,7 +78,7 @@ function CopyButton({
 				className="animate-in fade-in zoom-in-75 duration-150 motion-reduce:animate-none"
 			/>
 			{showLabel && (
-				<span className="grid">
+				<span className="grid justify-items-start">
 					{Object.entries(labels).map(([key, text]) => (
 						<span
 							key={key}
