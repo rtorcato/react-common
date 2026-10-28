@@ -15,9 +15,9 @@ component library and depends on `react-common`.
    ```ts
    import { cn, useIsMobile, usePrevious, useToggle, ThemeProvider } from '@rtorcato/react-common'
    ```
-   Exports: hooks `useClickOutside`, `useCopy` (`{ copy, copied, failed }`), `useDebounce`, `useHasMounted`, `useLocalStorage`,
+   Exports: hooks `useClickOutside`, `useCopy` (`{ copy, copied, failed }`), `useDebounce`, `useEventListener`, `useHasMounted`, `useInterval`, `useLocalStorage`,
    `useMediaQuery`, `useIsMobile`, `usePrevious`, `useToggle`; the
-   `cn` class-merge utility; and `ThemeProvider` / `useTheme` (re-exported from
+   `cn` class-merge utility; and `ThemeProvider` / `useTheme` (both re-exported from
    next-themes).
 
 2. **Import `@rtorcato/shadcn-ui` from the subpath, never the package root.**

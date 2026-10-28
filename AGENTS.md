@@ -15,9 +15,9 @@ hooks, the `cn` class-merge utility, `ThemeProvider`; zero UI deps).
    ```ts
    import { cn, useIsMobile, usePrevious, useToggle, ThemeProvider } from '@rtorcato/react-common'
    ```
-   Exports: `useClickOutside`, `useCopy` (`{ copy, copied, failed }`), `useDebounce`, `useHasMounted`, `useLocalStorage`,
+   Exports: `useClickOutside`, `useCopy` (`{ copy, copied, failed }`), `useDebounce`, `useEventListener`, `useHasMounted`, `useInterval`, `useLocalStorage`,
    `useMediaQuery`, `useIsMobile`, `usePrevious`, `useToggle`,
-   `cn`, and `ThemeProvider` / `useTheme` (next-themes re-export).
+   `cn`, and `ThemeProvider` / `useTheme` (both re-exported from `next-themes`).
 
 2. **Import `@rtorcato/shadcn-ui` from the subpath, never the package root** —
    there is no root export.

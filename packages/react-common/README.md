@@ -42,15 +42,19 @@ import { useDebounce, useLocalStorage, cn, ThemeProvider } from '@rtorcato/react
 | `useClickOutside` | Fire a callback when a click lands outside a ref. |
 | `useCopy` | `{ copy, copied }` over browser-common `copyToClipboard`; `copied` resets after a timeout (default 2000 ms). |
 | `useDebounce` | Debounce a rapidly-changing value. |
+| `useEventListener` | Attach a DOM event listener with automatic cleanup. Defaults to `window`; pass a `Document`, an element, or a ref to one. |
 | `useHasMounted` | `false` on the server and first client render, `true` after mount (hydration-safe browser-only values). |
+| `useInterval` | Declarative `setInterval`. The latest callback runs without resetting the timer; pass `null` as the delay to pause. |
 | `useLocalStorage` | State synced to `localStorage` via `@rtorcato/browser-common`. Optional `isValid` guard; third item clears the entry. |
 | `useMediaQuery` | Subscribe to a CSS media query. |
 | `useIsMobile` | `true` below the 768px breakpoint. |
+| `usePrevious` | The value from the previous render (`undefined` on the first render). |
+| `useToggle` | Boolean state with `toggle`, `setOn` and `setOff` helpers. |
 
 ### Utilities
 
 - `cn` — merge Tailwind class names (clsx + tailwind-merge).
-- `ThemeProvider` — light/dark theme context provider.
+- `ThemeProvider` / `useTheme` — re-exported from [`next-themes`](https://github.com/pacocoursey/next-themes). `ThemeProvider` takes the `next-themes` props, such as `attribute="class"`, `defaultTheme`, `enableSystem` and `disableTransitionOnChange`.
 
 ## Scope
 
