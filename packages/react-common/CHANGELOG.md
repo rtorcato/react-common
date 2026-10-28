@@ -1,5 +1,26 @@
 # @rtorcato/react-common
 
+## 1.0.0
+
+### Major Changes
+
+- 14b3213: Lock the 1.0 public API by removing two dead exports (breaking).
+  
+  - `@rtorcato/shadcn-ui`: remove `useToast` and the whole `./hooks` subpath. It reimplemented a toast store that nothing rendered; the `sonner` component has its own store. Replace with `import { toast } from 'sonner'`.
+  - `@rtorcato/react-common`: remove `useSidebar`. Replace with `useToggle`.
+- b0667c0: Require Node 24 or newer (breaking). `engines.node` moves from `>=22.12` to `>=24`, matching `@rtorcato/js-common` 6.x, which `shadcn-ui` now depends on. Node 22 installs warn, and fail under `engine-strict`. Folded into the 1.0.0 pre-release, so it costs no extra major.
+
+### Minor Changes
+
+- 2e95c7c: Add `CopyButton` to `shadcn-ui` `ui-extended` (icon-only with tooltip, or labelled; copied and failed states; wraps `useCopy`). `useCopy` now also returns `failed`.
+- f7b782b: Add `useCopy(timeout)`: returns `{ copy, copied }` built on `@rtorcato/browser-common` `copyToClipboard`, with `copied` resetting after `timeout` ms (default 2000).
+- 76e539e: Add `useHasMounted()`: `false` on the server and first client render, `true` after mount, for deferring browser-only values without a hydration mismatch.
+- e8bdb3e: `useLocalStorage` now delegates to `@rtorcato/browser-common/localstorage` (new dependency) instead of touching `window.localStorage` directly. It takes an optional `isValid` guard as a third argument so a stale or hand-edited entry is ignored, and returns a third tuple item that removes the entry and resets to the initial value. Without `isValid`, a stored value whose type does not match `initialValue` (e.g. the raw string browser-common returns for invalid JSON) is ignored, as before; the check is skipped when `initialValue` is `null`.
+
+### Patch Changes
+
+- 1377953: First `@beta` pre-release: exercises the changesets pre mode release flow end to end.
+
 ## 1.0.0-beta.2
 
 ### Minor Changes
