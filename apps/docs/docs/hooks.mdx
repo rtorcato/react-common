@@ -71,7 +71,9 @@ function ThemeLabel() {
 
 ## `usePrevious`
 
-Returns the value from the previous render — `undefined` on the first render.
+Returns the value `usePrevious` saw on the previous render, `undefined` on the
+first render only. It tracks renders, not changes: if the component re-renders
+while `count` stays the same, `prev` equals `count`.
 
 ```tsx
 function Counter({ count }: { count: number }) {

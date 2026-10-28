@@ -25,7 +25,7 @@ dependencies.
 pnpm add @rtorcato/react-common
 ```
 
-Requires `react` and `react-dom` 19+ as peer dependencies.
+Requires Node.js 24+, with `react` and `react-dom` `^19.2.8` as peer dependencies.
 
 ## Usage
 
@@ -40,7 +40,7 @@ import { useDebounce, useLocalStorage, cn, ThemeProvider } from '@rtorcato/react
 | Hook | Purpose |
 | --- | --- |
 | `useClickOutside` | Fire a callback when a click lands outside a ref. |
-| `useCopy` | `{ copy, copied }` over browser-common `copyToClipboard`; `copied` resets after a timeout (default 2000 ms). |
+| `useCopy` | `{ copy, copied, failed }` over browser-common `copyToClipboard`; both flags reset after a timeout (default 2000 ms). |
 | `useDebounce` | Debounce a rapidly-changing value. |
 | `useEventListener` | Attach a DOM event listener with automatic cleanup. Defaults to `window`; pass a `Document`, an element, or a ref to one. |
 | `useHasMounted` | `false` on the server and first client render, `true` after mount (hydration-safe browser-only values). |
