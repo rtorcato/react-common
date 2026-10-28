@@ -1,5 +1,11 @@
 # [1.4.0](https://github.com/rtorcato/shadcn-ui/compare/v1.3.0...v1.4.0) (2026-07-04)
 
+## 2.0.0-beta.3
+
+### Patch Changes
+
+- ff05b0d: Stop publishing `*.stories` files and `dist/test` in the tarball.
+
 ## 2.0.0-beta.2
 
 ### Minor Changes
