@@ -15,33 +15,26 @@ pulls `@rtorcato/react-common` in automatically.
 | [`@rtorcato/react-common`](https://www.npmjs.com/package/@rtorcato/react-common) | Headless hooks, the `cn` class-merge utility, or `ThemeProvider` — zero UI. |
 | [`@rtorcato/shadcn-ui`](https://www.npmjs.com/package/@rtorcato/shadcn-ui) | Pre-built shadcn/ui components (also brings in `react-common`). |
 
-## Install the beta {#beta}
+## Install {#install}
 
-:::warning These docs describe the beta
-This site documents the 1.0 beta: `@rtorcato/react-common` **1.0.0-beta** and
-`@rtorcato/shadcn-ui` **2.0.0-beta**. A plain install gets the older `latest`
-releases (react-common 0.3.x, shadcn-ui 1.7.x), which don't have
-[`CopyButton`](./components/ui-extended/copy-button) or the TanStack Table 9
-[`DataTable`](./components/ui-extended/data-table). Install with the `@beta` tag
-until 1.0 ships.
-:::
+These docs describe `@rtorcato/react-common` 1.x and `@rtorcato/shadcn-ui` 2.x.
 
 ```bash
 # Foundation only (hooks + cn + ThemeProvider)
-pnpm add @rtorcato/react-common@beta
+pnpm add @rtorcato/react-common
 
 # Components (depends on react-common)
-pnpm add @rtorcato/shadcn-ui@beta
+pnpm add @rtorcato/shadcn-ui
 ```
 
 With npm:
 
 ```bash
-npm install @rtorcato/react-common@beta
-npm install @rtorcato/shadcn-ui@beta
+npm install @rtorcato/react-common
+npm install @rtorcato/shadcn-ui
 ```
 
-What changed in each beta is in the package changelogs:
+What changed in each release is in the package changelogs:
 [react-common](https://github.com/rtorcato/react-common/blob/main/packages/react-common/CHANGELOG.md)
 and
 [shadcn-ui](https://github.com/rtorcato/react-common/blob/main/packages/shadcn-ui/CHANGELOG.md).

@@ -7,10 +7,10 @@ import StorybookEmbed from '@site/src/components/StorybookEmbed'
 
 # Data table
 
-:::info Beta only
+:::info Requires 2.0
 This page describes the TanStack Table 9 `DataTable` in `@rtorcato/shadcn-ui`
-**2.0.0-beta**. The `latest` release (1.7.x) still ships the TanStack Table 8
-version. [Install the beta](../../getting-started#beta).
+**2.0.0** and later. 1.x ships the TanStack Table 8 version; see
+[Upgrading from 1.x](#upgrading-from-1x).
 :::
 
 A generic table built on [@tanstack/react-table](https://tanstack.com/table):
@@ -49,8 +49,8 @@ const columns: ColumnDef<Payment>[] = [
 
 ## Upgrading from 1.x
 
-`DataTable` runs on TanStack Table 9 from `@rtorcato/shadcn-ui` 2.0.0-beta.0
-([install the beta](../../getting-started#beta)). Plain accessor/header/cell columns typed with
+`DataTable` runs on TanStack Table 9 from `@rtorcato/shadcn-ui` 2.0.0. Plain
+accessor/header/cell columns typed with
 `ColumnDef` from this module keep working unchanged. Check these if you go further:
 
 1. `@tanstack/react-table` is now `^9` (a runtime dependency of `@rtorcato/shadcn-ui`).

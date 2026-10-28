@@ -30,7 +30,7 @@ This package flips it around: shadcn components are built once, here, and consum
 
 This library leans on two sibling packages so it doesn't reinvent tooling or utilities:
 
-- **[`@rtorcato/js-common`](https://github.com/rtorcato/js-common)** — runtime utilities (date, formatting, arrays, async, validation). Compatible companion package — install separately if you want it; this library doesn't currently pull it as a dependency.
+- **[`@rtorcato/js-common`](https://github.com/rtorcato/js-common)** — runtime utilities (date, formatting, arrays, async, validation). A dependency of this library, so it's installed with it.
 - **[`@rtorcato/repo-tooling`](https://github.com/rtorcato/repo-tooling)** — shared TypeScript / Biome / Vitest / commitlint / semantic-release configs. The repo's `tsconfig.json` already extends `@rtorcato/repo-tooling/typescript/react`; other configs are being migrated.
 
 ## Installation
@@ -114,7 +114,7 @@ Hand-written compositions on top of the primitives:
 
 ### Hooks
 
-This package ships no hooks. For toasts use `import { toast } from 'sonner'` with the `sonner` component's `<Toaster />`. The generic, headless hooks (`useClickOutside`, `useDebounce`, `useLocalStorage`, `useMediaQuery`, `useIsMobile`, `useToggle`, …) live in the foundation package [`@rtorcato/react-common`](https://www.npmjs.com/package/@rtorcato/react-common), alongside the `cn` class-merge utility (which this package re-exports internally) and `ThemeProvider` (no longer shipped here) — install it separately if you need them.
+This package ships no hooks. For toasts use `import { toast } from 'sonner'` with the `sonner` component's `<Toaster />`. The generic, headless hooks (`useClickOutside`, `useDebounce`, `useLocalStorage`, `useMediaQuery`, `useIsMobile`, `useToggle`, …) live in the foundation package [`@rtorcato/react-common`](https://www.npmjs.com/package/@rtorcato/react-common), alongside the `cn` class-merge utility (which this package re-exports internally) and `ThemeProvider` (no longer shipped here). It's a dependency of this package, so installing `@rtorcato/shadcn-ui` pulls it in. If you import from it directly, add it to your own `package.json` too (pnpm doesn't expose transitive dependencies).
 
 ## Theming
 
