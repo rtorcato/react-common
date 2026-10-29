@@ -23,7 +23,7 @@ jobs:
   cloudflare:
     permissions:
       contents: read
-    uses: rtorcato/repo-tooling/.github/workflows/docs-deploy-cloudflare.yml@v6.0.0
+    uses: rtorcato/repo-tooling/.github/workflows/docs-deploy-cloudflare.yml@43134f2981c1780eb6cfc616bf6b10bed1b22058 # v6.0.0
     with:
       build-filter: '@rtorcato/react-common-docs'
       worker-name: react-common-docs
