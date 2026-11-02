@@ -5,6 +5,10 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
 import { useLocalStorage } from '~/hooks/use-local-storage'
 
+function Probe() {
+	return useLocalStorage('theme', 'light')[0]
+}
+
 describe('useLocalStorage', () => {
 	beforeEach(() => {
 		window.localStorage.clear()
@@ -117,9 +121,6 @@ describe('useLocalStorage', () => {
 
 	it('renders initialValue first so SSR and hydration markup match (#184)', () => {
 		window.localStorage.setItem('theme', JSON.stringify('dark'))
-		function Probe() {
-			return useLocalStorage('theme', 'light')[0]
-		}
 		expect(renderToString(createElement(Probe))).toBe('light')
 
 		const seen: string[] = []

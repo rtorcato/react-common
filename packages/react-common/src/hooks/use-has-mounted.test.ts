@@ -5,6 +5,10 @@ import { describe, expect, it } from 'vitest'
 
 import { useHasMounted } from '~/hooks/use-has-mounted'
 
+function Probe() {
+	return createElement('span', null, String(useHasMounted()))
+}
+
 describe('useHasMounted', () => {
 	it('is true once mounted on the client', () => {
 		const { result } = renderHook(() => useHasMounted())
@@ -12,9 +16,6 @@ describe('useHasMounted', () => {
 	})
 
 	it('is false during server rendering', () => {
-		function Probe() {
-			return createElement('span', null, String(useHasMounted()))
-		}
 		expect(renderToString(createElement(Probe))).toContain('false')
 	})
 })
